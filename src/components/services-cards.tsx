@@ -1,202 +1,83 @@
 "use client";
 
-import React, { useEffect, useId, useRef, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
-import { useOutsideClick } from "@/app/hooks/use-outside-click";
-
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 export default function ExpandableCardDemo() {
   const [active, setActive] = useState<any>(null);
-  const ref = useRef<HTMLDivElement>(null);
-  const id = useId();
-
-  useEffect(() => {
-    function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") {
-        setActive(null);
-      }
-    }
-
-    if (active && typeof active === "object") {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [active]);
-
-  useOutsideClick(ref, () => setActive(null));
 
   return (
-    <div className="min-h-screen  p-6">
-      <AnimatePresence>
+    <div className="min-h-screen p-6">
+      {/* Modal */}
+      <Dialog  open={!!active} onOpenChange={(open) => !open && setActive(null)}>
         {active && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-blue-900/20 h-full w-full z-10"
-          />
+    <DialogContent
+  className="max-w-lg w-full rounded-2xl p-0 overflow-hidden border border-gray-200 shadow-lg 
+    transition-all duration-300 ease-out
+    data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95
+    data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95
+    max-h-[calc(100vh-4rem)]"  // ✨ keeps dialog vertically centered with margins
+>
+  <DialogHeader className="p-4 border-b">
+    <DialogTitle className="text-xl font-semibold">{active.title}</DialogTitle>
+    <DialogDescription className="text-sm text-gray-500">
+      {active.description}
+    </DialogDescription>
+  </DialogHeader>
+
+  {/* Image */}
+  <img src={active.src} alt={active.title} className="w-full h-56 object-cover " />
+
+  {/* Scrollable Content */}
+  <div className="p-4 text-sm text-gray-700 overflow-y-auto">
+    {typeof active.content === "function" ? active.content() : active.content}
+  </div>
+
+  {/* CTA Button */}
+  <div className="p-4 border-t">
+    <Button asChild className="w-full">
+      <a href={active.ctaLink}>{active.ctaText}</a>
+    </Button>
+  </div>
+</DialogContent>
         )}
-      </AnimatePresence>
-      <AnimatePresence>
-        {active ? (
-          <div className="fixed inset-0 bg-blue-900/30 backdrop-blur-sm grid place-items-center z-[100]">
-            {/* Close Button (Mobile) */}
-            <motion.button
-              key={`button-${active.title}-${id}`}
-              layout
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{
-                opacity: 0,
-                transition: { duration: 0.05 },
-              }}
-              className="flex absolute top-4 right-4 lg:hidden items-center justify-center bg-white rounded-full h-8 w-8 shadow-md border border-blue-100"
-              onClick={() => setActive(null)}
-            >
-              <CloseIcon />
-            </motion.button>
+      </Dialog>
 
-            {/* Modal Content */}
-            <motion.div
-              layoutId={`card-${active.title}-${id}`}
-              ref={ref}
-              className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white sm:rounded-3xl overflow-hidden shadow-xl border border-blue-100"
-            >
-              {/* Service Image */}
-              <motion.div layoutId={`image-${active.title}-${id}`}>
-                <img
-                  width={100}
-                  height={100}
-                  src={active.src}
-                  alt={active.title}
-                  className="w-full h-64 md:h-64 object-cover sm:rounded-t-3xl"
-                />
-              </motion.div>
-
-              {/* Service Details */}
-              <div className="flex flex-col">
-                <div className="flex justify-between items-center p-5 border-b border-blue-100">
-                  <div className="flex-1 min-w-0 pr-4">
-                    <motion.h3
-                      layoutId={`title-${active.title}-${id}`}
-                      className="font-semibold text-xl text-gray-900"
-                    >
-                      {active.title}
-                    </motion.h3>
-                    <motion.p
-                      layoutId={`description-${active.description}-${id}`}
-                      className="text-gray-700 mt-1 text-sm"
-                    >
-                      {active.description}
-                    </motion.p>
-                  </div>
-                  <motion.a
-                    layoutId={`button-${active.title}-${id}`}
-                    href={active.ctaLink}
-                    className="px-4 py-2 text-sm rounded-full font-medium bg-blue-500 hover:bg-blue-600 text-white whitespace-nowrap flex-shrink-0 transition-colors"
-                  >
-                    {active.ctaText}
-                  </motion.a>
-                </div>
-
-                {/* Scrollable Content */}
-                <div className="flex-1 px-5 py-4 text-gray-800 text-sm leading-relaxed scrollbar-thin scrollbar-thumb-blue-200">
-                  <motion.div
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                  >
-                    {typeof active.content === "function" ? active.content() : active.content}
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        ) : null}
-      </AnimatePresence>
+      {/* Cards List */}
       <ul className="max-w-2xl mx-auto w-full gap-4">
-        {cards.map((card, index: number) => (
-          <motion.div
-            layoutId={`card-${card.title}-${id}`}
-            key={`card-${card.title}-${id}`}
+        {cards.map((card) => (
+          <div
+            key={card.title}
             onClick={() => setActive(card)}
             className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-blue-100 rounded-xl cursor-pointer bg-white shadow-sm border border-blue-50 mb-4 transition-colors"
           >
             <div className="flex gap-4 flex-col md:flex-row items-center md:items-start">
-              <motion.div layoutId={`image-${card.title}-${id}`}>
-                <img
-                  width={100}
-                  height={100}
-                  src={card.src}
-                  alt={card.title}
-                  className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top border border-blue-100"
-                />
-              </motion.div>
+              <img
+                src={card.src}
+                alt={card.title}
+                className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover border border-blue-100"
+              />
               <div>
-                <motion.h3
-                  layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-gray-900 text-center md:text-left"
-                >
-                  {card.title}
-                </motion.h3>
-                <motion.p
-                  layoutId={`description-${card.description}-${id}`}
-                  className="text-gray-700 text-center md:text-left"
-                >
-                  {card.description}
-                </motion.p>
+                <h3 className="font-medium text-gray-900 text-center md:text-left">{card.title}</h3>
+                <p className="text-gray-700 text-center md:text-left">{card.description}</p>
               </div>
             </div>
-            <motion.button
-              layoutId={`button-${card.title}-${id}`}
-              className="px-4 py-2 text-sm rounded-full font-bold bg-blue-50 hover:bg-blue-500 hover:text-white text-gray-700 mt-4 md:mt-0 border border-blue-200 transition-colors"
-            >
+            <Button variant="outline" className="mt-4 md:mt-0">
               {card.ctaText}
-            </motion.button>
-          </motion.div>
+            </Button>
+          </div>
         ))}
       </ul>
     </div>
   );
 }
-
-export const CloseIcon = () => {
-  return (
-    <motion.svg
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      exit={{
-        opacity: 0,
-        transition: {
-          duration: 0.05,
-        },
-      }}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="h-4 w-4 text-gray-600"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M18 6l-12 12" />
-      <path d="M6 6l12 12" />
-    </motion.svg>
-  );
-};
 
 const cards = [
   {
