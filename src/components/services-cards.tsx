@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { act, useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -9,6 +9,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { scrollToSection } from "@/app/hooks/smooth-scroll";
 
 export default function ExpandableCardDemo() {
   const [active, setActive] = useState<any>(null);
@@ -18,12 +19,12 @@ export default function ExpandableCardDemo() {
       {/* Modal */}
       <Dialog  open={!!active} onOpenChange={(open) => !open && setActive(null)}>
         {active && (
-    <DialogContent
-  className="max-w-lg w-full rounded-2xl p-0 overflow-hidden border border-gray-200 shadow-lg 
+<DialogContent
+  className="max-w-[calc(100vw-2rem)] w-full rounded-2xl p-0 overflow-hidden border border-gray-200 shadow-lg 
     transition-all duration-300 ease-out
     data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95
     data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95
-    max-h-[calc(100vh-4rem)]"  // ✨ keeps dialog vertically centered with margins
+    max-h-[calc(100vh-4rem)] " // ✨ horizontal margin added
 >
   <DialogHeader className="p-4 border-b">
     <DialogTitle className="text-xl font-semibold">{active.title}</DialogTitle>
@@ -33,17 +34,24 @@ export default function ExpandableCardDemo() {
   </DialogHeader>
 
   {/* Image */}
-  <img src={active.src} alt={active.title} className="w-full h-56 object-cover " />
+  <img src={active.src} alt={active.title} className="w-full h-56 object-cover" />
 
   {/* Scrollable Content */}
-  <div className="p-4 text-sm text-gray-700 overflow-y-auto">
+  <div className="p-4 text-sm text-gray-700 overflow-y-auto max-h-[40vh]">
     {typeof active.content === "function" ? active.content() : active.content}
   </div>
 
   {/* CTA Button */}
   <div className="p-4 border-t">
-    <Button asChild className="w-full">
-      <a href={active.ctaLink}>{active.ctaText}</a>
+    <Button onClick={()=>{
+      setActive(null)
+       scrollToSection("#appointment", {
+            navbarHeight: 80,
+            duration: 1000,
+            easing: 'easeInOut'
+          });
+    }} className="w-full">
+      {active.ctaText}
     </Button>
   </div>
 </DialogContent>
@@ -85,7 +93,7 @@ const cards = [
     title: "Anxiety & Stress Therapy",
     src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=80",
     ctaText: "Book Session",
-    ctaLink: "#contact",
+    ctaLink: "#appointment",
     content: () => {
       return (
         <p>
@@ -101,7 +109,7 @@ const cards = [
     title: "Relationship Counseling",
     src: "/relation_ship_counselling.png",
     ctaText: "Book Session",
-    ctaLink: "#contact",
+    ctaLink: "#appointment",
     content: () => {
       return (
         <p>
@@ -117,7 +125,7 @@ const cards = [
     title: "Mindfulness Therapy",
     src: "/mindfulness_therapy.jpg",
     ctaText: "Book Session",
-    ctaLink: "#contact",
+    ctaLink: "#appointment",
     content: () => {
       return (
         <p>
@@ -132,7 +140,7 @@ const cards = [
     title: "Trauma & PTSD Therapy",
     src: "/trauma_ptsd.png",
     ctaText: "Book Session",
-    ctaLink: "#contact",
+    ctaLink: "#appointment",
     content: () => {
       return (
         <p>
@@ -147,7 +155,7 @@ const cards = [
     title: "Depression Counseling",
     src: "/depression.png",
     ctaText: "Book Session",
-    ctaLink: "#contact",
+    ctaLink: "#appointment",
     content: () => {
       return (
         <p>
