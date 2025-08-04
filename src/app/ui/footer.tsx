@@ -1,8 +1,27 @@
-import { Heart, Phone, Mail } from "lucide-react";
+"use client"
+import { Heart, Phone, Mail, Loader2 } from "lucide-react";
 import * as Info from "../config/constants/info";
 import { Button } from "@/components/ui/button";
 
-const Footer = () => {
+import nodemailer from "nodemailer";
+import { sendContactMail } from "../server/actions";
+import { useState } from "react";
+const Footer =() => {
+  const [status,setStatus] = useState(false);
+  async function handleSubmit(formData: FormData) {
+if(!status)
+{
+   try {
+    setStatus(true);
+      await sendContactMail(formData);
+     
+    } catch (err) {
+      setStatus(false);
+
+    }
+}
+ 
+  }
   return (
     <footer id="footer" className="bg-navy-blue/95 text-pure-white pt-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,10 +33,11 @@ const Footer = () => {
             <p className="text-sm text-pure-white/70 mb-6">
               Have questions or want to book a session? Fill out the form and we'll get back to you.
             </p>
-            <form className="space-y-4">
+            <form action={handleSubmit} className="space-y-4">
               {/* Name */}
               <input
                 type="text"
+                name="name"
                 placeholder="Your Name"
                 className="w-full rounded-lg border border-pure-white/20 bg-transparent px-4 py-3 text-pure-white placeholder-pure-white/50 focus:outline-none focus:ring-2 focus:ring-calming-blue focus:scale-[1.02]  focus:ring-black transition-all duration-300"
                 required
@@ -26,6 +46,7 @@ const Footer = () => {
               {/* Email */}
               <input
                 type="email"
+                name="email"
                 placeholder="you@example.com"
                 className="w-full rounded-lg border border-pure-white/20 bg-transparent px-4 py-3 text-pure-white placeholder-pure-white/50 focus:outline-none focus:ring-2 focus:ring-calming-blue focus:scale-[1.02]  focus:ring-black transition-all duration-300"
                 required
@@ -35,12 +56,13 @@ const Footer = () => {
               <textarea
                 placeholder="Your Message"
                 rows={4}
+                name="message"
                 className="w-full rounded-lg border border-pure-white/20 bg-transparent px-4 py-3 text-pure-white placeholder-pure-white/50 focus:outline-none focus:ring-2 focus:ring-calming-blue focus:scale-[1.02]  focus:ring-black transition-all duration-300 resize-none"
                 required
               />
 
-              <Button className="w-full bg-calming-blue hover:bg-calming-blue/90 text-white bg-black cursor-pointer">
-                Send Message
+              <Button disabled={status} className="w-full bg-calming-blue hover:bg-calming-blue/90 text-white bg-black cursor-pointer">
+                {!status?"Send Message" : <span className="flex items-center gap-1"> Sending Message <Loader2 className="animate-spin"/></span>}
               </Button>
             </form>
           </div>

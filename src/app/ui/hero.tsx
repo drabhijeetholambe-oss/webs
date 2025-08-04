@@ -1,6 +1,7 @@
 "use client"; 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { scrollToSection } from "../hooks/smooth-scroll";
 
 
 const Hero = () => {
@@ -22,6 +23,14 @@ const Hero = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, [images.length]);
+ const handleGetStartedClick = (): void => {
+    scrollToSection("#appointment", {
+      navbarHeight: 80,
+      duration: 1000,
+      easing: 'easeInOut'
+    });
+  };
+
 
   return (
     <section id="hero" className="relative h-screen w-full overflow-hidden flex items-center justify-center text-center">
@@ -49,9 +58,12 @@ const Hero = () => {
           Healing begins with understanding
         </p>
         <div className="flex justify-center">
-<Button className="bg-blue-400 hover:bg-blue-700 px-6 py-4 text-lg text-center rounded-3xl cursor-pointer" >
-          Get Started
-        </Button>
+<Button
+  onClick={handleGetStartedClick}
+  className="bg-blue-400 hover:bg-blue-700 px-6 py-4 text-lg text-center rounded-3xl cursor-pointer"
+>
+  Get Started
+</Button>
         </div>
         
       </div>

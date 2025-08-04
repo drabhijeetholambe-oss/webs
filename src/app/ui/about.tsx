@@ -26,7 +26,7 @@ const About = () => {
           <p className="text-gray-600 font-light">
             <strong>Specializations:</strong> Anxiety Management, Trauma Therapy, Mindfulness-Based CBT
           </p>
-        {Info.QUALIFICATIONS.map(q=>(   <p className="text-gray-500 text-sm italic">
+        {Info.QUALIFICATIONS.map(q=>(   <p key={q} className="text-gray-500 text-sm italic">
            {q}
           </p>))}
         </div>
