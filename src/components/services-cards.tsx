@@ -92,130 +92,211 @@ export default function ExpandableCardDemo() {
 
 const cards = [
   {
-    description: "Manage anxiety and regain a sense of calm.",
-    title: "Anxiety & Stress Therapy",
-    src: "/book_session.avif",
+    description: "Confidential and expert care for sexual wellness and relationship intimacy.",
+    title: "Sexual Health",
+    src: "/sti.jpg",
     ctaText: "Book Session",
     ctaLink: "#appointment",
-    content: () => {
-      return (
-        <p>
-          Anxiety and stress can feel overwhelming, but you don't have to face them alone.  
-          Through evidence-based approaches like CBT and relaxation techniques, I help you 
-          build effective coping strategies, reduce worry, and restore balance in your life.
-        </p>
-      );
-    },
+    content: () => (
+      <p>
+        Sexual health is an important aspect of overall well-being.  
+        I provide confidential and professional care to address concerns around intimacy, sexual function, and relationship wellness with compassion and expertise.
+      </p>
+    ),
   },
   {
-    description: "Strengthen your relationships and resolve conflicts.",
-    title: "Relationship Counseling",
-    src: "/relation_ship_counselling.png",
-    ctaText: "Book Session",
-    ctaLink: "#appointment",
-    content: () => {
-      return (
-        <p>
-          Healthy relationships are vital for emotional well-being.  
-          I provide a safe, non-judgmental space for couples and individuals to address conflicts, 
-          improve communication, and foster deeper connections.
-        </p>
-      );
-    },
-  },
-  {
-    description: "Stay grounded with mindfulness and self-awareness.",
-    title: "Mindfulness Therapy",
-    src: "/mindfulness_therapy.jpg",
-    ctaText: "Book Session",
-    ctaLink: "#appointment",
-    content: () => {
-      return (
-        <p>
-          Mindfulness-based therapy helps you stay present and manage emotional turbulence.  
-          Learn simple yet powerful techniques to enhance focus, reduce stress, and cultivate inner peace.
-        </p>
-      );
-    },
-  },
-  {
-    description: "Heal from past trauma and move forward.",
-    title: "Trauma & PTSD Therapy",
-    src: "/trauma_ptsd.png",
-    ctaText: "Book Session",
-    ctaLink: "#appointment",
-    content: () => {
-      return (
-        <p>
-          Trauma therapy provides a compassionate space to process painful experiences.  
-          Using gentle, client-centered methods, I help you heal emotional wounds and rebuild a sense of safety and trust.
-        </p>
-      );
-    },
-  },
-  {
-    description: "Support through emotional lows and depression.",
+    description: "Helping you navigate low moods and rediscover hope with compassionate support.",
     title: "Depression Counseling",
     src: "/depression.png",
     ctaText: "Book Session",
     ctaLink: "#appointment",
-    content: () => {
-      return (
-        <p>
-          If you're struggling with sadness or low motivation, therapy can help.  
-          Together, we'll work on practical steps to regain hope, build resilience, and improve your daily life.
-        </p>
-      );
-    },
+    content: () => (
+      <p>
+        If you're feeling persistently sad or demotivated, therapy can help.  
+        Together, we'll focus on practical strategies to rebuild hope, resilience, and emotional balance.
+      </p>
+    ),
   },
   {
-  description: "Overcome challenges related to sexual disorders safely.",
-  title: "Sexual Disorder Counseling",
-  src: "/sexual_disorder_counselling.jpg",
-  ctaText: "Book Session",
-  ctaLink: "#appointment",
-  content: () => {
-    return (
+    description: "Learn to manage overwhelming thoughts and regain a sense of calm.",
+    title: "Anxiety & Panic Disorder",
+    src: "/therapist.jpg",
+    ctaText: "Book Session",
+    ctaLink: "#appointment",
+    content: () => (
       <p>
-        Sexual disorders can impact both emotional well-being and relationships.  
-        I offer professional support to address conditions like vaginismus, erectile dysfunction, 
-        and other related concerns with care and discretion.
+        Anxiety and panic can feel debilitating, but you don’t have to face them alone.  
+        I offer evidence-based therapies like CBT and relaxation techniques to help you regain control and find peace.
       </p>
-    );
+    ),
   },
-},
-{
-  description: "Get guidance and treatment for STIs in a confidential space.",
-  title: "STIs Counseling & Care",
-  src: "/sti.jpg",
-  ctaText: "Book Session",
-  ctaLink: "#appointment",
-  content: () => {
-    return (
+  {
+    description: "Restful sleep is possible with the right diagnosis and treatment.",
+    title: "Sleep Disorders",
+    src: "/sleep_disorder.jpg",
+    ctaText: "Book Session",
+    ctaLink: "#appointment",
+    content: () => (
       <p>
-        Sexually transmitted infections (STIs) require timely medical and emotional support.  
-        I provide confidential counseling to help you understand risks, treatment options, 
-        and safe practices without stigma or judgment.
+        Poor sleep can impact your mental and physical health.  
+        I help identify underlying causes of sleep issues and provide tailored strategies for achieving restful, restorative sleep.
       </p>
-    );
+    ),
   },
-},
-{
-  description: "Overcome performance anxiety and regain confidence.",
-  title: "Performance Issues Therapy",
-  src: "/performance.jpg",
-  ctaText: "Book Session",
-  ctaLink: "#appointment",
-  content: () => {
-    return (
+  {
+    description: "Balanced support for mood stabilization and emotional regulation.",
+    title: "Bipolar Mood Disorder",
+    src: "/bipolar_disorder.jpg",
+    ctaText: "Book Session",
+    ctaLink: "#appointment",
+    content: () => (
       <p>
-        Performance issues can affect self-esteem and intimacy.  
-        Through targeted therapy and practical techniques, I help individuals reduce anxiety, 
-        improve confidence, and enhance their sexual well-being.
+        Bipolar disorder can feel like an emotional rollercoaster.  
+        With structured therapy and support, I help you stabilize moods, improve daily functioning, and live a balanced life.
       </p>
-    );
+    ),
   },
-},
-
-
+  {
+    description: "Comprehensive care for managing symptoms and improving daily functioning.",
+    title: "Schizophrenia Therapy",
+    src: "/schizophrenia.jpg",
+    ctaText: "Book Session",
+    ctaLink: "#appointment",
+    content: () => (
+      <p>
+        Schizophrenia requires ongoing care and understanding.  
+        I provide therapy to manage symptoms, improve social skills, and support both patients and caregivers in daily life.
+      </p>
+    ),
+  },
+  {
+    description: "Evidence-based treatment to help you break free from obsessive thoughts and compulsive behaviors.",
+    title: "OCD Therapy",
+    src: "/ocd.jpeg",
+    ctaText: "Book Session",
+    ctaLink: "#appointment",
+    content: () => (
+      <p>
+        Obsessive-compulsive disorder can feel exhausting.  
+        Through structured interventions like ERP, I help you reduce compulsions and regain control over intrusive thoughts.
+      </p>
+    ),
+  },
+  // {
+  //   description: "Holistic support for healing your relationship with food and body image.",
+  //   title: "Eating Disorders",
+  //   src: "/eating_disorders.jpg",
+  //   ctaText: "Book Session",
+  //   ctaLink: "#appointment",
+  //   content: () => (
+  //     <p>
+  //       Eating disorders can affect both physical and mental health.  
+  //       I provide compassionate, holistic therapy to help you develop a healthier relationship with food and self-image.
+  //     </p>
+  //   ),
+  // },
+  {
+    description: "Tailored interventions for conditions like ADHD and autism.",
+    title: "Neurodevelopmental Disorders",
+    src: "/neurodevelopmental.jpg",
+    ctaText: "Book Session",
+    ctaLink: "#appointment",
+    content: () => (
+      <p>
+        From ADHD to autism spectrum conditions, I offer tailored therapeutic strategies and behavioral interventions 
+        to support both children and adults in achieving their potential.
+      </p>
+    ),
+  },
+  {
+    description: "Supportive care for memory concerns, cognitive decline, and caregiver guidance.",
+    title: "Dementia Care",
+    src: "/dementia.jpg",
+    ctaText: "Book Session",
+    ctaLink: "#appointment",
+    content: () => (
+      <p>
+        Dementia affects both patients and their families.  
+        I provide supportive therapy for memory issues, cognitive health, and caregiver stress management.
+      </p>
+    ),
+  },
+  // {
+  //   description: "Safe space to address emotional struggles, stress, and societal pressure.",
+  //   title: "Men’s Mental Health",
+  //   src: "/mens_mental_health.jpg",
+  //   ctaText: "Book Session",
+  //   ctaLink: "#appointment",
+  //   content: () => (
+  //     <p>
+  //       Men often face silent struggles due to societal expectations.  
+  //       I offer a safe, confidential space to address stress, anger, and emotional health without judgment.
+  //     </p>
+  //   ),
+  // },
+  {
+    description: "Structured therapy and medication support for lasting recovery from substance use.",
+    title: "De-addiction Therapy",
+    src: "/deaddiction.jpg",
+    ctaText: "Book Session",
+    ctaLink: "#appointment",
+    content: () => (
+      <p>
+        Addiction recovery is possible with the right support.  
+        I provide evidence-based therapy and relapse prevention tools to help you achieve and maintain sobriety.
+      </p>
+    ),
+  },
+  {
+    description: "Affirmative care for gender identity exploration and transition support.",
+    title: "Gender Incongruence Therapy",
+    src: "/gender_incogruence.webp",
+    ctaText: "Book Session",
+    ctaLink: "#appointment",
+    content: () => (
+      <p>
+        Exploring gender identity can be a deeply personal journey.  
+        I offer supportive, affirming care to help you navigate identity, expression, and transitions safely.
+      </p>
+    ),
+  },
+  {
+    description: "Insight-oriented therapy to manage emotions, relationships, and behavior patterns.",
+    title: "Personality Disorders Therapy",
+    src: "/personality_disorders.jpg",
+    ctaText: "Book Session",
+    ctaLink: "#appointment",
+    content: () => (
+      <p>
+        Personality disorders can impact emotions and relationships.  
+        I use therapeutic techniques to help improve self-awareness, regulate emotions, and build healthier connections.
+      </p>
+    ),
+  },
+  {
+    description: "Learn practical tools to reduce burnout and improve your mental well-being.",
+    title: "Stress Management",
+    src: "/stress_management.jpg",
+    ctaText: "Book Session",
+    ctaLink: "#appointment",
+    content: () => (
+      <p>
+        Chronic stress can take a toll on your health.  
+        I help you develop practical coping tools to reduce burnout, balance responsibilities, and improve mental well-being.
+      </p>
+    ),
+  },
+  {
+    description: "Strategies to overcome procrastination, focus better, and boost performance.",
+    title: "Productivity Management",
+    src: "/productivity.jpg",
+    ctaText: "Book Session",
+    ctaLink: "#appointment",
+    content: () => (
+      <p>
+        Struggling with focus or procrastination?  
+        I offer structured techniques and psychological strategies to help improve productivity and time management skills.
+      </p>
+    ),
+  },
 ];

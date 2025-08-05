@@ -14,7 +14,8 @@ export const SOCIALS = {
 export const PHONE = "+91 9619719344";
 
 export const ABOUT = `
-Dr. Abhijeet Holambe, a trusted Psychiatrist and Sexologist in Mumbai, takes a personalized and integrative approach to mental health care. With a focus on holistic well-being, he tailors treatment plans to suit the unique psychological and emotional needs of each client. Whether addressing issues such as anxiety, depression, stress, relationship concerns, or sexual health disorders, Dr. Holambe is dedicated to creating a safe, supportive, and collaborative therapeutic environment. His goal is to empower individuals to overcome life’s challenges, build resilience, and improve their overall emotional and mental well-being. Online and in-person consultations are available, offering flexible access to expert care.
+ I’m Dr. Abhijeet Holambe, a dedicated Sexologist and Neuropsychiatrist with over 3 years of experience in addressing a wide range of mental and sexual health concerns. I offer both online and offline consultations, creating a safe, judgment-free space where individuals and couples can feel heard and supported. My approach combines clinical expertise with empathy, helping clients improve their emotional well-being, strengthen relationships, and enhance overall quality of life.
 `;
-export const SPECIALISATIONS = ["Anxiety Management","Stress Reduction","Life Transitions","Sexual Disorders"]
+export const ADDRESS = `United Multispeciality Hospital New Link Rd, near Hyundai Showroom, Mahavir Nagar, Kandivali West, Mumbai, Maharashtra 400067`
+export const SPECIALISATIONS = ["Sexual Health", "Neuropsychiatric Consultation", "Deaddiction" , "Counselling"]
 export const QUALIFICATIONS = ["MBBS" , "MD Psychiatry"]

@@ -7,7 +7,7 @@ const About = () => {
         {/* Left: Image */}
         <div className="flex justify-center">
           <Image
-            src="/therapist.jpg" // 👉 Replace with your image in /public
+            src="/doctor.jpg" // 👉 Replace with your image in /public
             alt="Therapist"
             width={400}
             height={400}
@@ -24,7 +24,7 @@ const About = () => {
         {Info.ABOUT}
           </p>
           <p className="text-gray-600 font-light">
-            <strong>Specializations:</strong> Anxiety Management, Trauma Therapy, Mindfulness-Based CBT
+            <strong>Specializations:</strong> <span>{Info.SPECIALISATIONS.join(" , ")}</span>
           </p>
           
         <p  className="text-gray-500 text-sm italic">
