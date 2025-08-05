@@ -11,6 +11,8 @@ const Hero = () => {
   const images = [
     "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=80",
     "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&w=2000&q=80",
+    "/performance.jpg",
+    "/sexual_disorder_counselling.jpg",
     "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=2000&q=80",
   ];
 
@@ -50,23 +52,22 @@ const Hero = () => {
       </div>
 
       {/* Foreground Content */}
-      <div className="relative z-10 text-white max-w-3xl px-4 space-y-6">
-        <h1 className="text-5xl md:text-6xl font-serif font-light leading-tight">
-          You're Not Alone Anymore
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-200 font-light">
-          Healing begins with understanding
-        </p>
-        <div className="flex justify-center">
-<Button
-  onClick={handleGetStartedClick}
-  className="bg-blue-400 hover:bg-blue-700 px-6 py-4 text-lg text-center rounded-3xl cursor-pointer"
->
-  Get Started
-</Button>
-        </div>
-        
-      </div>
+    <div className="relative z-10 text-white max-w-3xl px-4 space-y-6">
+  <h1 className="text-5xl md:text-6xl font-serif font-light leading-tight">
+    Expert Care for Mind & Intimacy
+  </h1>
+  <p className="text-xl md:text-2xl text-gray-200 font-light">
+    Your mental health and sexual well-being matter—take the first step toward a healthier you.
+  </p>
+  <div className="flex justify-center">
+    <Button
+      onClick={handleGetStartedClick}
+      className="bg-blue-400 hover:bg-blue-700 px-6 py-4 text-lg text-center rounded-3xl cursor-pointer"
+    >
+      Book Your Consultation
+    </Button>
+  </div>
+</div>
 
     
     </section>

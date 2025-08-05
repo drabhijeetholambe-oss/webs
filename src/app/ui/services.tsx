@@ -27,7 +27,7 @@ const Services = () => {
     <section id="services" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl font-serif font-light text-gray-900 mb-12">
-          Services I Offer
+          My Expertise
         </h2>
 
        <ServicesCard/>

@@ -165,4 +165,54 @@ const cards = [
       );
     },
   },
+  {
+  description: "Overcome challenges related to sexual disorders safely.",
+  title: "Sexual Disorder Counseling",
+  src: "/sexual_disorder_counselling.jpg",
+  ctaText: "Book Session",
+  ctaLink: "#appointment",
+  content: () => {
+    return (
+      <p>
+        Sexual disorders can impact both emotional well-being and relationships.  
+        I offer professional support to address conditions like vaginismus, erectile dysfunction, 
+        and other related concerns with care and discretion.
+      </p>
+    );
+  },
+},
+{
+  description: "Get guidance and treatment for STIs in a confidential space.",
+  title: "STIs Counseling & Care",
+  src: "/sti.jpg",
+  ctaText: "Book Session",
+  ctaLink: "#appointment",
+  content: () => {
+    return (
+      <p>
+        Sexually transmitted infections (STIs) require timely medical and emotional support.  
+        I provide confidential counseling to help you understand risks, treatment options, 
+        and safe practices without stigma or judgment.
+      </p>
+    );
+  },
+},
+{
+  description: "Overcome performance anxiety and regain confidence.",
+  title: "Performance Issues Therapy",
+  src: "/performance.jpg",
+  ctaText: "Book Session",
+  ctaLink: "#appointment",
+  content: () => {
+    return (
+      <p>
+        Performance issues can affect self-esteem and intimacy.  
+        Through targeted therapy and practical techniques, I help individuals reduce anxiety, 
+        improve confidence, and enhance their sexual well-being.
+      </p>
+    );
+  },
+},
+
+
 ];

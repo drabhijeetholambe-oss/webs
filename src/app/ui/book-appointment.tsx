@@ -43,11 +43,9 @@ const BookAppointment = () => {
     "06:00 PM"
   ];
   const sessionTypes = [
-    {value:"anxiety-stress-therapy",label:"Anxiety & Stress Therapy"},
-    {value:"relationship-counselling",label:"Relationship Counselling"},
-    {value:"mindfulness-therapy",label:"Mindfulness Therapy"},
-    {value:"trauma-ptsd-therapy",label:"Trauma & PTSD Therapy"},
-    {value:"depression-counselling",label:"Depression Counselling"}
+    {value:"offline",label:"Offline"},
+    {value:"online",label:"Online"},
+
   ]
   const formatDate = (date: Date) => {
     return date.toLocaleDateString('en-US', {

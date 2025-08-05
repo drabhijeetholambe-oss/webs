@@ -74,7 +74,7 @@ if(!status)
               {Info.NAME}
             </h3>
             <p className="text-pure-white/60 leading-relaxed font-light max-w-md mx-auto lg:mx-0">
-              Licensed Clinical Psychologist providing compassionate care in a peaceful environment.
+             Trusted Psychiatrist and Sexologist providing compassionate care in a peaceful environment.
             </p>
 
             <div className="space-y-4 pt-4">
@@ -95,7 +95,7 @@ if(!status)
         {/* --- Bottom --- */}
         <div className="pt-8 mt-12 border-t border-pure-white/10 text-center">
           <p className="text-pure-white/40 text-sm font-light">
-            © 2025 {Info.NAME}, Licensed Clinical Psychologist
+            © 2025 {Info.NAME}
           </p>
         </div>
       </div>
