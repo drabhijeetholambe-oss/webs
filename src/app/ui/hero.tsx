@@ -62,7 +62,7 @@ const Hero = () => {
   <div className="flex justify-center">
     <Button
       onClick={handleGetStartedClick}
-      className="bg-blue-400 hover:bg-blue-700 px-6 py-4 text-lg text-center rounded-3xl cursor-pointer"
+      className="bg-blue-500 hover:bg-blue-700 px-6 py-4 text-lg text-center rounded-3xl cursor-pointer"
     >
       Book Your Consultation
     </Button>

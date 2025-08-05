@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { scrollToSection } from "@/app/hooks/smooth-scroll";
+import Image from "next/image";
 
 export default function ExpandableCardDemo() {
   const [active, setActive] = useState<any>(null);
@@ -34,7 +35,7 @@ export default function ExpandableCardDemo() {
   </DialogHeader>
 
   {/* Image */}
-  <img src={active.src} alt={active.title} className="w-full h-56 object-cover" />
+  <Image width={500} height={500} src={active.src} alt={active.title} className="w-full h-56 object-cover" />
 
   {/* Scrollable Content */}
   <div className="p-4 text-sm text-gray-700 overflow-y-auto max-h-[40vh]">
@@ -67,7 +68,9 @@ export default function ExpandableCardDemo() {
             className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-blue-100 rounded-xl cursor-pointer bg-white shadow-sm border border-blue-50 mb-4 transition-colors"
           >
             <div className="flex gap-4 flex-col md:flex-row items-center md:items-start">
-              <img
+              <Image
+               width={500}
+               height={500}
                 src={card.src}
                 alt={card.title}
                 className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover border border-blue-100"
@@ -91,7 +94,7 @@ const cards = [
   {
     description: "Manage anxiety and regain a sense of calm.",
     title: "Anxiety & Stress Therapy",
-    src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=80",
+    src: "/book_session.avif",
     ctaText: "Book Session",
     ctaLink: "#appointment",
     content: () => {

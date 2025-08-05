@@ -23,7 +23,7 @@ export const scrollToSection = (
 
   const element = document.querySelector(href) as HTMLElement;
   if (!element) {
-    console.warn(`Element with selector "${href}" not found`);
+    
     return;
   }
 
