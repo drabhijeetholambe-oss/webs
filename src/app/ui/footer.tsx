@@ -19,6 +19,9 @@ if(!status)
       setStatus(false);
 
     }
+    finally{
+      setStatus(false)
+    }
 }
  
   }
