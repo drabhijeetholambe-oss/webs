@@ -11,7 +11,7 @@ export const SOCIALS = {
     url: `https://www.linkedin.com/in/chandaniakhenia/`,
   },
 };
-export const PHONE = "+91 9619719344";
+export const PHONE = "+91 8169065210";
 
 export const ABOUT = `
  I’m Dr. Abhijeet Holambe, a dedicated Sexologist and Neuropsychiatrist with over 3 years of experience in addressing a wide range of mental and sexual health concerns. I offer both online and offline consultations, creating a safe, judgment-free space where individuals and couples can feel heard and supported. My approach combines clinical expertise with empathy, helping clients improve their emotional well-being, strengthen relationships, and enhance overall quality of life.
