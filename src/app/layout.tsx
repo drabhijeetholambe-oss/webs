@@ -7,6 +7,7 @@ import Footer from "./ui/footer";
 import "./app.css"
 import { Analytics } from "@vercel/analytics/next"
 import { Toaster } from "@/components/ui/sonner";
+import WhatsappButton from "@/components/whatsapp-button";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -87,6 +88,7 @@ export default function RootLayout({
            {children}
         </main>
         <Toaster />
+        <WhatsappButton />
         <Footer/>
       </body>
     </html>
