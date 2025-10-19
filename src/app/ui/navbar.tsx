@@ -125,13 +125,6 @@ const Navbar = () => {
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></span>
                 </button>
               ))}
-              <Button
-                onClick={() => scrollToSection("#appointment")}
-                variant="ghost"
-                className="ml-4 font-light text-white hover:bg-white/20 cursor-pointer transition-all duration-200"
-              >
-                Book Appointment
-              </Button>
             </div>
           </div>
 
@@ -169,12 +162,6 @@ const Navbar = () => {
               {item.name}
             </button>
           ))}
-          <Button
-            onClick={() => scrollToSection("#appointment")}
-            className="w-full mt-2 bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-200"
-          >
-            Book Appointment
-          </Button>
         </div>
       </div>
     </nav>

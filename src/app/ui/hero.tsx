@@ -1,7 +1,7 @@
-"use client"; 
+"use client";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { scrollToSection } from "../hooks/smooth-scroll";
+import { PHONE } from "@/app/config/constants/info";
 
 
 const Hero = () => {
@@ -25,12 +25,18 @@ const Hero = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, [images.length]);
- const handleGetStartedClick = (): void => {
-    scrollToSection("#appointment", {
-      navbarHeight: 80,
-      duration: 1000,
-      easing: 'easeInOut'
-    });
+  const handleGetStartedClick = (): void => {
+    // Remove all non-numeric characters from phone number
+    const phoneNumber = PHONE.replace(/\D/g, "");
+
+    // Pre-filled message
+    const message = encodeURIComponent("Hi Dr. Abhijeet Holambe, I'd like to schedule an appointment.");
+
+    // WhatsApp URL (works for both mobile app and web)
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    // Open in new tab/window (or app on mobile)
+    window.open(whatsappUrl, "_blank");
   };
 
 

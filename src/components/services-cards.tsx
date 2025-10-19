@@ -1,6 +1,6 @@
 "use client";
 
-import { act, useState } from "react";
+import { useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -9,11 +9,28 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { scrollToSection } from "@/app/hooks/smooth-scroll";
+import { PHONE } from "@/app/config/constants/info";
 import Image from "next/image";
 
 export default function ExpandableCardDemo() {
   const [active, setActive] = useState<any>(null);
+
+  const handleBookSession = (serviceTitle: string) => {
+    // Remove all non-numeric characters from phone number
+    const phoneNumber = PHONE.replace(/\D/g, "");
+
+    // Pre-filled message with service title
+    const message = encodeURIComponent(`Hi Dr. Abhijeet Holambe, I'd like to schedule an appointment about ${serviceTitle}.`);
+
+    // WhatsApp URL (works for both mobile app and web)
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    // Open in new tab/window (or app on mobile)
+    window.open(whatsappUrl, "_blank");
+
+    // Close the modal
+    setActive(null);
+  };
 
   return (
     <div className="min-h-screen p-6">
@@ -44,14 +61,7 @@ export default function ExpandableCardDemo() {
 
   {/* CTA Button */}
   <div className="p-4 border-t">
-    <Button onClick={()=>{
-      setActive(null)
-       scrollToSection("#appointment", {
-            navbarHeight: 80,
-            duration: 1000,
-            easing: 'easeInOut'
-          });
-    }} className="w-full">
+    <Button onClick={() => handleBookSession(active.title)} className="w-full">
       {active.ctaText}
     </Button>
   </div>
@@ -96,10 +106,9 @@ const cards = [
     title: "Sexual Health",
     src: "/sti.jpg",
     ctaText: "Book Session",
-    ctaLink: "#appointment",
     content: () => (
       <p>
-        Sexual health is an important aspect of overall well-being.  
+        Sexual health is an important aspect of overall well-being.
         I provide confidential and professional care to address concerns around intimacy, sexual function, and relationship wellness with compassion and expertise.
       </p>
     ),
@@ -109,10 +118,9 @@ const cards = [
     title: "Depression Counseling",
     src: "/depression.png",
     ctaText: "Book Session",
-    ctaLink: "#appointment",
     content: () => (
       <p>
-        If you're feeling persistently sad or demotivated, therapy can help.  
+        If you're feeling persistently sad or demotivated, therapy can help.
         Together, we'll focus on practical strategies to rebuild hope, resilience, and emotional balance.
       </p>
     ),
@@ -122,7 +130,6 @@ const cards = [
     title: "Anxiety & Panic Disorder",
     src: "/therapist.jpg",
     ctaText: "Book Session",
-    ctaLink: "#appointment",
     content: () => (
       <p>
         Anxiety and panic can feel debilitating, but you don’t have to face them alone.  
@@ -135,7 +142,6 @@ const cards = [
     title: "Sleep Disorders",
     src: "/sleep_disorder.jpg",
     ctaText: "Book Session",
-    ctaLink: "#appointment",
     content: () => (
       <p>
         Poor sleep can impact your mental and physical health.  
@@ -148,7 +154,6 @@ const cards = [
     title: "Bipolar Mood Disorder",
     src: "/bipolar_disorder.jpg",
     ctaText: "Book Session",
-    ctaLink: "#appointment",
     content: () => (
       <p>
         Bipolar disorder can feel like an emotional rollercoaster.  
@@ -161,7 +166,6 @@ const cards = [
     title: "Schizophrenia Therapy",
     src: "/schizophrenia.jpg",
     ctaText: "Book Session",
-    ctaLink: "#appointment",
     content: () => (
       <p>
         Schizophrenia requires ongoing care and understanding.  
@@ -174,7 +178,6 @@ const cards = [
     title: "OCD Therapy",
     src: "/ocd.jpeg",
     ctaText: "Book Session",
-    ctaLink: "#appointment",
     content: () => (
       <p>
         Obsessive-compulsive disorder can feel exhausting.  
@@ -200,7 +203,6 @@ const cards = [
     title: "Neurodevelopmental Disorders",
     src: "/neurodevelopmental.jpg",
     ctaText: "Book Session",
-    ctaLink: "#appointment",
     content: () => (
       <p>
         From ADHD to autism spectrum conditions, I offer tailored therapeutic strategies and behavioral interventions 
@@ -213,7 +215,6 @@ const cards = [
     title: "Dementia Care",
     src: "/dementia.jpg",
     ctaText: "Book Session",
-    ctaLink: "#appointment",
     content: () => (
       <p>
         Dementia affects both patients and their families.  
@@ -239,7 +240,6 @@ const cards = [
     title: "De-addiction Therapy",
     src: "/deaddiction.jpg",
     ctaText: "Book Session",
-    ctaLink: "#appointment",
     content: () => (
       <p>
         Addiction recovery is possible with the right support.  
@@ -252,7 +252,6 @@ const cards = [
     title: "Gender Incongruence Therapy",
     src: "/gender_incogruence.webp",
     ctaText: "Book Session",
-    ctaLink: "#appointment",
     content: () => (
       <p>
         Exploring gender identity can be a deeply personal journey.  
@@ -265,7 +264,6 @@ const cards = [
     title: "Personality Disorders Therapy",
     src: "/personality_disorders.jpg",
     ctaText: "Book Session",
-    ctaLink: "#appointment",
     content: () => (
       <p>
         Personality disorders can impact emotions and relationships.  
@@ -278,7 +276,6 @@ const cards = [
     title: "Stress Management",
     src: "/stress_management.jpg",
     ctaText: "Book Session",
-    ctaLink: "#appointment",
     content: () => (
       <p>
         Chronic stress can take a toll on your health.  
@@ -291,7 +288,6 @@ const cards = [
     title: "Productivity Management",
     src: "/productivity.jpg",
     ctaText: "Book Session",
-    ctaLink: "#appointment",
     content: () => (
       <p>
         Struggling with focus or procrastination?  

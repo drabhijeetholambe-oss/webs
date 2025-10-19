@@ -25,7 +25,17 @@ export async function sendContactMail(formData: FormData) {
 
   return { success: true };
 }
-export async function bookAppointment(formData: FormData) {
+
+/**
+ * CURRENTLY NOT IN USE - Kept for potential future use
+ *
+ * This function was previously used by the Book Appointment form component.
+ * The appointment booking feature has been removed in favor of WhatsApp-based bookings.
+ *
+ * If you need to re-enable form-based appointment booking in the future,
+ * you can uncomment this function and create a new appointment form component.
+ */
+/*export async function bookAppointment(formData: FormData) {
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
   const phone = formData.get("phone") as string;
@@ -65,4 +75,4 @@ export async function bookAppointment(formData: FormData) {
   });
 
   return { success: true, message: "Appointment request sent successfully!" };
-}
+}*/
