@@ -1,16 +1,5 @@
 export const NAME = "Dr. Abhijeet Holambe";
 export const EMAIL = "drabhijeetholambe@gmail.com";
-export const SOCIALS = {
-  whatsapp: {
-    url: `https://wa.me/7718805593?text=Hi%20Chandni,%20I%27d%20like%20to%20schedule%20an%20appointment.`,
-  },
-  instagram: {
-    url: `https://www.instagram.com/psychologistchandni`,
-  },
-  linkedin: {
-    url: `https://www.linkedin.com/in/chandaniakhenia/`,
-  },
-};
 export const PHONE = "+91 8169065210";
 
 export const ABOUT = `
