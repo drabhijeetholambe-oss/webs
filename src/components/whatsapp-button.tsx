@@ -1,9 +1,26 @@
 "use client";
 
+import { PHONE } from "@/app/config/constants/info";
+
 export default function WhatsappButton() {
+  const handleWhatsAppClick = () => {
+    // Remove all non-numeric characters from phone number
+    const phoneNumber = PHONE.replace(/\D/g, "");
+
+    // Pre-filled message
+    const message = encodeURIComponent("Hi Dr. Abhijeet Holambe, I'd like to schedule an appointment.");
+
+    // WhatsApp URL (works for both mobile app and web)
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    // Open in new tab/window (or app on mobile)
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <div className="fixed bottom-6 right-6 z-50">
       <button
+        onClick={handleWhatsAppClick}
         className="bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center group"
         aria-label="Contact us on WhatsApp"
       >
