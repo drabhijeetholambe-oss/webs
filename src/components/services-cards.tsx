@@ -108,8 +108,7 @@ const cards = [
     ctaText: "Book Session",
     content: () => (
       <p>
-        Sexual health is an important aspect of overall well-being.
-        I provide confidential and professional care to address concerns around intimacy, sexual function, and relationship wellness with compassion and expertise.
+        Confidential sexual wellness care by an experienced sexologist in Mumbai, helping individuals and couples improve intimacy, address concerns, and build healthier relationships.
       </p>
     ),
   },
@@ -120,8 +119,7 @@ const cards = [
     ctaText: "Book Session",
     content: () => (
       <p>
-        If you're feeling persistently sad or demotivated, therapy can help.
-        Together, we'll focus on practical strategies to rebuild hope, resilience, and emotional balance.
+        Evidence-based depression treatment to help manage persistent sadness, low motivation, and emotional distress, guided by a compassionate mental health professional.
       </p>
     ),
   },
@@ -132,8 +130,7 @@ const cards = [
     ctaText: "Book Session",
     content: () => (
       <p>
-        Anxiety and panic can feel debilitating, but you don’t have to face them alone.  
-        I offer evidence-based therapies like CBT and relaxation techniques to help you regain control and find peace.
+        Effective therapy for anxiety and panic attacks, focusing on calming techniques, cognitive restructuring, and long-term emotional resilience.
       </p>
     ),
   },
@@ -144,8 +141,7 @@ const cards = [
     ctaText: "Book Session",
     content: () => (
       <p>
-        Poor sleep can impact your mental and physical health.  
-        I help identify underlying causes of sleep issues and provide tailored strategies for achieving restful, restorative sleep.
+        Professional support for insomnia and sleep disorders, identifying root causes and creating personalized plans for better sleep and overall well-being.
       </p>
     ),
   },
@@ -156,8 +152,7 @@ const cards = [
     ctaText: "Book Session",
     content: () => (
       <p>
-        Bipolar disorder can feel like an emotional rollercoaster.  
-        With structured therapy and support, I help you stabilize moods, improve daily functioning, and live a balanced life.
+        Specialized care for bipolar disorder, focusing on mood stabilization, relapse prevention, and improving day-to-day functioning.
       </p>
     ),
   },
@@ -168,8 +163,7 @@ const cards = [
     ctaText: "Book Session",
     content: () => (
       <p>
-        Schizophrenia requires ongoing care and understanding.  
-        I provide therapy to manage symptoms, improve social skills, and support both patients and caregivers in daily life.
+        Comprehensive schizophrenia treatment with a focus on symptom management, social functioning, and improving quality of life for patients and families.
       </p>
     ),
   },
@@ -180,24 +174,10 @@ const cards = [
     ctaText: "Book Session",
     content: () => (
       <p>
-        Obsessive-compulsive disorder can feel exhausting.  
-        Through structured interventions like ERP, I help you reduce compulsions and regain control over intrusive thoughts.
+        Structured OCD treatment using proven approaches like exposure and response prevention (ERP) to reduce intrusive thoughts and compulsive behaviors.
       </p>
     ),
   },
-  // {
-  //   description: "Holistic support for healing your relationship with food and body image.",
-  //   title: "Eating Disorders",
-  //   src: "/eating_disorders.jpg",
-  //   ctaText: "Book Session",
-  //   ctaLink: "#appointment",
-  //   content: () => (
-  //     <p>
-  //       Eating disorders can affect both physical and mental health.  
-  //       I provide compassionate, holistic therapy to help you develop a healthier relationship with food and self-image.
-  //     </p>
-  //   ),
-  // },
   {
     description: "Tailored interventions for conditions like ADHD and autism.",
     title: "Neurodevelopmental Disorders",
@@ -205,8 +185,7 @@ const cards = [
     ctaText: "Book Session",
     content: () => (
       <p>
-        From ADHD to autism spectrum conditions, I offer tailored therapeutic strategies and behavioral interventions 
-        to support both children and adults in achieving their potential.
+        Tailored interventions for ADHD and autism spectrum conditions, supporting improved focus, behavior, and daily functioning in children and adults.
       </p>
     ),
   },
@@ -217,24 +196,10 @@ const cards = [
     ctaText: "Book Session",
     content: () => (
       <p>
-        Dementia affects both patients and their families.  
-        I provide supportive therapy for memory issues, cognitive health, and caregiver stress management.
+        Compassionate dementia care focusing on memory support, cognitive health, and guidance for caregivers managing long-term care challenges.
       </p>
     ),
   },
-  // {
-  //   description: "Safe space to address emotional struggles, stress, and societal pressure.",
-  //   title: "Men’s Mental Health",
-  //   src: "/mens_mental_health.jpg",
-  //   ctaText: "Book Session",
-  //   ctaLink: "#appointment",
-  //   content: () => (
-  //     <p>
-  //       Men often face silent struggles due to societal expectations.  
-  //       I offer a safe, confidential space to address stress, anger, and emotional health without judgment.
-  //     </p>
-  //   ),
-  // },
   {
     description: "Structured therapy and medication support for lasting recovery from substance use.",
     title: "De-addiction Therapy",
@@ -242,8 +207,7 @@ const cards = [
     ctaText: "Book Session",
     content: () => (
       <p>
-        Addiction recovery is possible with the right support.  
-        I provide evidence-based therapy and relapse prevention tools to help you achieve and maintain sobriety.
+        Structured de-addiction programs combining therapy and medical support to help individuals overcome substance use and maintain long-term recovery.
       </p>
     ),
   },
@@ -254,8 +218,7 @@ const cards = [
     ctaText: "Book Session",
     content: () => (
       <p>
-        Exploring gender identity can be a deeply personal journey.  
-        I offer supportive, affirming care to help you navigate identity, expression, and transitions safely.
+        Affirmative mental health support for individuals exploring gender identity, offering a safe and respectful space for self-expression and transition.
       </p>
     ),
   },
@@ -266,8 +229,7 @@ const cards = [
     ctaText: "Book Session",
     content: () => (
       <p>
-        Personality disorders can impact emotions and relationships.  
-        I use therapeutic techniques to help improve self-awareness, regulate emotions, and build healthier connections.
+        Insight-oriented therapy to improve emotional regulation, relationship patterns, and long-standing behavioral challenges.
       </p>
     ),
   },
@@ -278,8 +240,7 @@ const cards = [
     ctaText: "Book Session",
     content: () => (
       <p>
-        Chronic stress can take a toll on your health.  
-        I help you develop practical coping tools to reduce burnout, balance responsibilities, and improve mental well-being.
+        Practical stress management techniques to reduce burnout, improve coping skills, and support better mental and physical health.
       </p>
     ),
   },
@@ -290,8 +251,7 @@ const cards = [
     ctaText: "Book Session",
     content: () => (
       <p>
-        Struggling with focus or procrastination?  
-        I offer structured techniques and psychological strategies to help improve productivity and time management skills.
+        Evidence-based strategies to improve focus, overcome procrastination, and enhance productivity in personal and professional life.
       </p>
     ),
   },
