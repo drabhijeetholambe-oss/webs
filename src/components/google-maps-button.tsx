@@ -10,15 +10,15 @@ type Location = {
 
 const locations: Location[] = [
   {
-    name: "Kandivali West – United Hospital",
+    name: "Kandivali West",
     query: "United Hospital Kandivali West",
   },
   {
-    name: "Malad - Zenith Clinic",
+    name: "Malad",
     query: "Zenith Clinic Mumbai",
   },
   {
-    name: "Andheri – Evolve Wellness",
+    name: "Andheri",
     query: "Evolve Wellness Andheri",
   },
   {

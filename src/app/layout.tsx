@@ -9,6 +9,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { Toaster } from "@/components/ui/sonner";
 import WhatsappButton from "@/components/whatsapp-button";
 import GoogleMapsButton from "@/components/google-maps-button";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -80,18 +81,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZRKLK5GYS"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-ZZRKLK5GYS');
+            `,
+          }}
+        />
+      </head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      <Analytics/>
-        <Navbar/>
-        <main>
-           {children}
-        </main>
+        <Analytics />
+        <Navbar />
+        <main>{children}</main>
         <Toaster />
         <GoogleMapsButton />
         <WhatsappButton />
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
