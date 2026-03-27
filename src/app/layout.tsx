@@ -8,6 +8,7 @@ import "./app.css"
 import { Analytics } from "@vercel/analytics/next"
 import { Toaster } from "@/components/ui/sonner";
 import WhatsappButton from "@/components/whatsapp-button";
+import GoogleMapsButton from "@/components/google-maps-button";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -19,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Abhijeet Holambe | Psychiatrist & Sexologist in Mumbai",
+  title: "Dr. Abhijeet Holambe | Psychiatrist, Sexologist, and De-Addiction Specialist",
   keywords:["psychiatrist","sexologist","psychiatrist in mumbai","psychiatrist near me","psychiatrist online","sexologist in mumbai","sexologist online",
      "Dr. Abhijeet Holambe",
     "Psychiatrist in Mumbai",
@@ -88,6 +89,7 @@ export default function RootLayout({
            {children}
         </main>
         <Toaster />
+        <GoogleMapsButton />
         <WhatsappButton />
         <Footer/>
       </body>
