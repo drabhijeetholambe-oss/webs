@@ -10,13 +10,19 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Home", href: "#hero" },
-    { name: "Procto", href: "#hero" },
+    { name: "Practo", href: "https://www.practo.com/mumbai/doctor/abhijeet-holambe-psychiatrist-1" },
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
     { name: "Contact", href: "#footer" },
   ];
 
   const scrollToSection = (href: string) => {
+    // Handle external links
+    if (href.startsWith('http')) {
+      window.open(href, '_blank');
+      return;
+    }
+    
     const element = document.querySelector(href) as HTMLElement;
     if (element) {
       const navbarHeight = 80;
