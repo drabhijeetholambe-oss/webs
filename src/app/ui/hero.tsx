@@ -53,14 +53,14 @@ const Hero = () => {
           <div aria-hidden="true" className="absolute -inset-4 rounded-[2rem] border border-white/10 bg-white/5" />
           <div className="relative overflow-hidden rounded-[1.75rem] border border-white/20 bg-slate-800 shadow-2xl shadow-black/40">
             <Image
-              src="/dr-abhijeet-holambe.jpeg"
+              src="/dr-abhijeet-holambe-brain-model.jpg"
               alt="Dr. Abhijeet Holambe, psychiatrist in Mumbai"
               title="Dr. Abhijeet Holambe"
-              width={459}
-              height={459}
+              width={1600}
+              height={2844}
               priority
               sizes="(max-width: 1024px) 80vw, 420px"
-              className="aspect-[4/5] w-full object-cover object-center"
+              className="aspect-[4/5] w-full object-cover object-[center_32%]"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/35 to-transparent px-6 pb-6 pt-20">
               <p className="text-lg font-semibold">Dr. Abhijeet Holambe</p>
