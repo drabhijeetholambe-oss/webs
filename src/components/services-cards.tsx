@@ -52,7 +52,7 @@ export default function ExpandableCardDemo() {
   </DialogHeader>
 
   {/* Image */}
-  <Image width={500} height={500} src={active.src} alt={active.title} className="w-full h-56 object-cover" />
+  <Image width={500} height={500} src={active.src} alt={active.title} title={active.title} sizes="(max-width: 768px) 100vw, 768px" loading="lazy" className="w-full h-56 object-cover" />
 
   {/* Scrollable Content */}
   <div className="p-4 text-sm text-gray-700 overflow-y-auto max-h-[40vh]">
@@ -83,6 +83,9 @@ export default function ExpandableCardDemo() {
                height={500}
                 src={card.src}
                 alt={card.title}
+                title={card.title}
+                sizes="(max-width: 768px) 160px, 56px"
+                loading="lazy"
                 className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover border border-blue-100"
               />
               <div>
@@ -102,156 +105,156 @@ export default function ExpandableCardDemo() {
 
 const cards = [
   {
-    description: "Confidential and expert care for sexual wellness and relationship intimacy.",
+    description: "Confidential consultation for sexual health and relationship intimacy concerns.",
     title: "Sexual Health",
     src: "/sti.jpg",
     ctaText: "Book Session",
     content: () => (
       <p>
-        Confidential sexual wellness care by an experienced sexologist in Mumbai, helping individuals and couples improve intimacy, address concerns, and build healthier relationships.
+        Consultations provide a confidential setting to discuss sexual health and intimacy concerns. The clinician can explain appropriate next steps after learning about each person's needs.
       </p>
     ),
   },
   {
-    description: "Helping you navigate low moods and rediscover hope with compassionate support.",
+    description: "Consultation for low mood, reduced motivation, and other concerns associated with depression.",
     title: "Depression Counseling",
     src: "/depression.png",
     ctaText: "Book Session",
     content: () => (
       <p>
-        Evidence-based depression treatment to help manage persistent sadness, low motivation, and emotional distress, guided by a compassionate mental health professional.
+        A psychiatric assessment can explore persistent sadness, low motivation, and emotional distress, and discuss suitable care options.
       </p>
     ),
   },
   {
-    description: "Learn to manage overwhelming thoughts and regain a sense of calm.",
+    description: "Consultation for anxiety symptoms, panic episodes, and related concerns.",
     title: "Anxiety & Panic Disorder",
     src: "/therapist.jpg",
     ctaText: "Book Session",
     content: () => (
       <p>
-        Effective therapy for anxiety and panic attacks, focusing on calming techniques, cognitive restructuring, and long-term emotional resilience.
+        Assessment can help clarify anxiety or panic symptoms and discuss care options based on individual needs.
       </p>
     ),
   },
   {
-    description: "Restful sleep is possible with the right diagnosis and treatment.",
+    description: "Consultation for sleep difficulties, including insomnia.",
     title: "Sleep Disorders",
     src: "/sleep_disorder.jpg",
     ctaText: "Book Session",
     content: () => (
       <p>
-        Professional support for insomnia and sleep disorders, identifying root causes and creating personalized plans for better sleep and overall well-being.
+        A consultation can review sleep concerns, contributing factors, and possible next steps. Assessment and recommendations depend on individual circumstances.
       </p>
     ),
   },
   {
-    description: "Balanced support for mood stabilization and emotional regulation.",
+    description: "Psychiatric consultation for bipolar mood concerns and treatment planning.",
     title: "Bipolar Mood Disorder",
     src: "/bipolar_disorder.jpg",
     ctaText: "Book Session",
     content: () => (
       <p>
-        Specialized care for bipolar disorder, focusing on mood stabilization, relapse prevention, and improving day-to-day functioning.
+        A psychiatrist can assess bipolar mood symptoms and discuss ongoing care options with the individual.
       </p>
     ),
   },
   {
-    description: "Comprehensive care for managing symptoms and improving daily functioning.",
+    description: "Psychiatric consultation for schizophrenia and related concerns.",
     title: "Schizophrenia Therapy",
     src: "/schizophrenia.jpg",
     ctaText: "Book Session",
     content: () => (
       <p>
-        Comprehensive schizophrenia treatment with a focus on symptom management, social functioning, and improving quality of life for patients and families.
+        Consultations can address symptoms, daily functioning, and support needs. Care recommendations are made after an individual assessment.
       </p>
     ),
   },
   {
-    description: "Evidence-based treatment to help you break free from obsessive thoughts and compulsive behaviors.",
+    description: "Consultation for obsessive thoughts, compulsive behaviors, and related concerns.",
     title: "OCD Therapy",
     src: "/ocd.jpeg",
     ctaText: "Book Session",
     content: () => (
       <p>
-        Structured OCD treatment using proven approaches like exposure and response prevention (ERP) to reduce intrusive thoughts and compulsive behaviors.
+        A consultation can explore obsessive-compulsive symptoms and discuss appropriate care options.
       </p>
     ),
   },
   {
-    description: "Tailored interventions for conditions like ADHD and autism.",
+    description: "Consultation for neurodevelopmental concerns, including ADHD and autism spectrum conditions.",
     title: "Neurodevelopmental Disorders",
     src: "/neurodevelopmental.jpg",
     ctaText: "Book Session",
     content: () => (
       <p>
-        Tailored interventions for ADHD and autism spectrum conditions, supporting improved focus, behavior, and daily functioning in children and adults.
+        An assessment can help clarify concerns involving attention, behavior, or development and identify appropriate next steps.
       </p>
     ),
   },
   {
-    description: "Supportive care for memory concerns, cognitive decline, and caregiver guidance.",
+    description: "Consultation for memory concerns and cognitive changes, with space to discuss caregiver questions.",
     title: "Dementia Care",
     src: "/dementia.jpg",
     ctaText: "Book Session",
     content: () => (
       <p>
-        Compassionate dementia care focusing on memory support, cognitive health, and guidance for caregivers managing long-term care challenges.
+        Consultations can address memory and cognitive concerns and discuss support options with individuals and caregivers.
       </p>
     ),
   },
   {
-    description: "Structured therapy and medication support for lasting recovery from substance use.",
+    description: "Psychiatric consultation for substance use and de-addiction concerns.",
     title: "De-addiction Therapy",
     src: "/deaddiction.jpg",
     ctaText: "Book Session",
     content: () => (
       <p>
-        Structured de-addiction programs combining therapy and medical support to help individuals overcome substance use and maintain long-term recovery.
+        A consultation can discuss substance use, health considerations, and possible support options. Care planning is individual.
       </p>
     ),
   },
   {
-    description: "Affirmative care for gender identity exploration and transition support.",
+    description: "Respectful mental health consultation for gender identity concerns.",
     title: "Gender Incongruence Therapy",
     src: "/gender_incogruence.webp",
     ctaText: "Book Session",
     content: () => (
       <p>
-        Affirmative mental health support for individuals exploring gender identity, offering a safe and respectful space for self-expression and transition.
+        Consultations offer a respectful setting to discuss gender identity and related mental health concerns. Any care recommendations are individual.
       </p>
     ),
   },
   {
-    description: "Insight-oriented therapy to manage emotions, relationships, and behavior patterns.",
+    description: "Consultation for emotional, relationship, and long-standing behavior concerns.",
     title: "Personality Disorders Therapy",
     src: "/personality_disorders.jpg",
     ctaText: "Book Session",
     content: () => (
       <p>
-        Insight-oriented therapy to improve emotional regulation, relationship patterns, and long-standing behavioral challenges.
+        A consultation can explore emotional and relationship patterns and discuss suitable support options.
       </p>
     ),
   },
   {
-    description: "Learn practical tools to reduce burnout and improve your mental well-being.",
+    description: "Consultation about stress, coping, and the effect of stress on daily life.",
     title: "Stress Management",
     src: "/stress_management.jpg",
     ctaText: "Book Session",
     content: () => (
       <p>
-        Practical stress management techniques to reduce burnout, improve coping skills, and support better mental and physical health.
+        A consultation can identify stressors and discuss coping approaches suited to the individual's circumstances.
       </p>
     ),
   },
   {
-    description: "Strategies to overcome procrastination, focus better, and boost performance.",
+    description: "Consultation about focus, procrastination, and productivity concerns.",
     title: "Productivity Management",
     src: "/productivity.jpg",
     ctaText: "Book Session",
     content: () => (
       <p>
-        Evidence-based strategies to improve focus, overcome procrastination, and enhance productivity in personal and professional life.
+        A consultation can explore focus and productivity concerns and consider whether they relate to broader mental health needs.
       </p>
     ),
   },
