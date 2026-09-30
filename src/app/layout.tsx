@@ -80,11 +80,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.drabhijeetholambe.com"),
   title: {
-    default: "Dr. Abhijeet Holambe | Psychiatrist in Kandivali, Mumbai",
+    default: "Dr. Abhijeet Holambe | Psychiatrist in Kandivali & Malad, Mumbai",
     template: "%s | Dr. Abhijeet Holambe",
   },
   description:
-    "Dr. Abhijeet Holambe provides confidential mental health and related consultation services in Mumbai, with online consultation options.",
+    "Dr. Abhijeet Holambe offers psychiatric consultations in Kandivali West, Malad, and Mumbai for concerns including anxiety, depression, sleep, sexual health, and substance use. Online consultation options are also available.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
     url: "https://www.drabhijeetholambe.com",
     siteName: "Dr. Abhijeet Holambe",
     title: "Dr. Abhijeet Holambe | Psychiatrist in Kandivali, Mumbai",
-    description: "Confidential consultation services in Mumbai, with online consultation options.",
+    description: "Psychiatric consultations in Kandivali West, Malad, and Mumbai, with online consultation options.",
     images: [{ url: "/img.jpeg", width: 459, height: 459, alt: "Dr. Abhijeet Holambe" }],
   },
   twitter: {
