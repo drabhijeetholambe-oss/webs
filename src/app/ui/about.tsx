@@ -46,10 +46,10 @@ const About = () => {
         {Info.ABOUT}
           </p>
           <p className="text-gray-600 font-light">
-            Learn about <a className="underline underline-offset-4" href="#services">psychiatric services</a> or <a className="underline underline-offset-4" href="#footer">contact the practice</a> to confirm appointment availability and location.
+            Explore the <a className="underline underline-offset-4" href="#services">psychiatric services</a> or <a className="underline underline-offset-4" href="#footer">contact the practice</a> to confirm appointment availability and location.
           </p>
           <p className="text-gray-600 font-light">
-            <strong>Specializations:</strong> <span>{Info.SPECIALISATIONS.join(" , ")}</span>
+            <strong>Clinical areas:</strong> <span>{Info.SPECIALISATIONS.join(" · ")}</span>
           </p>
           
         <p  className="text-gray-500 text-sm italic">
