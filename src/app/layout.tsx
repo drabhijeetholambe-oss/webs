@@ -47,20 +47,16 @@ const siteStructuredData = {
       "sameAs": [
         "https://www.practo.com/mumbai/doctor/abhijeet-holambe-psychiatrist-1"
       ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "United Multispeciality Hospital, New Link Road, near Hyundai Showroom, Mahavir Nagar, Kandivali West",
-        "addressLocality": "Mumbai",
-        "addressRegion": "Maharashtra",
-        "postalCode": "400067",
-        "addressCountry": "IN"
-      },
       "areaServed": [
         { "@type": "City", "name": "Mumbai" },
         { "@type": "Place", "name": "Kandivali West" },
-        { "@type": "Place", "name": "Malad" },
-        { "@type": "Place", "name": "Andheri" },
-        { "@type": "Place", "name": "Bandra" }
+        { "@type": "Place", "name": "Malad East" },
+        { "@type": "Place", "name": "Malad West" }
+      ],
+      "workLocation": [
+        { "@type": "Place", "name": "Warrier Clinic, Kandivali West, Mumbai" },
+        { "@type": "Place", "name": "Madhav Hospital, Malad East, Mumbai" },
+        { "@type": "Place", "name": "Sun Multispeciality Hospital, Malad West, Mumbai" }
       ],
       "knowsAbout": [
         "Psychiatry",
