@@ -1,27 +1,21 @@
 const locations = [
   {
     name: "Kandivali West",
-    clinic: "United Hospital",
-    detail: "Appointments by prior booking.",
-    href: "https://share.google/1L04Enu0BNKXV3sNd",
+    clinic: "Warrier Clinic",
+    detail: "Contact the practice to confirm appointment availability.",
+    href: "https://www.google.com/maps/search/?api=1&query=Warrier+Clinic+Kandivali+West+Mumbai",
   },
   {
-    name: "Malad",
-    clinic: "Zenith Clinic",
-    detail: "Contact the practice to confirm current hours and availability.",
-    href: "https://share.google/dTEnltj1hVFCY2GXY",
+    name: "Malad East",
+    clinic: "Madhav Hospital",
+    detail: "Contact the practice to confirm appointment availability.",
+    href: "https://www.google.com/maps/search/?api=1&query=Madhav+Hospital+Malad+East+Mumbai",
   },
   {
-    name: "Andheri",
-    clinic: "Evolve Wellness",
-    detail: "Appointments by prior booking.",
-    href: "https://share.google/YnwDkxTiBHwwuR0V5",
-  },
-  {
-    name: "Bandra",
-    clinic: "By appointment",
-    detail: "Contact the practice to confirm current clinic details.",
-    href: "https://share.google/c0Be75GNsJpxAhPLW",
+    name: "Malad West",
+    clinic: "Sun Multispeciality Hospital",
+    detail: "Contact the practice to confirm appointment availability.",
+    href: "https://www.google.com/maps/search/?api=1&query=Sun+Multispeciality+Hospital+Malad+West+Mumbai",
   },
 ];
 
@@ -33,9 +27,9 @@ export default function Locations() {
           Consultation Locations in Mumbai
         </h2>
         <p className="max-w-3xl mx-auto mb-10 text-center text-gray-600 leading-relaxed">
-          Dr. Abhijeet Holambe sees patients by appointment in Kandivali West, Malad, Andheri, and Bandra. Clinic availability can vary, so contact the practice to confirm the location and timing before visiting.
+          Dr. Abhijeet Holambe sees patients by appointment at Warrier Clinic in Kandivali West, Madhav Hospital in Malad East, and Sun Multispeciality Hospital in Malad West. Clinic availability can vary, so contact the practice to confirm the location and timing before visiting.
         </p>
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {locations.map((location) => (
             <li key={location.name} className="rounded-xl border border-gray-200 p-5">
               <h3 className="text-lg font-medium text-gray-900">{location.name}</h3>
