@@ -30,7 +30,7 @@ const siteStructuredData = {
       "@type": "WebPage",
       "@id": "https://www.drabhijeetholambe.com/#webpage",
       "url": "https://www.drabhijeetholambe.com",
-      "name": "Psychiatrist in Kandivali and Mumbai | Dr. Abhijeet Holambe",
+      "name": "Psychiatrist in Malad West, Mumbai | Dr. Abhijeet Holambe",
       "isPartOf": { "@id": "https://www.drabhijeetholambe.com/#website" },
       "about": { "@id": "https://www.drabhijeetholambe.com/#physician" },
       "inLanguage": "en-IN"
@@ -49,13 +49,9 @@ const siteStructuredData = {
       ],
       "areaServed": [
         { "@type": "City", "name": "Mumbai" },
-        { "@type": "Place", "name": "Kandivali West" },
-        { "@type": "Place", "name": "Malad East" },
         { "@type": "Place", "name": "Malad West" }
       ],
       "workLocation": [
-        { "@type": "Place", "name": "Warrier Clinic, Kandivali West, Mumbai" },
-        { "@type": "Place", "name": "Madhav Hospital, Malad East, Mumbai" },
         { "@type": "Place", "name": "Sun Multispeciality Hospital, Malad West, Mumbai" }
       ],
       "knowsAbout": [
@@ -78,25 +74,25 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.drabhijeetholambe.com"),
   title: {
-    default: "Dr. Abhijeet Holambe | Psychiatrist in Kandivali & Malad, Mumbai",
+    default: "Dr. Abhijeet Holambe | Psychiatrist in Malad West, Mumbai",
     template: "%s | Dr. Abhijeet Holambe",
   },
   description:
-    "Dr. Abhijeet Holambe offers psychiatric consultations in Kandivali West, Malad, and Mumbai for concerns including anxiety, depression, sleep, sexual health, and substance use. Online consultation options are also available.",
+    "Dr. Abhijeet Holambe offers psychiatric consultations at Sun Multispeciality Hospital in Malad West, Mumbai, for concerns including anxiety, depression, sleep, sexual health, and substance use. Online consultation options are also available.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://www.drabhijeetholambe.com",
     siteName: "Dr. Abhijeet Holambe",
-    title: "Dr. Abhijeet Holambe | Psychiatrist in Kandivali & Malad, Mumbai",
-    description: "Psychiatric consultations in Kandivali West, Malad, and Mumbai, with online consultation options.",
+    title: "Dr. Abhijeet Holambe | Psychiatrist in Malad West, Mumbai",
+    description: "Psychiatric consultations at Sun Multispeciality Hospital in Malad West, Mumbai, with online consultation options.",
     images: [{ url: "/dr-abhijeet-holambe.jpeg", width: 459, height: 459, alt: "Dr. Abhijeet Holambe" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dr. Abhijeet Holambe | Psychiatrist in Kandivali & Malad, Mumbai",
-    description: "Psychiatric consultations in Kandivali West, Malad, and Mumbai, with online consultation options.",
+    title: "Dr. Abhijeet Holambe | Psychiatrist in Malad West, Mumbai",
+    description: "Psychiatric consultations at Sun Multispeciality Hospital in Malad West, Mumbai, with online consultation options.",
     images: ["/dr-abhijeet-holambe.jpeg"],
   },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },

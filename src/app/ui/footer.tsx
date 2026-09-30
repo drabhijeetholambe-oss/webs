@@ -12,7 +12,7 @@ const Footer = () => {
             {Info.NAME}
           </h3>
           <p className="text-pure-white/60 leading-relaxed font-light max-w-md">
-            Psychiatric, sexual health, and de-addiction consultations in Mumbai. By-appointment clinics are Warrier Clinic in Kandivali West, Madhav Hospital in Malad East, and Sun Multispeciality Hospital in Malad West. Contact the practice to confirm availability.
+            Psychiatric, sexual health, and de-addiction consultations in Mumbai, with appointments at Sun Multispeciality Hospital in Malad West. Contact the practice to confirm availability.
           </p>
           <address className="not-italic text-sm text-pure-white/70 max-w-md">
             {Info.ADDRESS}
