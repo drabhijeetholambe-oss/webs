@@ -91,14 +91,14 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://www.drabhijeetholambe.com",
     siteName: "Dr. Abhijeet Holambe",
-    title: "Dr. Abhijeet Holambe | Psychiatrist in Kandivali, Mumbai",
+    title: "Dr. Abhijeet Holambe | Psychiatrist in Kandivali & Malad, Mumbai",
     description: "Psychiatric consultations in Kandivali West, Malad, and Mumbai, with online consultation options.",
     images: [{ url: "/dr-abhijeet-holambe.jpeg", width: 459, height: 459, alt: "Dr. Abhijeet Holambe" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dr. Abhijeet Holambe | Psychiatrist in Kandivali, Mumbai",
-    description: "Confidential consultation services in Mumbai, with online consultation options.",
+    title: "Dr. Abhijeet Holambe | Psychiatrist in Kandivali & Malad, Mumbai",
+    description: "Psychiatric consultations in Kandivali West, Malad, and Mumbai, with online consultation options.",
     images: ["/dr-abhijeet-holambe.jpeg"],
   },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
@@ -111,7 +111,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>\n        <script type="application/ld+json">{JSON.stringify(siteStructuredData)}</script>
+      <head>
+        <script type="application/ld+json">{JSON.stringify(siteStructuredData)}</script>
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZRKLK5GYS"></script>
         <script
