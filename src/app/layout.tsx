@@ -58,7 +58,9 @@ const siteStructuredData = {
       "areaServed": [
         { "@type": "City", "name": "Mumbai" },
         { "@type": "Place", "name": "Kandivali West" },
-        { "@type": "Place", "name": "Malad" }
+        { "@type": "Place", "name": "Malad" },
+        { "@type": "Place", "name": "Andheri" },
+        { "@type": "Place", "name": "Bandra" }
       ],
       "knowsAbout": [
         "Psychiatry",
