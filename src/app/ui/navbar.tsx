@@ -114,7 +114,7 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <button
               onClick={() => scrollToSection("#hero")}
-              className="text-xl font-light text-white hover:text-gray-200 transition-colors cursor-pointer"
+              className="text-lg font-semibold tracking-tight text-white hover:text-teal-100 transition-colors cursor-pointer sm:text-2xl"
             >
               {Info.NAME}
             </button>
