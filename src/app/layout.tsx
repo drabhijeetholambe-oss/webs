@@ -15,6 +15,13 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+const siteStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Dr. Abhijeet Holambe",
+  "url": "https://www.drabhijeetholambe.com",
+};
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -54,7 +61,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <head>\n        <script type="application/ld+json">{JSON.stringify(siteStructuredData)}</script>
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZRKLK5GYS"></script>
         <script
