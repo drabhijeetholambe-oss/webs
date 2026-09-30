@@ -1,84 +1,78 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { PHONE } from "@/app/config/constants/info";
 
-
 const Hero = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  // Background images (replace with your own)
-  const images = [
-    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=80",
-    "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&w=2000&q=80",
-    "/performance.jpg",
-    "/sexual_disorder_counselling.jpg",
-    "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=2000&q=80",
-  ];
-
-  // Change image every 5s
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) =>
-        prev === images.length - 1 ? 0 : prev + 1
-      );
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [images.length]);
   const handleGetStartedClick = (): void => {
-    // Remove all non-numeric characters from phone number
     const phoneNumber = PHONE.replace(/\D/g, "");
-
-    // Pre-filled message
     const message = encodeURIComponent("Hi Dr. Abhijeet Holambe, I'd like to schedule an appointment.");
-
-    // WhatsApp URL (works for both mobile app and web)
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-
-    // Open in new tab/window (or app on mobile)
-    window.open(whatsappUrl, "_blank");
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank", "noopener,noreferrer");
   };
 
-
   return (
-    <section id="hero" className="relative h-screen w-full overflow-hidden flex items-center justify-center text-center">
-      {/* Background Carousel */}
-      <div className="absolute inset-0 z-0">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
-              index === currentImageIndex ? "opacity-100" : "opacity-0"
-            }`}
-            style={{ backgroundImage: `url(${image})` }}
-          />
-        ))}
-        {/* Black Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
+    <section id="hero" className="relative isolate min-h-[92svh] overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-teal-950 pt-24 text-white">
+      <div aria-hidden="true" className="absolute -right-28 -top-28 h-96 w-96 rounded-full bg-teal-400/10 blur-3xl" />
+      <div aria-hidden="true" className="absolute -bottom-36 left-1/4 h-96 w-96 rounded-full bg-sky-400/10 blur-3xl" />
+
+      <div className="relative mx-auto grid min-h-[calc(92svh-6rem)] max-w-7xl items-center gap-12 px-6 py-16 sm:px-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:px-12">
+        <div className="max-w-3xl text-center lg:text-left">
+          <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-teal-200/25 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-teal-100 sm:text-sm">
+            Psychiatrist <span aria-hidden="true" className="text-teal-300">·</span> Mumbai
+          </p>
+          <h1 className="font-serif text-6xl font-medium leading-[0.98] tracking-tight sm:text-7xl lg:text-8xl xl:text-9xl">
+            Dr. Abhijeet <span className="text-teal-200">Holambe</span>
+          </h1>
+          <h2 className="mt-7 text-xl font-medium text-white sm:text-2xl">
+            Psychiatric consultations in Malad West
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg lg:mx-0">
+            Thoughtful, confidential consultations for concerns including anxiety, depression, sleep, sexual health, and substance use. Online consultation options are also available.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+            <Button
+              onClick={handleGetStartedClick}
+              className="h-12 rounded-full bg-teal-300 px-7 text-base font-semibold text-slate-950 shadow-lg shadow-teal-950/30 transition hover:bg-teal-200"
+            >
+              Book a consultation
+            </Button>
+            <a
+              href="#about"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-white/30 px-7 text-base font-medium text-white transition hover:border-white hover:bg-white/10"
+            >
+              Meet Dr. Holambe
+            </a>
+          </div>
+          <p className="mt-6 text-sm text-slate-300">
+            MBBS · MD Psychiatry <span className="mx-2 text-teal-300">|</span> Appointments by prior booking
+          </p>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-md lg:mr-4">
+          <div aria-hidden="true" className="absolute -inset-4 rounded-[2rem] border border-white/10 bg-white/5" />
+          <div className="relative overflow-hidden rounded-[1.75rem] border border-white/20 bg-slate-800 shadow-2xl shadow-black/40">
+            <Image
+              src="/dr-abhijeet-holambe.jpeg"
+              alt="Dr. Abhijeet Holambe, psychiatrist in Mumbai"
+              title="Dr. Abhijeet Holambe"
+              width={459}
+              height={459}
+              priority
+              sizes="(max-width: 1024px) 80vw, 420px"
+              className="aspect-[4/5] w-full object-cover object-center"
+            />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/35 to-transparent px-6 pb-6 pt-20">
+              <p className="text-lg font-semibold">Dr. Abhijeet Holambe</p>
+              <p className="mt-1 text-sm text-slate-200">Psychiatrist · MBBS, MD Psychiatry</p>
+            </div>
+          </div>
+          <div className="absolute -bottom-5 -left-5 hidden rounded-2xl border border-white/15 bg-slate-900/90 px-5 py-4 shadow-xl backdrop-blur sm:block">
+            <p className="text-xs font-semibold uppercase tracking-wider text-teal-200">Clinic</p>
+            <p className="mt-1 text-sm text-white">Malad West, Mumbai</p>
+          </div>
+        </div>
       </div>
-
-      {/* Foreground Content */}
-    <div className="relative z-10 text-white max-w-3xl px-4 space-y-6">
-  <h1 className="text-5xl md:text-6xl font-serif font-light leading-tight">
-    Psychiatrist in Kandivali West and Mumbai
-  </h1>
-  <p className="text-xl md:text-2xl text-gray-200 font-light">
-    Dr. Abhijeet Holambe offers psychiatric, sexual health, and de-addiction consultations in Mumbai, with online consultation options.
-  </p>
-  <div className="flex justify-center">
-    <Button
-      onClick={handleGetStartedClick}
-      className="bg-blue-500 hover:bg-blue-700 px-6 py-4 text-lg text-center rounded-3xl cursor-pointer"
-    >
-      Book Your Consultation
-    </Button>
-  </div>
-  <p className="text-sm text-gray-200">
-    Explore <a className="underline underline-offset-4" href="#services">psychiatric services</a>, learn <a className="underline underline-offset-4" href="#about">about Dr. Holambe</a>, or <a className="underline underline-offset-4" href="#footer">contact the practice</a>.
-  </p>
-</div>
-
-    
     </section>
   );
 };
