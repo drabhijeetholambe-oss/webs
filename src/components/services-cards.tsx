@@ -11,6 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { PHONE } from "@/app/config/constants/info";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ExpandableCardDemo() {
   const [active, setActive] = useState<any>(null);
@@ -92,9 +93,19 @@ export default function ExpandableCardDemo() {
             <div className="flex flex-1 flex-col p-5">
               <h3 className="font-serif text-xl font-medium text-slate-900">{card.title}</h3>
               <p className="mt-2 flex-1 text-sm leading-6 text-slate-600">{card.description}</p>
-              <Button type="button" variant="outline" className="mt-5 w-full rounded-full border-slate-300 text-slate-800 transition hover:border-teal-700 hover:bg-teal-50 hover:text-teal-900" onClick={() => setActive(card)}>
-                Learn about {card.title}
-              </Button>
+              <div className="mt-5 grid grid-cols-2 gap-2">
+                <Button type="button" variant="outline" className="w-full rounded-full border-slate-300 text-slate-800 transition hover:border-teal-700 hover:bg-teal-50 hover:text-teal-900" onClick={() => setActive(card)}>
+                  Quick overview
+                </Button>
+                {card.slug && (
+                  <Link
+                    href={`/services/${card.slug}`}
+                    className="inline-flex items-center justify-center rounded-full border border-slate-300 px-3 text-center text-sm font-medium text-slate-800 transition hover:border-teal-700 hover:bg-teal-50 hover:text-teal-900"
+                  >
+                    Detailed guide
+                  </Link>
+                )}
+              </div>
             </div>
           </article>
         ))}
@@ -107,6 +118,7 @@ const cards = [
   {
     description: "Confidential consultation for sexual health and relationship intimacy concerns.",
     title: "Sexual Health",
+    slug: "sexual-health",
     src: "/sexual_disorder_counselling.jpg",
     imageAlt: "Supportive hand gesture during a confidential counselling conversation",
     ctaText: "Book Session",
@@ -119,6 +131,7 @@ const cards = [
   {
     description: "Consultation for low mood, reduced motivation, and other concerns associated with depression.",
     title: "Depression Counseling",
+    slug: "depression",
     src: "/depression.png",
     imageAlt: "Illustration of a patient and clinician talking in a consultation",
     ctaText: "Book Session",
@@ -131,6 +144,7 @@ const cards = [
   {
     description: "Consultation for anxiety symptoms, panic episodes, and related concerns.",
     title: "Anxiety & Panic Disorder",
+    slug: "anxiety-panic-disorder",
     src: "/therapist.jpg",
     imageAlt: "Counsellor supporting a client during a therapy session",
     ctaText: "Book Session",
@@ -143,6 +157,7 @@ const cards = [
   {
     description: "Consultation for sleep difficulties, including insomnia.",
     title: "Sleep Disorders",
+    slug: "sleep-disorders",
     src: "/sleep_disorder.jpg",
     imageAlt: "Person lying awake in bed with difficulty sleeping",
     ctaText: "Book Session",
@@ -215,6 +230,7 @@ const cards = [
   {
     description: "Psychiatric consultation for substance use and de-addiction concerns.",
     title: "De-addiction Therapy",
+    slug: "de-addiction",
     src: "/deaddiction.jpg",
     imageAlt: "Illustrated overview of substance use and recovery support",
     ctaText: "Book Session",
