@@ -8,7 +8,7 @@ const Services = () => {
           Psychiatric and Mental Health Services in Mumbai
         </h2>
         <p className="max-w-3xl mx-auto mb-10 text-gray-600 leading-relaxed">
-          Explore <a className="underline underline-offset-4" href="#anxiety-panic-disorder">anxiety and panic consultations</a>, <a className="underline underline-offset-4" href="#depression-counseling">depression consultations</a>, <a className="underline underline-offset-4" href="#sexual-health">sexual health consultations</a>, and <a className="underline underline-offset-4" href="#de-addiction-therapy">de-addiction support</a>, alongside sleep, mood, and other concerns. Each service card summarizes topics to discuss with a psychiatrist; assessment and care recommendations are individual. To ask about appointments in Kandivali West, Malad, or elsewhere in Mumbai, <a className="underline underline-offset-4" href="#footer">contact the practice</a>.
+          Explore <a className="underline underline-offset-4" href="#anxiety-panic-disorder">anxiety and panic consultations</a>, <a className="underline underline-offset-4" href="#depression-counseling">depression consultations</a>, <a className="underline underline-offset-4" href="#sexual-health">sexual health consultations</a>, and <a className="underline underline-offset-4" href="#de-addiction-therapy">de-addiction support</a>, alongside sleep, mood, and other concerns. Each service card summarizes topics to discuss with a psychiatrist; assessment and care recommendations are individual. For appointment enquiries at Sun Multispeciality Hospital in Malad West or about online consultations, <a className="underline underline-offset-4" href="#footer">contact the practice</a>.
         </p>
         <ServicesCard />
       </div>
