@@ -10,20 +10,16 @@ type Location = {
 
 const locations: Location[] = [
   {
-    name: "Kandivali West",
-    query: "United Hospital Kandivali West",
+    name: "Warrier Clinic · Kandivali West",
+    query: "Warrier Clinic Kandivali West Mumbai",
   },
   {
-    name: "Malad",
-    query: "Zenith Clinic Mumbai",
+    name: "Madhav Hospital · Malad East",
+    query: "Madhav Hospital Malad East Mumbai",
   },
   {
-    name: "Andheri",
-    query: "Evolve Wellness Andheri",
-  },
-  {
-    name: "Bandra",
-    query: "Bandra Mumbai",
+    name: "Sun Multispeciality Hospital · Malad West",
+    query: "Sun Multispeciality Hospital Malad West Mumbai",
   },
 ];
 
