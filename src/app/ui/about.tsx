@@ -11,6 +11,8 @@ const About = () => {
             alt="Dr. Abhijeet Holambe, psychiatrist" title="Dr. Abhijeet Holambe"
             width={400}
             height={400}
+            sizes="(max-width: 768px) 100vw, 400px"
+            loading="lazy"
             className="rounded-2xl shadow-lg object-cover"
           />
         </div>
