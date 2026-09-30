@@ -60,10 +60,10 @@ const Hero = () => {
       {/* Foreground Content */}
     <div className="relative z-10 text-white max-w-3xl px-4 space-y-6">
   <h1 className="text-5xl md:text-6xl font-serif font-light leading-tight">
-    Expert Care for Mind & Intimacy
+    Psychiatrist in Kandivali West and Mumbai
   </h1>
   <p className="text-xl md:text-2xl text-gray-200 font-light">
-    Your mental health and sexual well-being matter—take the first step toward a healthier you.
+    Dr. Abhijeet Holambe offers psychiatric, sexual health, and de-addiction consultations in Mumbai, with online consultation options.
   </p>
   <div className="flex justify-center">
     <Button
@@ -73,6 +73,9 @@ const Hero = () => {
       Book Your Consultation
     </Button>
   </div>
+  <p className="text-sm text-gray-200">
+    Explore <a className="underline underline-offset-4" href="#services">psychiatric services</a>, learn <a className="underline underline-offset-4" href="#about">about Dr. Holambe</a>, or <a className="underline underline-offset-4" href="#footer">contact the practice</a>.
+  </p>
 </div>
 
     

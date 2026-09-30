@@ -3,9 +3,9 @@ export const EMAIL = "drabhijeetholambe@gmail.com";
 export const PHONE = "+91 8169065210";
 
 export const ABOUT = `
-Dr. Abhijeet Holambe is a highly trusted psychiatrist, sexologist, and de-addiction specialist in Mumbai, known as one of the best psychiatrists and sexologists in Kandivali, Malad, Andheri, and Bandra. If you are searching for a psychiatrist near me or a sexologist near me, he provides confidential, personalized, and evidence-based treatment tailored to individual needs.
+Dr. Abhijeet Holambe is a psychiatrist in Mumbai with qualifications in MBBS and MD Psychiatry. He offers consultations for concerns such as anxiety, depression, mood changes, sleep difficulties, sexual health, and substance use. Each consultation begins with an individual assessment and a discussion of suitable next steps.
 
-He specializes in managing anxiety, depression, stress, mood disorders, sexual health concerns, and addiction-related issues, helping individuals achieve better mental and emotional well-being. With a patient-centric and non-judgmental approach, Dr. Holambe creates a safe and supportive space for those looking for a top psychiatrist in Kandivali, Malad, Andheri, or Bandra.
+Appointments are available in Mumbai by prior booking, including Kandivali West and Malad. Online consultation options are also available. Contact the practice to confirm the clinic, appointment time, and whether a service is suitable for your needs.
 `;
 export const ADDRESS = `United Multispeciality Hospital New Link Rd, near Hyundai Showroom, Mahavir Nagar, Kandivali West, Mumbai, Maharashtra 400067`
 export const SPECIALISATIONS = ["Sexual Health", "Neuropsychiatric Consultation", "Deaddiction" , "Counselling"]

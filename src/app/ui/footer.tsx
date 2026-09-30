@@ -12,19 +12,22 @@ const Footer = () => {
             {Info.NAME}
           </h3>
           <p className="text-pure-white/60 leading-relaxed font-light max-w-md">
-            Trusted Psychiatrist and Sexologist providing compassionate care in a peaceful environment.
+            Psychiatric, sexual health, and de-addiction consultations in Mumbai. Appointments in Kandivali West, Malad, Andheri, and Bandra are by prior booking; contact the practice to confirm the clinic and availability.
           </p>
+          <address className="not-italic text-sm text-pure-white/70 max-w-md">
+            {Info.ADDRESS}
+          </address>
 
           <div className="space-y-4 pt-4">
             <div className="flex flex-col gap-3 text-sm text-pure-white/70">
               <span className="flex items-center justify-center gap-2">
                 <Phone className="h-4 w-4 text-calming-blue" />
                 <MessageCircle className="h-4 w-4 text-[#25D366]" />
-                {Info.PHONE}
+                <a href={`tel:${Info.PHONE.replace(/[^+\d]/g, "")}`} className="hover:underline">{Info.PHONE}</a>
               </span>
               <span className="flex items-center justify-center gap-2">
                 <Mail className="h-4 w-4 text-calming-blue" />
-                {Info.EMAIL}
+                <a href={`mailto:${Info.EMAIL}`} className="hover:underline">{Info.EMAIL}</a>
               </span>
             </div>
           </div>
@@ -33,7 +36,7 @@ const Footer = () => {
         {/* --- Bottom --- */}
         <div className="pt-8 mt-12 border-t border-pure-white/10 text-center">
           <p className="text-pure-white/40 text-sm font-light">
-            © 2025 {Info.NAME}
+            © {new Date().getFullYear()} {Info.NAME}
           </p>
         </div>
       </div>
