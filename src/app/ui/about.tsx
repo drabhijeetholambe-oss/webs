@@ -7,7 +7,7 @@ const About = () => {
         {/* Left: Image */}
         <div className="flex justify-center">
           <Image
-            src="/img.jpeg"
+            src="/dr-abhijeet-holambe.jpeg"
             alt="Dr. Abhijeet Holambe, psychiatrist" title="Dr. Abhijeet Holambe"
             width={400}
             height={400}
