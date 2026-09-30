@@ -22,10 +22,11 @@ const Hero = () => {
             Psychiatrist <span aria-hidden="true" className="text-teal-300">·</span> Mumbai
           </p>
           <h1 className="font-serif text-6xl font-medium leading-[0.98] tracking-tight sm:text-7xl lg:text-8xl xl:text-9xl">
-            Dr. Abhijeet <span className="text-teal-200">Holambe</span>
+            Psychiatrist in <span className="text-teal-200">Malad West, Mumbai</span>
           </h1>
+          <p className="mt-4 text-lg font-medium text-slate-100 sm:text-xl">Dr. Abhijeet Holambe · MBBS, MD Psychiatry</p>
           <h2 className="mt-7 text-xl font-medium text-white sm:text-2xl">
-            Psychiatric consultations in Malad West
+            Confidential psychiatric consultations in Mumbai
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg lg:mx-0">
             Thoughtful, confidential consultations for concerns including anxiety, depression, sleep, sexual health, and substance use. Online consultation options are also available.
@@ -45,7 +46,7 @@ const Hero = () => {
             </a>
           </div>
           <p className="mt-6 text-sm text-slate-300">
-            MBBS · MD Psychiatry <span className="mx-2 text-teal-300">|</span> Appointments by prior booking
+            Anxiety · Depression · Sleep · Sexual health · De-addiction <span className="mx-2 text-teal-300">|</span> Appointments by prior booking
           </p>
         </div>
 
