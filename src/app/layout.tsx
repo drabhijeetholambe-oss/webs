@@ -36,24 +36,43 @@ const siteStructuredData = {
       "inLanguage": "en-IN"
     },
     {
-      "@type": "Physician",
+      "@type": "MedicalClinic",
+      "@id": "https://www.drabhijeetholambe.com/#clinic",
+      "name": "Dr. Abhijeet Holambe Psychiatry Practice",
+      "url": "https://www.drabhijeetholambe.com/",
+      "telephone": "+91 8169065210",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sun Multispeciality Hospital",
+        "addressLocality": "Malad West",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Mumbai" },
+        { "@type": "Place", "name": "Malad West" }
+      ]
+    },
+    {
+      "@type": ["Physician", "Person"],
       "@id": "https://www.drabhijeetholambe.com/#physician",
       "name": "Dr. Abhijeet Holambe",
       "url": "https://www.drabhijeetholambe.com",
       "image": "https://www.drabhijeetholambe.com/dr-abhijeet-holambe-brain-model.jpg",
       "telephone": "+91 8169065210",
       "email": "drabhijeetholambe@gmail.com",
-      "medicalSpecialty": "https://schema.org/Psychiatric",
+      "jobTitle": "Psychiatrist",
+      "medicalSpecialty": "Psychiatric",
       "sameAs": [
         "https://www.practo.com/mumbai/doctor/abhijeet-holambe-psychiatrist-1"
       ],
-      "areaServed": [
-        { "@type": "City", "name": "Mumbai" },
-        { "@type": "Place", "name": "Malad West" }
-      ],
-      "workLocation": [
-        { "@type": "Place", "name": "Sun Multispeciality Hospital, Malad West, Mumbai" }
-      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mumbai",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      },
+      "worksFor": { "@id": "https://www.drabhijeetholambe.com/#clinic" },
       "knowsAbout": [
         "Psychiatry",
         "Anxiety",
@@ -78,7 +97,7 @@ export const metadata: Metadata = {
     template: "%s | Dr. Abhijeet Holambe",
   },
   description:
-    "Dr. Abhijeet Holambe offers psychiatric consultations at Sun Multispeciality Hospital in Malad West, Mumbai, for concerns including anxiety, depression, sleep, sexual health, and substance use. Online consultation options are also available.",
+    "Dr. Abhijeet Holambe is a psychiatrist in Malad West, Mumbai, offering consultations for anxiety, depression, sleep disorders, sexual health, substance use, OCD, bipolar disorder, and other mental health concerns. Online consultations are also available.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -86,7 +105,7 @@ export const metadata: Metadata = {
     url: "https://www.drabhijeetholambe.com",
     siteName: "Dr. Abhijeet Holambe",
     title: "Dr. Abhijeet Holambe | Psychiatrist in Malad West, Mumbai",
-    description: "Psychiatric consultations at Sun Multispeciality Hospital in Malad West, Mumbai, with online consultation options.",
+    description: "Psychiatric consultations in Malad West, Mumbai for anxiety, depression, sleep, sexual health, substance use, OCD, bipolar disorder and related concerns. Online consultation options are available.",
     images: [{ url: "/dr-abhijeet-holambe-brain-model.jpg", width: 1600, height: 2844, alt: "Dr. Abhijeet Holambe holding a brain model" }],
   },
   twitter: {
@@ -95,7 +114,20 @@ export const metadata: Metadata = {
     description: "Psychiatric consultations at Sun Multispeciality Hospital in Malad West, Mumbai, with online consultation options.",
     images: ["/dr-abhijeet-holambe-brain-model.jpg"],
   },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
+  robots: {
+    index: true,
+    follow: true,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+    "max-video-preview": -1,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({
