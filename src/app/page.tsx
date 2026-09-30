@@ -4,17 +4,10 @@ import Services from "./ui/services";
 
 export default function Home() {
   return (
-    <div>
-
-<main>
-  <section>
-    <Hero/>
-    <About/>
-    <Services/>
-
-  </section>
-</main>
-    </div>
-
+    <>
+      <Hero />
+      <About />
+      <Services />
+    </>
   );
 }
