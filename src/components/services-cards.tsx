@@ -69,33 +69,33 @@ export default function ExpandableCardDemo() {
         )}
       </Dialog>
 
-      {/* Cards List */}
-      <div className="max-w-2xl mx-auto w-full gap-4">
+      {/* Responsive service tiles */}
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {cards.map((card) => (
           <article
             id={card.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}
             key={card.title}
-            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-blue-100 rounded-xl bg-white shadow-sm border border-blue-50 mb-4 transition-colors"
+            className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:border-teal-200 hover:shadow-xl hover:shadow-slate-900/10"
           >
-            <div className="flex gap-4 flex-col md:flex-row items-center md:items-start">
+            <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
               <Image
-               width={500}
-               height={500}
+                width={800}
+                height={500}
                 src={card.src}
-                alt={card.title}
+                alt={card.imageAlt}
                 title={card.title}
-                sizes="(max-width: 768px) 160px, 56px"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                 loading="lazy"
-                className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover border border-blue-100"
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
               />
-              <div>
-                <h3 className="font-medium text-gray-900 text-center md:text-left">{card.title}</h3>
-                <p className="text-gray-700 text-center md:text-left">{card.description}</p>
-              </div>
             </div>
-            <Button type="button" variant="outline" className="mt-4 md:mt-0" onClick={() => setActive(card)}>
-              Learn about {card.title}
-            </Button>
+            <div className="flex flex-1 flex-col p-5">
+              <h3 className="font-serif text-xl font-medium text-slate-900">{card.title}</h3>
+              <p className="mt-2 flex-1 text-sm leading-6 text-slate-600">{card.description}</p>
+              <Button type="button" variant="outline" className="mt-5 w-full rounded-full border-slate-300 text-slate-800 transition hover:border-teal-700 hover:bg-teal-50 hover:text-teal-900" onClick={() => setActive(card)}>
+                Learn about {card.title}
+              </Button>
+            </div>
           </article>
         ))}
       </div>
@@ -107,7 +107,8 @@ const cards = [
   {
     description: "Confidential consultation for sexual health and relationship intimacy concerns.",
     title: "Sexual Health",
-    src: "/sti.jpg",
+    src: "/sexual_disorder_counselling.jpg",
+    imageAlt: "Supportive hand gesture during a confidential counselling conversation",
     ctaText: "Book Session",
     content: () => (
       <p>
@@ -119,6 +120,7 @@ const cards = [
     description: "Consultation for low mood, reduced motivation, and other concerns associated with depression.",
     title: "Depression Counseling",
     src: "/depression.png",
+    imageAlt: "Illustration of a patient and clinician talking in a consultation",
     ctaText: "Book Session",
     content: () => (
       <p>
@@ -130,6 +132,7 @@ const cards = [
     description: "Consultation for anxiety symptoms, panic episodes, and related concerns.",
     title: "Anxiety & Panic Disorder",
     src: "/therapist.jpg",
+    imageAlt: "Counsellor supporting a client during a therapy session",
     ctaText: "Book Session",
     content: () => (
       <p>
@@ -141,6 +144,7 @@ const cards = [
     description: "Consultation for sleep difficulties, including insomnia.",
     title: "Sleep Disorders",
     src: "/sleep_disorder.jpg",
+    imageAlt: "Person lying awake in bed with difficulty sleeping",
     ctaText: "Book Session",
     content: () => (
       <p>
@@ -152,6 +156,7 @@ const cards = [
     description: "Psychiatric consultation for bipolar mood concerns and treatment planning.",
     title: "Bipolar Mood Disorder",
     src: "/bipolar_disorder.jpg",
+    imageAlt: "Illustration representing changing moods and emotional wellbeing",
     ctaText: "Book Session",
     content: () => (
       <p>
@@ -163,6 +168,7 @@ const cards = [
     description: "Psychiatric consultation for schizophrenia and related concerns.",
     title: "Schizophrenia Therapy",
     src: "/schizophrenia.jpg",
+    imageAlt: "Illustration of a person experiencing mental health symptoms",
     ctaText: "Book Session",
     content: () => (
       <p>
@@ -174,6 +180,7 @@ const cards = [
     description: "Consultation for obsessive thoughts, compulsive behaviors, and related concerns.",
     title: "OCD Therapy",
     src: "/ocd.jpeg",
+    imageAlt: "Person carefully arranging coloured pencils",
     ctaText: "Book Session",
     content: () => (
       <p>
@@ -185,6 +192,7 @@ const cards = [
     description: "Consultation for neurodevelopmental concerns, including ADHD and autism spectrum conditions.",
     title: "Neurodevelopmental Disorders",
     src: "/neurodevelopmental.jpg",
+    imageAlt: "Parent offering support to a child",
     ctaText: "Book Session",
     content: () => (
       <p>
@@ -196,6 +204,7 @@ const cards = [
     description: "Consultation for memory concerns and cognitive changes, with space to discuss caregiver questions.",
     title: "Dementia Care",
     src: "/dementia.jpg",
+    imageAlt: "Older adult with family and a clinician",
     ctaText: "Book Session",
     content: () => (
       <p>
@@ -207,6 +216,7 @@ const cards = [
     description: "Psychiatric consultation for substance use and de-addiction concerns.",
     title: "De-addiction Therapy",
     src: "/deaddiction.jpg",
+    imageAlt: "Illustrated overview of substance use and recovery support",
     ctaText: "Book Session",
     content: () => (
       <p>
@@ -218,6 +228,7 @@ const cards = [
     description: "Respectful mental health consultation for gender identity concerns.",
     title: "Gender Incongruence Therapy",
     src: "/gender_incogruence.webp",
+    imageAlt: "Abstract illustration about gender identity",
     ctaText: "Book Session",
     content: () => (
       <p>
@@ -229,6 +240,7 @@ const cards = [
     description: "Consultation for emotional, relationship, and long-standing behavior concerns.",
     title: "Personality Disorders Therapy",
     src: "/personality_disorders.jpg",
+    imageAlt: "Illustration representing varied emotions and self-expression",
     ctaText: "Book Session",
     content: () => (
       <p>
@@ -240,6 +252,7 @@ const cards = [
     description: "Consultation about stress, coping, and the effect of stress on daily life.",
     title: "Stress Management",
     src: "/stress_management.jpg",
+    imageAlt: "Illustration of a person practicing mindfulness",
     ctaText: "Book Session",
     content: () => (
       <p>
@@ -251,6 +264,7 @@ const cards = [
     description: "Consultation about focus, procrastination, and productivity concerns.",
     title: "Productivity Management",
     src: "/productivity.jpg",
+    imageAlt: "Illustration of a person organizing tasks and priorities",
     ctaText: "Book Session",
     content: () => (
       <p>

@@ -3,18 +3,38 @@ import * as Info from "@/app/config/constants/info"
 const About = () => {
   return (
     <section id="about" className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
-        {/* Left: Image */}
-        <div className="flex justify-center">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
+        <div className="mx-auto w-full max-w-md space-y-4">
           <Image
-            src="/dr-abhijeet-holambe.jpeg"
-            alt="Dr. Abhijeet Holambe, psychiatrist" title="Dr. Abhijeet Holambe"
-            width={400}
-            height={400}
+            src="/dr-abhijeet-holambe-clinic.jpg"
+            alt="Dr. Abhijeet Holambe in his clinic holding a brain model"
+            title="Dr. Abhijeet Holambe"
+            width={1600}
+            height={2844}
             sizes="(max-width: 768px) 100vw, 400px"
             loading="lazy"
-            className="rounded-2xl shadow-lg object-cover"
+            className="aspect-[4/5] w-full rounded-3xl object-cover object-[center_30%] shadow-xl"
           />
+          <a
+            href="/dr-abhijeet-holambe-profile-poster.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm transition hover:shadow-md"
+          >
+            <Image
+              src="/dr-abhijeet-holambe-profile-poster.jpg"
+              alt="Practice information poster for Dr. Abhijeet Holambe"
+              width={1024}
+              height={1536}
+              sizes="88px"
+              loading="lazy"
+              className="h-24 w-16 rounded-lg bg-slate-50 object-contain"
+            />
+            <span>
+              <span className="block font-medium text-slate-900">Practice information</span>
+              <span className="mt-1 block text-sm text-slate-600">Open the full-size poster</span>
+            </span>
+          </a>
         </div>
 
         {/* Right: Content */}
