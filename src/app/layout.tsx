@@ -17,9 +17,59 @@ const geistSans = Geist({
 
 const siteStructuredData = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Dr. Abhijeet Holambe",
-  "url": "https://www.drabhijeetholambe.com",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.drabhijeetholambe.com/#website",
+      "url": "https://www.drabhijeetholambe.com",
+      "name": "Dr. Abhijeet Holambe",
+      "publisher": { "@id": "https://www.drabhijeetholambe.com/#physician" },
+      "inLanguage": "en-IN"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.drabhijeetholambe.com/#webpage",
+      "url": "https://www.drabhijeetholambe.com",
+      "name": "Psychiatrist in Kandivali and Mumbai | Dr. Abhijeet Holambe",
+      "isPartOf": { "@id": "https://www.drabhijeetholambe.com/#website" },
+      "about": { "@id": "https://www.drabhijeetholambe.com/#physician" },
+      "inLanguage": "en-IN"
+    },
+    {
+      "@type": "Physician",
+      "@id": "https://www.drabhijeetholambe.com/#physician",
+      "name": "Dr. Abhijeet Holambe",
+      "url": "https://www.drabhijeetholambe.com",
+      "image": "https://www.drabhijeetholambe.com/img.jpeg",
+      "telephone": "+91 8169065210",
+      "email": "drabhijeetholambe@gmail.com",
+      "medicalSpecialty": "https://schema.org/Psychiatric",
+      "sameAs": [
+        "https://www.practo.com/mumbai/doctor/abhijeet-holambe-psychiatrist-1"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "United Multispeciality Hospital, New Link Road, near Hyundai Showroom, Mahavir Nagar, Kandivali West",
+        "addressLocality": "Mumbai",
+        "addressRegion": "Maharashtra",
+        "postalCode": "400067",
+        "addressCountry": "IN"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Mumbai" },
+        { "@type": "Place", "name": "Kandivali West" },
+        { "@type": "Place", "name": "Malad" }
+      ],
+      "knowsAbout": [
+        "Psychiatry",
+        "Anxiety",
+        "Depression",
+        "Sleep disorders",
+        "Sexual health",
+        "Substance use"
+      ]
+    }
+  ]
 };
 
 const geistMono = Geist_Mono({
