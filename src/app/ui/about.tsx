@@ -8,7 +8,7 @@ const About = () => {
         <div className="flex justify-center">
           <Image
             src="/img.jpeg"
-            alt="Therapist"
+            alt="Dr. Abhijeet Holambe, psychiatrist" title="Dr. Abhijeet Holambe"
             width={400}
             height={400}
             className="rounded-2xl shadow-lg object-cover"
@@ -18,10 +18,13 @@ const About = () => {
         {/* Right: Content */}
         <div className="space-y-6 text-center md:text-left">
           <h2 className="text-4xl font-serif font-light text-gray-900">
-            About Me
+            About Dr. Abhijeet Holambe
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed font-light">
         {Info.ABOUT}
+          </p>
+          <p className="text-gray-600 font-light">
+            Learn about <a className="underline underline-offset-4" href="#services">psychiatric services</a> or <a className="underline underline-offset-4" href="#footer">contact the practice</a> to confirm appointment availability and location.
           </p>
           <p className="text-gray-600 font-light">
             <strong>Specializations:</strong> <span>{Info.SPECIALISATIONS.join(" , ")}</span>
