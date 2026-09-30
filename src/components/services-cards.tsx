@@ -33,7 +33,7 @@ export default function ExpandableCardDemo() {
   };
 
   return (
-    <div className="min-h-screen p-6">
+    <div className="p-6">
       {/* Modal */}
       <Dialog  open={!!active} onOpenChange={(open) => !open && setActive(null)}>
         {active && (
@@ -70,12 +70,12 @@ export default function ExpandableCardDemo() {
       </Dialog>
 
       {/* Cards List */}
-      <ul className="max-w-2xl mx-auto w-full gap-4">
+      <div className="max-w-2xl mx-auto w-full gap-4">
         {cards.map((card) => (
-          <div
+          <article
+            id={card.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}
             key={card.title}
-            onClick={() => setActive(card)}
-            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-blue-100 rounded-xl cursor-pointer bg-white shadow-sm border border-blue-50 mb-4 transition-colors"
+            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-blue-100 rounded-xl bg-white shadow-sm border border-blue-50 mb-4 transition-colors"
           >
             <div className="flex gap-4 flex-col md:flex-row items-center md:items-start">
               <Image
@@ -93,12 +93,12 @@ export default function ExpandableCardDemo() {
                 <p className="text-gray-700 text-center md:text-left">{card.description}</p>
               </div>
             </div>
-            <Button variant="outline" className="mt-4 md:mt-0">
-              {card.ctaText}
+            <Button type="button" variant="outline" className="mt-4 md:mt-0" onClick={() => setActive(card)}>
+              Learn about {card.title}
             </Button>
-          </div>
+          </article>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
