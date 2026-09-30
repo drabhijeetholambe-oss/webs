@@ -13,6 +13,7 @@ const Navbar = () => {
     { name: "Practo", href: "https://www.practo.com/mumbai/doctor/abhijeet-holambe-psychiatrist-1" },
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
+    { name: "Locations", href: "#locations" },
     { name: "Contact", href: "#footer" },
   ];
 
