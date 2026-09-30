@@ -60,7 +60,7 @@ const Hero = () => {
       {/* Foreground Content */}
     <div className="relative z-10 text-white max-w-3xl px-4 space-y-6">
   <h1 className="text-5xl md:text-6xl font-serif font-light leading-tight">
-    Psychiatric Care in Kandivali and Mumbai
+    Psychiatrist in Kandivali West and Mumbai
   </h1>
   <p className="text-xl md:text-2xl text-gray-200 font-light">
     Dr. Abhijeet Holambe offers psychiatric, sexual health, and de-addiction consultations in Mumbai, with online consultation options.
