@@ -170,6 +170,7 @@ const cards = [
   {
     description: "Psychiatric consultation for bipolar mood concerns and treatment planning.",
     title: "Bipolar Mood Disorder",
+    slug: undefined,
     src: "/bipolar_disorder.jpg",
     imageAlt: "Illustration representing changing moods and emotional wellbeing",
     ctaText: "Book Session",
@@ -182,6 +183,7 @@ const cards = [
   {
     description: "Psychiatric consultation for schizophrenia and related concerns.",
     title: "Schizophrenia Therapy",
+    slug: undefined,
     src: "/schizophrenia.jpg",
     imageAlt: "Illustration of a person experiencing mental health symptoms",
     ctaText: "Book Session",
@@ -194,6 +196,7 @@ const cards = [
   {
     description: "Consultation for obsessive thoughts, compulsive behaviors, and related concerns.",
     title: "OCD Therapy",
+    slug: undefined,
     src: "/ocd.jpeg",
     imageAlt: "Person carefully arranging coloured pencils",
     ctaText: "Book Session",
@@ -206,6 +209,7 @@ const cards = [
   {
     description: "Consultation for neurodevelopmental concerns, including ADHD and autism spectrum conditions.",
     title: "Neurodevelopmental Disorders",
+    slug: undefined,
     src: "/neurodevelopmental.jpg",
     imageAlt: "Parent offering support to a child",
     ctaText: "Book Session",
@@ -218,6 +222,7 @@ const cards = [
   {
     description: "Consultation for memory concerns and cognitive changes, with space to discuss caregiver questions.",
     title: "Dementia Care",
+    slug: undefined,
     src: "/dementia.jpg",
     imageAlt: "Older adult with family and a clinician",
     ctaText: "Book Session",
@@ -243,6 +248,7 @@ const cards = [
   {
     description: "Respectful mental health consultation for gender identity concerns.",
     title: "Gender Incongruence Therapy",
+    slug: undefined,
     src: "/gender_incogruence.webp",
     imageAlt: "Abstract illustration about gender identity",
     ctaText: "Book Session",
@@ -255,6 +261,7 @@ const cards = [
   {
     description: "Consultation for emotional, relationship, and long-standing behavior concerns.",
     title: "Personality Disorders Therapy",
+    slug: undefined,
     src: "/personality_disorders.jpg",
     imageAlt: "Illustration representing varied emotions and self-expression",
     ctaText: "Book Session",
@@ -267,6 +274,7 @@ const cards = [
   {
     description: "Consultation about stress, coping, and the effect of stress on daily life.",
     title: "Stress Management",
+    slug: undefined,
     src: "/stress_management.jpg",
     imageAlt: "Illustration of a person practicing mindfulness",
     ctaText: "Book Session",
@@ -279,6 +287,7 @@ const cards = [
   {
     description: "Consultation about focus, procrastination, and productivity concerns.",
     title: "Productivity Management",
+    slug: undefined,
     src: "/productivity.jpg",
     imageAlt: "Illustration of a person organizing tasks and priorities",
     ctaText: "Book Session",
