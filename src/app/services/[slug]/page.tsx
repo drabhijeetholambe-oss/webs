@@ -1,119 +1,36 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { services, serviceSlugs, type ServiceSlug } from "../service-data";
 
 const siteUrl = "https://www.drabhijeetholambe.com";
 
-const services = {
-  "anxiety-panic-disorder": {
-    title: "Anxiety & Panic Disorder",
-    seoTitle: "Anxiety & Panic Disorder Psychiatrist in Mumbai",
-    description:
-      "Psychiatric consultation for anxiety symptoms, panic episodes, persistent worry, and related concerns in Malad West, Mumbai.",
-    overview:
-      "Anxiety can affect concentration, sleep, relationships, work, and day-to-day functioning. A psychiatric consultation can help clarify symptoms, contributing factors, and appropriate next steps.",
-    topics: [
-      "Persistent or excessive worry",
-      "Panic episodes or intense fear",
-      "Physical symptoms associated with anxiety",
-      "Anxiety affecting sleep, work, or relationships",
-    ],
-  },
-  "depression": {
-    title: "Depression",
-    seoTitle: "Depression Psychiatrist in Malad West, Mumbai",
-    description:
-      "Psychiatric consultation for depression symptoms, persistent low mood, reduced motivation, and related mental health concerns.",
-    overview:
-      "Depression can involve changes in mood, motivation, sleep, appetite, concentration, and interest in usual activities. A consultation can assess the pattern and severity of symptoms and discuss suitable care options.",
-    topics: [
-      "Persistent low mood or sadness",
-      "Reduced interest or motivation",
-      "Sleep or appetite changes",
-      "Concentration and functioning difficulties",
-    ],
-  },
-  "sleep-disorders": {
-    title: "Sleep Disorders",
-    seoTitle: "Sleep Disorder Psychiatrist in Mumbai",
-    description:
-      "Psychiatric consultation for insomnia and other sleep difficulties in Malad West, Mumbai, including sleep concerns associated with mental health.",
-    overview:
-      "Sleep difficulties can occur on their own or alongside anxiety, depression, substance use, and other conditions. A consultation can review sleep patterns, contributing factors, and possible next steps.",
-    topics: [
-      "Difficulty falling asleep",
-      "Frequent or early waking",
-      "Poor-quality or non-restorative sleep",
-      "Sleep problems affecting daytime functioning",
-    ],
-  },
-  "sexual-health": {
-    title: "Sexual Health",
-    seoTitle: "Sexual Health Psychiatrist in Mumbai",
-    description:
-      "Confidential psychiatric consultation for sexual health, intimacy, and related psychological concerns in Mumbai.",
-    overview:
-      "Sexual health concerns can be influenced by psychological, relationship, medical, medication-related, and lifestyle factors. A confidential consultation provides space to discuss symptoms and decide whether further assessment or treatment is appropriate.",
-    topics: [
-      "Sexual concerns affecting wellbeing or relationships",
-      "Intimacy and relationship difficulties",
-      "Psychological factors affecting sexual functioning",
-      "Sexual concerns associated with stress, anxiety, or mood",
-    ],
-  },
-  "de-addiction": {
-    title: "De-addiction & Substance Use",
-    seoTitle: "De-addiction Psychiatrist in Mumbai",
-    description:
-      "Psychiatric consultation for substance use, dependence, recovery planning, and related mental health concerns in Mumbai.",
-    overview:
-      "Substance use can affect physical health, mood, sleep, relationships, and work. A psychiatric assessment can review patterns of use, risks, co-occurring mental health concerns, and appropriate support options.",
-    topics: [
-      "Alcohol or drug use causing problems",
-      "Difficulty reducing or stopping use",
-      "Cravings or loss of control",
-      "Substance use occurring with anxiety, depression, or sleep problems",
-    ],
-  },
-} as const;
-
-type ServiceSlug = keyof typeof services;
-
 export function generateStaticParams() {
-  return Object.keys(services).map((slug) => ({ slug }));
+  return serviceSlugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const service = services[slug as ServiceSlug];
   if (!service) return {};
-
-  const canonical = `/services/${slug}`;
-
   return {
     title: service.seoTitle,
     description: service.description,
-    alternates: { canonical },
+    alternates: { canonical: "/services/" + slug },
     openGraph: {
       type: "article",
-      url: `${siteUrl}${canonical}`,
+      url: siteUrl + "/services/" + slug,
       title: service.seoTitle,
       description: service.description,
       siteName: "Dr. Abhijeet Holambe",
       locale: "en_IN",
+      images: [{ url: "/dr-abhijeet-holambe-brain-model.jpg", alt: "Dr. Abhijeet Holambe, psychiatrist in Malad West, Mumbai" }],
     },
   };
 }
 
-export default async function ServicePage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const service = services[slug as ServiceSlug];
   if (!service) notFound();
@@ -123,117 +40,115 @@ export default async function ServicePage({
     "@graph": [
       {
         "@type": "MedicalWebPage",
-        "@id": `${siteUrl}/services/${slug}#webpage`,
-        url: `${siteUrl}/services/${slug}`,
+        "@id": siteUrl + "/services/" + slug + "#webpage",
+        url: siteUrl + "/services/" + slug,
         name: service.seoTitle,
         description: service.description,
         inLanguage: "en-IN",
-        about: {
-          "@type": "MedicalCondition",
-          name: service.title,
-        },
-        author: {
-          "@type": "Person",
-          name: "Dr. Abhijeet Holambe",
-          url: siteUrl,
-        },
+        about: { "@type": "MedicalCondition", name: service.title },
+        author: { "@type": "Physician", name: "Dr. Abhijeet Holambe", url: siteUrl },
+        mainEntity: { "@id": siteUrl + "/services/" + slug + "#faq" },
+      },
+      {
+        "@type": "FAQPage",
+        "@id": siteUrl + "/services/" + slug + "#faq",
+        mainEntity: service.faqs.map(([question, answer]) => ({
+          "@type": "Question",
+          name: question,
+          acceptedAnswer: { "@type": "Answer", text: answer },
+        })),
       },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: `${siteUrl}/`,
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: service.title,
-            item: `${siteUrl}/services/${slug}`,
-          },
+          { "@type": "ListItem", position: 1, name: "Home", item: siteUrl + "/" },
+          { "@type": "ListItem", position: 2, name: "Services", item: siteUrl + "/#services" },
+          { "@type": "ListItem", position: 3, name: service.title, item: siteUrl + "/services/" + slug },
         ],
       },
     ],
   };
 
   return (
-    <main className="min-h-screen bg-white pt-24">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-
-      <article className="mx-auto max-w-4xl px-5 py-16 sm:px-8">
-        <nav aria-label="Breadcrumb" className="mb-8 text-sm text-slate-500">
-          <Link href="/" className="hover:underline">
-            Home
-          </Link>
-          <span className="mx-2" aria-hidden="true">
-            /
-          </span>
-          <span>{service.title}</span>
+    <div className="min-h-screen bg-[#fbfaf7] pt-24">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
+      <article className="mx-auto max-w-4xl px-5 py-12 sm:px-8 sm:py-16">
+        <nav aria-label="Breadcrumb" className="mb-8 text-sm text-[#64736d]">
+          <Link href="/" className="hover:text-[#183b37]">Home</Link><span className="mx-2" aria-hidden="true">/</span>
+          <Link href="/#services" className="hover:text-[#183b37]">Services</Link><span className="mx-2" aria-hidden="true">/</span><span>{service.title}</span>
         </nav>
-
-        <header>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-700">
-            Dr. Abhijeet Holambe · Psychiatrist in Mumbai
-          </p>
-          <h1 className="mt-3 font-serif text-4xl font-medium leading-tight text-slate-900 sm:text-5xl">
-            {service.seoTitle}
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-slate-600">
-            {service.description}
-          </p>
+        <header className="border-b border-[#e2e7df] pb-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#42796d]">Psychiatric consultation · Malad West, Mumbai</p>
+          <h1 className="mt-4 font-serif text-4xl font-medium leading-tight tracking-tight text-[#183b37] sm:text-5xl">{service.heading}</h1>
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-[#60736e]">{service.description}</p>
         </header>
-
-        <section className="mt-12">
-          <h2 className="font-serif text-3xl font-medium text-slate-900">
-            What a consultation can cover
-          </h2>
-          <p className="mt-4 leading-8 text-slate-700">{service.overview}</p>
-
-          <div className="mt-7 grid gap-4 sm:grid-cols-2">
-            {service.topics.map((topic) => (
-              <div
-                key={topic}
-                className="rounded-2xl border border-slate-200 bg-slate-50 p-5"
-              >
-                <p className="font-medium text-slate-900">{topic}</p>
-              </div>
-            ))}
+        <section className="mt-10">
+          <h2 className="font-serif text-3xl font-medium text-[#183b37]">Understanding {service.title.toLowerCase()}</h2>
+          <div className="mt-5 space-y-4 text-base leading-8 text-[#4f615b]">
+            {service.summary.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
         </section>
-
-        <section className="mt-12 rounded-3xl border border-teal-100 bg-teal-50/60 p-7">
-          <h2 className="font-serif text-2xl font-medium text-slate-900">
-            Consultation in Malad West, Mumbai
-          </h2>
-          <p className="mt-3 leading-7 text-slate-700">
-            Appointments are available by prior booking at Sun Multispeciality
-            Hospital in Malad West, Mumbai. Online consultation options are
-            also available. Contact the practice to confirm current
-            availability and appointment timing.
-          </p>
+        <section className="mt-10 rounded-3xl border border-[#e2e7df] bg-white p-6 sm:p-8">
+          <h2 className="font-serif text-2xl font-medium text-[#183b37]">Common signs and symptoms</h2>
+          <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+            {service.signs.map((sign) => <li key={sign} className="flex gap-3 rounded-2xl bg-[#f5f5ef] p-4 text-sm leading-6 text-[#4f615b]"><span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#a9844b]" />{sign}</li>)}
+          </ul>
+        </section>
+        <section className="mt-10">
+          <h2 className="font-serif text-3xl font-medium text-[#183b37]">When to see a psychiatrist</h2>
+          <p className="mt-4 text-base leading-8 text-[#4f615b]">{service.when}</p>
+        </section>
+        <section className="mt-10">
+          <h2 className="font-serif text-3xl font-medium text-[#183b37]">How treatment works</h2>
+          <p className="mt-4 text-base leading-8 text-[#4f615b]">{service.care}</p>
+          <p className="mt-4 text-base leading-8 text-[#4f615b]">Medication is prescribed only after an individual assessment and discussion. You can ask about the purpose, possible side effects, alternatives, and how follow-up will work. There are no guaranteed results; the plan is reviewed as your needs and circumstances change.</p>
+        </section>
+        <section className="mt-10 grid gap-5 md:grid-cols-2">
+          <div className="rounded-3xl bg-[#edf2eb] p-6 sm:p-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#42796d]">Your first appointment</p>
+            <h2 className="mt-3 font-serif text-2xl font-medium text-[#183b37]">A conversation at your pace</h2>
+            <p className="mt-3 text-sm leading-7 text-[#53655e]">The first visit is a chance to explain what has been troubling you, when it began, and what you hope will change. Dr. Holambe will ask about your health, sleep, daily life, and any medicines or past care that may be relevant. You can ask questions and share only what you feel ready to discuss. Together, you can consider an assessment and agree on next steps. Bring a current medicine list or previous reports if you have them; they are helpful but not required to begin.</p>
+          </div>
+          <div className="rounded-3xl bg-[#183b37] p-6 text-white sm:p-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#b5deca]">Online consultation</p>
+            <h2 className="mt-3 font-serif text-2xl font-medium">Care from a private space</h2>
+            <p className="mt-3 text-sm leading-7 text-white/75">Online appointments are available by arrangement. Choose a private, quiet place and keep any reports or medicine details nearby. Some concerns need an in-person visit, examination, or further tests; if so, the doctor will explain why and discuss the next step. Online appointments are not a substitute for urgent emergency care.</p>
+            <a href="https://wa.me/918169065210" target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex rounded-full bg-[#b5deca] px-5 py-3 text-sm font-semibold text-[#183b37] transition hover:bg-white">Ask about an online appointment</a>
+          </div>
+        </section>
+        <section className="mt-12">
+          <h2 className="font-serif text-3xl font-medium text-[#183b37]">Frequently asked questions</h2>
+          <div className="mt-5 divide-y divide-[#e2e7df] border-y border-[#e2e7df]">
+            {service.faqs.map(([question, answer]) => <details key={question} className="group py-5">
+              <summary className="cursor-pointer list-none pr-8 font-medium text-[#183b37] marker:hidden">{question}<span aria-hidden="true" className="float-right text-[#a9844b] transition group-open:rotate-45">＋</span></summary>
+              <p className="mt-3 max-w-3xl text-sm leading-7 text-[#60736e]">{answer}</p>
+            </details>)}
+          </div>
+        </section>
+        <section className="mt-12 rounded-3xl border border-[#e6dfcf] bg-[#f3efe5] p-6 sm:p-8">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
+            <Image src="/dr-abhijeet-holambe-clinic.jpg" alt="Dr. Abhijeet Holambe, psychiatrist in Malad West" width={1600} height={2844} sizes="96px" className="h-24 w-24 rounded-full object-cover object-[center_25%]" />
+            <div className="flex-1">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#42796d]">About the psychiatrist</p>
+              <h2 className="mt-2 font-serif text-2xl font-medium text-[#183b37]">Dr. Abhijeet Holambe</h2>
+              <p className="mt-2 text-sm leading-6 text-[#53655e]">MBBS, Seth GS Medical College and KEM Hospital · MD Psychiatry, Grant Medical College and JJ Hospital · 6 years of clinical experience · Consultations in Hindi, Marathi, and English.</p>
+            </div>
+          </div>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="https://wa.me/918169065210"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white"
-            >
-              Book via WhatsApp
-            </a>
-            <Link
-              href="/#services"
-              className="inline-flex items-center justify-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800"
-            >
-              View all services
-            </Link>
+            <a href="https://wa.me/918169065210" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#183b37] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#285a50]">Book on WhatsApp</a>
+            <a href="tel:+918169065210" className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#b5cfc0] px-6 py-3 text-sm font-semibold text-[#183b37] transition hover:bg-white">Call now</a>
+          </div>
+        </section>
+        <section className="mt-12">
+          <h2 className="font-serif text-2xl font-medium text-[#183b37]">Related areas of care</h2>
+          <div className="mt-4 flex flex-wrap gap-3">
+            {service.related.map((relatedSlug) => {
+              const relatedService = services[relatedSlug as ServiceSlug];
+              return <Link key={relatedSlug} href={"/services/" + relatedSlug} className="rounded-full border border-[#d9e1d9] bg-white px-4 py-2 text-sm text-[#315d50] transition hover:border-[#42796d] hover:bg-[#edf2eb]">{relatedService.title}</Link>;
+            })}
           </div>
         </section>
       </article>
-    </main>
+    </div>
   );
 }
