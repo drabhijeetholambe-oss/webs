@@ -3,7 +3,7 @@ import * as Info from "@/app/config/constants/info";
 
 export default function Locations() {
   return (
-    <section id="locations" className="bg-[#143936] py-20 text-[#f7f5ef] sm:py-24">
+    <section id="locations" className="scroll-reveal bg-[#143936] py-20 text-[#f7f5ef] sm:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
         <div className="mb-9 max-w-xl"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#b5deca]">Clinic information</p><h2 className="mt-4 font-serif text-4xl font-medium leading-tight tracking-tight sm:text-5xl">Plan your visit.</h2><p className="mt-5 leading-7 text-white/70">In-person psychiatric consultations at Sun Multispeciality Hospital, Malad West. Online appointments are also available.</p></div>
         <div className="grid overflow-hidden rounded-3xl bg-[#f7f5ef] text-[#183b37] shadow-2xl shadow-black/10 lg:grid-cols-[0.78fr_1.22fr]">
