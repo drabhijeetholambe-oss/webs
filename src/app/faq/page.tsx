@@ -31,12 +31,12 @@ export default function FAQPage() {
   ]};
   return <div className="min-h-screen bg-[#fbfaf7] px-5 pb-16 pt-28 sm:px-8 sm:pt-36">
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}} />
-    <main className="mx-auto max-w-4xl">
+    <div className="mx-auto max-w-4xl">
       <nav aria-label="Breadcrumb" className="mb-8 text-sm text-[#64736d]"><Link href="/" className="hover:text-[#183b37]">Home</Link><span className="mx-2">/</span><span>FAQ</span></nav>
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#42796d]">Before your visit</p><h1 className="mt-4 font-serif text-4xl font-medium leading-tight text-[#183b37] sm:text-5xl">Frequently asked questions</h1>
-      <p className="mt-5 max-w-2xl text-base leading-7 text-[#60736e]">Straightforward information about consultations with Dr. Abhijeet Holambe.</p>
-      <div className="mt-9 divide-y divide-[#e2e7df] border-y border-[#e2e7df]">{faqs.map(([question,answer])=><details key={question} className="group py-5"><summary className="cursor-pointer list-none pr-8 font-medium text-[#183b37]">{question}<span aria-hidden="true" className="float-right text-[#a9844b] transition group-open:rotate-45">＋</span></summary><p className="mt-3 max-w-3xl text-sm leading-7 text-[#60736e]">{answer}</p></details>)}</div>
-      <div className="mt-10 rounded-3xl bg-[#edf2eb] p-6 sm:p-8"><h2 className="font-serif text-2xl text-[#183b37]">Need help booking?</h2><p className="mt-2 text-sm leading-6 text-[#60736e]">Contact the practice to request an in-person or online appointment.</p><div className="mt-5 flex flex-col gap-3 sm:flex-row"><a href="https://wa.me/918169065210" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#183b37] px-6 py-3 text-sm font-semibold text-white">Book on WhatsApp</a><a href="tel:+918169065210" className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#b5cfc0] bg-white px-6 py-3 text-sm font-semibold text-[#183b37]">Call now</a></div></div>
-    </main>
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#38695e]">Before your visit</p><h1 className="mt-4 font-serif text-4xl font-medium leading-tight text-[#183b37] sm:text-5xl">Frequently asked questions</h1>
+      <p className="mt-5 max-w-2xl text-base leading-7 text-[#53655e]">Straightforward information about consultations with Dr. Abhijeet Holambe.</p>
+      <div className="mt-9 divide-y divide-[#e2e7df] border-y border-[#e2e7df]">{faqs.map(([question,answer])=><details key={question} className="group py-5"><summary className="cursor-pointer list-none pr-8 font-medium text-[#183b37]">{question}<span aria-hidden="true" className="float-right text-[#a9844b] transition group-open:rotate-45">＋</span></summary><p className="mt-3 max-w-3xl text-sm leading-7 text-[#53655e]">{answer}</p></details>)}</div>
+      <div className="mt-10 rounded-3xl bg-[#edf2eb] p-6 sm:p-8"><h2 className="font-serif text-2xl text-[#183b37]">Need help booking?</h2><p className="mt-2 text-sm leading-6 text-[#53655e]">Contact the practice to request an in-person or online appointment.</p><div className="mt-5 flex flex-col gap-3 sm:flex-row"><a href="https://wa.me/918169065210" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#183b37] px-6 py-3 text-sm font-semibold text-white">Book on WhatsApp</a><a href="tel:+918169065210" className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#b5cfc0] bg-white px-6 py-3 text-sm font-semibold text-[#183b37]">Call now</a></div></div>
+    </div>
   </div>;
 }

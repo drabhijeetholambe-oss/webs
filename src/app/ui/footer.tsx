@@ -20,7 +20,7 @@ export default function Footer() {
             <Link href="/contact" className="inline-flex pt-1 text-[#b5deca] underline decoration-white/25 underline-offset-4 hover:text-white">Contact and directions</Link>
           </div>
         </div>
-        <div className="flex flex-col gap-2 pt-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-2 pt-6 text-xs text-white/75 sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} {Info.NAME}</span>
           <span>Malad West, Mumbai · Maharashtra</span>
         </div>

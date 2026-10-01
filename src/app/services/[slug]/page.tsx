@@ -78,9 +78,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <Link href="/#services" className="hover:text-[#183b37]">Services</Link><span className="mx-2" aria-hidden="true">/</span><span>{service.title}</span>
         </nav>
         <header className="border-b border-[#e2e7df] pb-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#42796d]">Psychiatric consultation · Malad West, Mumbai</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#38695e]">Psychiatric consultation · Malad West, Mumbai</p>
           <h1 className="mt-4 font-serif text-4xl font-medium leading-tight tracking-tight text-[#183b37] sm:text-5xl">{service.heading}</h1>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-[#60736e]">{service.description}</p>
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-[#53655e]">{service.description}</p>
         </header>
         <section className="mt-10">
           <h2 className="font-serif text-3xl font-medium text-[#183b37]">Understanding {service.title.toLowerCase()}</h2>
@@ -105,7 +105,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </section>
         <section className="mt-10 grid gap-5 md:grid-cols-2">
           <div className="rounded-3xl bg-[#edf2eb] p-6 sm:p-7">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#42796d]">Your first appointment</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#38695e]">Your first appointment</p>
             <h2 className="mt-3 font-serif text-2xl font-medium text-[#183b37]">A conversation at your pace</h2>
             <p className="mt-3 text-sm leading-7 text-[#53655e]">The first visit is a chance to explain what has been troubling you, when it began, and what you hope will change. Dr. Holambe will ask about your health, sleep, daily life, and any medicines or past care that may be relevant. You can ask questions and share only what you feel ready to discuss. Together, you can consider an assessment and agree on next steps. Bring a current medicine list or previous reports if you have them; they are helpful but not required to begin.</p>
           </div>
@@ -121,7 +121,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="mt-5 divide-y divide-[#e2e7df] border-y border-[#e2e7df]">
             {service.faqs.map(([question, answer]) => <details key={question} className="group py-5">
               <summary className="cursor-pointer list-none pr-8 font-medium text-[#183b37] marker:hidden">{question}<span aria-hidden="true" className="float-right text-[#a9844b] transition group-open:rotate-45">＋</span></summary>
-              <p className="mt-3 max-w-3xl text-sm leading-7 text-[#60736e]">{answer}</p>
+              <p className="mt-3 max-w-3xl text-sm leading-7 text-[#53655e]">{answer}</p>
             </details>)}
           </div>
         </section>
@@ -129,7 +129,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
             <Image src="/dr-abhijeet-holambe-clinic.jpg" alt="Dr. Abhijeet Holambe, psychiatrist in Malad West" width={1600} height={2844} sizes="96px" className="h-24 w-24 rounded-full object-cover object-[center_25%]" />
             <div className="flex-1">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#42796d]">About the psychiatrist</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#38695e]">About the psychiatrist</p>
               <h2 className="mt-2 font-serif text-2xl font-medium text-[#183b37]">Dr. Abhijeet Holambe</h2>
               <p className="mt-2 text-sm leading-6 text-[#53655e]">MBBS, Seth GS Medical College and KEM Hospital · MD Psychiatry, Grant Medical College and JJ Hospital · 6 years of clinical experience · Consultations in Hindi, Marathi, and English.</p>
             </div>

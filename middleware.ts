@@ -4,6 +4,7 @@ const legacyHosts = new Set([
   "psychiatristnearme.in",
   "www.psychiatristnearme.in",
   "drabhijeetholambe.vercel.app",
+  "www.drabhijeetholambe.vercel.app",
 ]);
 
 export function middleware(request: NextRequest) {
