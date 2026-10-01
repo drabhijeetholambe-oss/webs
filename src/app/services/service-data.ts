@@ -247,7 +247,7 @@ export const services = {
   },
   "schizophrenia-psychosis": {
     "title": "Schizophrenia and Psychosis",
-    "heading": "Psychosis Treatment in Malad West, Mumbai",
+    "heading": "Schizophrenia and Psychosis Treatment in Malad West, Mumbai",
     "seoTitle": "Schizophrenia and Psychosis Psychiatrist in Malad West, Mumbai",
     "description": "Psychiatric consultation in Malad West, Mumbai for experiences such as hearing or seeing things others do not, strong unusual beliefs, or changes in thinking.",
     "summary": [
@@ -493,7 +493,7 @@ export const services = {
   },
   "stress-burnout": {
     "title": "Stress and Workplace Burnout",
-    "heading": "Stress and Burnout Consultation in Malad West, Mumbai",
+    "heading": "Stress and Workplace Burnout Consultation in Malad West, Mumbai",
     "seoTitle": "Stress and Burnout Psychiatrist in Malad West, Mumbai",
     "description": "Psychiatric consultation in Malad West, Mumbai for prolonged stress, exhaustion, work-related strain, and changes in sleep or mood.",
     "summary": [
