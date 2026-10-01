@@ -10,3 +10,6 @@ Appointments are available by prior booking at Sun Multispeciality Hospital in M
 export const ADDRESS = `Sun Multispeciality Hospital, Excel House, No. 6, B. J. Patel Road, opposite SNDT College, near Liberty Garden, Kanchpada, Malad West, Mumbai 400064`;
 export const SPECIALISATIONS = ["Sexual Health", "Neuropsychiatric Consultation", "Deaddiction", "Counselling"];
 export const QUALIFICATIONS = ["MBBS", "MD Psychiatry"];
+export const CONSULTATION_LANGUAGES = ["Hindi", "Marathi", "English"];
+export const FIRST_CONSULTATION_FEE = "₹1,800";
+export const FOLLOW_UP_CONSULTATION_FEE = "₹1,500";
