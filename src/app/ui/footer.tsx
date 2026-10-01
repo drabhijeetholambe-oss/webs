@@ -3,41 +3,38 @@ import * as Info from "../config/constants/info";
 
 const Footer = () => {
   return (
-    <footer id="footer" className="bg-navy-blue/95 text-pure-white pt-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Practice Info */}
-        <div className="flex flex-col justify-center items-center text-center space-y-6">
-          <h3 className="text-xl font-light flex items-center gap-2">
-            <Heart className="h-5 w-5 text-calming-blue" />
-            {Info.NAME}
-          </h3>
-          <p className="text-pure-white/60 leading-relaxed font-light max-w-md">
-            Psychiatric, sexual health, and de-addiction consultations in Mumbai, with appointments at Sun Multispeciality Hospital in Malad West. Contact the practice to confirm availability.
-          </p>
-          <address className="not-italic text-sm text-pure-white/70 max-w-md">
-            {Info.ADDRESS}
-          </address>
-
-          <div className="space-y-4 pt-4">
-            <div className="flex flex-col gap-3 text-sm text-pure-white/70">
-              <span className="flex items-center justify-center gap-2">
-                <Phone className="h-4 w-4 text-calming-blue" />
-                <MessageCircle className="h-4 w-4 text-[#25D366]" />
-                <a href={`tel:${Info.PHONE.replace(/[^+\d]/g, "")}`} className="hover:underline">{Info.PHONE}</a>
+    <footer id="footer" className="bg-[#102f2e] py-14 text-[#f7f5ef] sm:py-16">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+        <div className="grid gap-10 border-b border-white/15 pb-10 md:grid-cols-[1fr_auto] md:items-start">
+          <div className="max-w-lg">
+            <h3 className="flex items-center gap-3 font-serif text-2xl font-medium">
+              <span className="grid h-10 w-10 place-items-center rounded-full border border-white/20 bg-white/[0.06]" aria-hidden="true">
+                <Heart className="h-4 w-4 text-[#b5deca]" />
               </span>
-              <span className="flex items-center justify-center gap-2">
-                <Mail className="h-4 w-4 text-calming-blue" />
-                <a href={`mailto:${Info.EMAIL}`} className="hover:underline">{Info.EMAIL}</a>
-              </span>
-            </div>
+              {Info.NAME}
+            </h3>
+            <p className="mt-5 leading-7 text-white/65">
+              Psychiatric consultations in Mumbai. Appointments by prior booking; please contact the practice to confirm availability and the current clinic location.
+            </p>
+            <address className="mt-4 max-w-md not-italic text-sm leading-6 text-white/55">
+              {Info.ADDRESS}
+            </address>
+          </div>
+          <div className="space-y-4 text-sm text-white/75">
+            <a href={`tel:${Info.PHONE.replace(/[^+\d]/g, "")}`} className="flex items-center gap-3 transition hover:text-white">
+              <Phone className="h-4 w-4 text-[#b5deca]" />{Info.PHONE}
+            </a>
+            <a href={`https://wa.me/${Info.PHONE.replace(/\D/g, "")}`} className="flex items-center gap-3 transition hover:text-white" target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="h-4 w-4 text-[#b5deca]" />WhatsApp the practice
+            </a>
+            <a href={`mailto:${Info.EMAIL}`} className="flex items-center gap-3 transition hover:text-white">
+              <Mail className="h-4 w-4 text-[#b5deca]" />{Info.EMAIL}
+            </a>
           </div>
         </div>
-
-        {/* --- Bottom --- */}
-        <div className="pt-8 mt-12 border-t border-pure-white/10 text-center">
-          <p className="text-pure-white/40 text-sm font-light">
-            © {new Date().getFullYear()} {Info.NAME}
-          </p>
+        <div className="flex flex-col gap-2 pt-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
+          <span>© {new Date().getFullYear()} {Info.NAME}</span>
+          <span>For appointment enquiries · Mumbai, Maharashtra</span>
         </div>
       </div>
     </footer>
