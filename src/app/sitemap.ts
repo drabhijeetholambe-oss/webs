@@ -1,21 +1,20 @@
 import type { MetadataRoute } from "next";
+import { serviceSlugs } from "./services/service-data";
 
 const siteUrl = "https://www.drabhijeetholambe.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
     "/",
-    "/services/anxiety-panic-disorder",
-    "/services/depression",
-    "/services/sleep-disorders",
-    "/services/sexual-health",
-    "/services/de-addiction",
+    "/about",
+    "/faq",
+    "/contact",
+    ...serviceSlugs.map((slug) => "/services/" + slug),
   ];
-
   return pages.map((path) => ({
-    url: `${siteUrl}${path}`,
-    lastModified: "2026-10-01",
-    changeFrequency: "weekly",
-    priority: path === "/" ? 1 : 0.8,
+    url: siteUrl + path,
+    lastModified: new Date(),
+    changeFrequency: path === "/" ? "weekly" : "monthly",
+    priority: path === "/" ? 1 : path.startsWith("/services/") ? 0.8 : 0.7,
   }));
 }

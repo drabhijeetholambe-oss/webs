@@ -1,179 +1,39 @@
 "use client";
-import { Button } from "@/components/ui/button";
+
+import Link from "next/link";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
 import * as Info from "@/app/config/constants/info";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+const links = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Areas of care", href: "/#services" },
+  { label: "How visits work", href: "/#first-visit" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
+];
 
-  const navItems = [
-    { name: "Home", href: "#hero" },
-    { name: "Practo", href: "https://www.practo.com/mumbai/doctor/abhijeet-holambe-psychiatrist-1" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Locations", href: "#locations" },
-    { name: "Contact", href: "#footer" },
-  ];
-
-  const scrollToSection = (href: string) => {
-    // Handle external links
-    if (href.startsWith('http')) {
-      window.open(href, '_blank');
-      return;
-    }
-    
-    const element = document.querySelector(href) as HTMLElement;
-    if (element) {
-      const navbarHeight = 80;
-      const targetPosition = element.offsetTop - navbarHeight;
-      const startPosition = window.pageYOffset;
-      const distance = targetPosition - startPosition;
-      const duration = 800; // 800ms for smooth animation
-      let start: number | null = null;
-
-      // Custom smooth scroll animation
-      const step = (timestamp: number) => {
-        if (!start) start = timestamp;
-        const progress = timestamp - start;
-        const percentage = Math.min(progress / duration, 1);
-        
-        // Easing function for smooth animation
-        const ease = easeInOutCubic(percentage);
-        const currentPosition = startPosition + (distance * ease);
-        
-        window.scrollTo(0, currentPosition);
-        
-        if (progress < duration) {
-          requestAnimationFrame(step);
-        }
-      };
-
-      // Easing function
-      const easeInOutCubic = (t: number): number => {
-        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-      };
-
-      requestAnimationFrame(step);
-      setIsOpen(false);
-    }
-  };
-
-  // Add scroll detection for background change
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    
-    // Throttle scroll events for better performance
-    let ticking = false;
-    const throttledHandleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", throttledHandleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", throttledHandleScroll);
-  }, []);
-
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const nav = document.querySelector('nav');
-      if (isOpen && nav && !nav.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isOpen]);
-
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled &&!isOpen
-          ? "bg-black/70 backdrop-blur-md"
-          : `${isOpen ? "bg-black/50":"bg-transparent"}`
-      } ${isOpen && "pb-4"}`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo/Brand */}
-          <div className="flex-shrink-0">
-            <button
-              onClick={() => scrollToSection("#hero")}
-              className="text-lg font-semibold tracking-tight text-white hover:text-teal-100 transition-colors cursor-pointer sm:text-2xl"
-            >
-              {Info.NAME}
-            </button>
-          </div>
-
-          {/* Desktop Nav */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-6">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-gray-200 hover:text-white transition-colors duration-200 text-sm font-light cursor-pointer relative group"
-                >
-                  {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-white hover:bg-white/10 transition-colors duration-200"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle mobile menu"
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
-          </div>
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-[#143936]/95 text-[#fbfaf7] shadow-sm backdrop-blur-lg">
+      <nav aria-label="Main navigation" className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12">
+        <Link href="/" className="font-serif text-lg font-medium tracking-tight sm:text-xl" onClick={() => setOpen(false)}>{Info.NAME}</Link>
+        <div className="hidden items-center gap-6 lg:flex">
+          {links.map((link) => <Link key={link.href} href={link.href} className="text-sm text-white/75 transition hover:text-white">{link.label}</Link>)}
+          <a href="https://wa.me/918169065210" target="_blank" rel="noopener noreferrer" className="rounded-full bg-[#b5deca] px-5 py-2.5 text-sm font-semibold text-[#143936] transition hover:bg-white">Book an appointment</a>
         </div>
-      </div>
-
-      {/* Mobile Nav */}
-      <div
-        className={`md:hidden transition-all duration-300 ease-in-out mx-2 rounded-2xl ${
-
-          isOpen 
-            ? "max-h-96 opacity-100" 
-            : "max-h-0 opacity-0 overflow-hidden"
-        } bg-black/80 backdrop-blur-sm border-t border-white/10`}
-      >
-        <div className="px-4 pt-4 pb-4 space-y-2">
-          {navItems.map((item) => (
-            <button
-              key={item.name}
-              onClick={() => scrollToSection(item.href)}
-              className="block w-full text-left px-3 py-2 rounded-md text-base text-gray-200 hover:text-white hover:bg-white/10 transition-all duration-200"
-            >
-              {item.name}
-            </button>
-          ))}
+        <button type="button" aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} onClick={() => setOpen(!open)} className="grid h-11 w-11 place-items-center rounded-full border border-white/20 transition hover:bg-white/10 lg:hidden">
+          {open ? <X aria-hidden="true" className="h-5 w-5" /> : <Menu aria-hidden="true" className="h-5 w-5" />}
+        </button>
+      </nav>
+      {open && <div className="border-t border-white/10 bg-[#143936] px-5 py-3 lg:hidden">
+        <div className="mx-auto flex max-w-7xl flex-col">
+          {links.map((link) => <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className="rounded-xl px-3 py-3 text-sm text-white/85 transition hover:bg-white/10 hover:text-white">{link.label}</Link>)}
+          <a href="https://wa.me/918169065210" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="mt-2 rounded-full bg-[#b5deca] px-5 py-3 text-center text-sm font-semibold text-[#143936]">Book on WhatsApp</a>
         </div>
-      </div>
-    </nav>
+      </div>}
+    </header>
   );
-};
-
-export default Navbar;
+}
