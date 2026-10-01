@@ -5,7 +5,6 @@ import "./globals.css";
 import Navbar from "./ui/navbar";
 import Footer from "./ui/footer";
 import { Analytics } from "@vercel/analytics/next";
-import { Toaster } from "@/components/ui/sonner";
 import WhatsappButton from "@/components/whatsapp-button";
 import GoogleMapsButton from "@/components/google-maps-button";
 import MobileContactBar from "@/components/mobile-contact-bar";
@@ -109,7 +108,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Script id="google-analytics" strategy="lazyOnload" dangerouslySetInnerHTML={{ __html: "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-ZZRKLK5GYS');" }} />
         <Navbar />
         <main id="main-content">{children}</main>
-        <Toaster />
         <GoogleMapsButton />
         <WhatsappButton />
         <MobileContactBar />

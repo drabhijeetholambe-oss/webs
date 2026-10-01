@@ -1,5 +1,3 @@
-"use client";
-
 import { PHONE } from "@/app/config/constants/info";
 
 export default function WhatsappButton() {
