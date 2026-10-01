@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="relative mx-auto w-full max-w-[430px] lg:mr-2">
           <div aria-hidden="true" className="absolute -inset-4 rounded-[13rem_13rem_2rem_2rem] border border-white/15 bg-white/[0.04]" />
           <div className="relative overflow-hidden rounded-[12rem_12rem_1.5rem_1.5rem] border border-white/20 bg-[#d7e5db] shadow-2xl shadow-black/25">
-            <Image src="/dr-abhijeet-holambe-brain-model.jpg" alt="Dr. Abhijeet Holambe, psychiatrist in Malad West, Mumbai" width={1600} height={2844} priority sizes="(max-width: 1024px) 85vw, 430px" className="aspect-[4/5] w-full object-cover object-[center_30%]" />
+            <Image src="/dr-abhijeet-holambe-brain-model.jpg" alt="Dr. Abhijeet Holambe, psychiatrist in Malad West, Mumbai" width={1600} height={2844} sizes="(max-width: 1024px) 85vw, 430px" className="aspect-[4/5] w-full object-cover object-[center_30%]" />
           </div>
           <div className="absolute -bottom-4 -left-5 hidden rounded-2xl border border-white/15 bg-[#1b4843] px-5 py-4 shadow-xl sm:block"><p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#b5deca]">Consultations</p><p className="mt-1 text-sm text-white">Hindi · Marathi · English</p></div>
         </div>
