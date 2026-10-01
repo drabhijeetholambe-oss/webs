@@ -7,6 +7,6 @@ Dr. Abhijeet Holambe is a psychiatrist in Mumbai with MBBS from Seth GS Medical 
 
 Appointments are available by prior booking at Sun Multispeciality Hospital in Malad West, Mumbai. Online consultation options are also available. Contact the practice to confirm the clinic, appointment time, and whether a service is suitable for your needs.
 `;
-export const ADDRESS = `Sun Multispeciality Hospital, Malad West, Mumbai, Maharashtra`
-export const SPECIALISATIONS = ["Sexual Health", "Neuropsychiatric Consultation", "Deaddiction" , "Counselling"]
-export const QUALIFICATIONS = ["MBBS" , "MD Psychiatry"]
+export const ADDRESS = `Sun Multispeciality Hospital, Excel House, No. 6, B. J. Patel Road, opposite SNDT College, near Liberty Garden, Kanchpada, Malad West, Mumbai 400064`;
+export const SPECIALISATIONS = ["Sexual Health", "Neuropsychiatric Consultation", "Deaddiction", "Counselling"];
+export const QUALIFICATIONS = ["MBBS", "MD Psychiatry"];
