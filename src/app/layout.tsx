@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cardo, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Navbar from "./ui/navbar";
 import Footer from "./ui/footer";
@@ -11,7 +11,7 @@ import GoogleMapsButton from "@/components/google-maps-button";
 import MobileContactBar from "@/components/mobile-contact-bar";
 
 const headingFont = Cormorant_Garamond({ variable: "--font-heading", subsets: ["latin"], weight: ["400","500","600"], display: "swap" });
-const bodyFont = Inter({ variable: "--font-body", subsets: ["latin"], display: "swap" });
+const bodyFont = Cardo({ variable: "--font-body", subsets: ["latin"], weight: ["400", "700"], display: "swap" });
 
 const siteUrl = "https://www.drabhijeetholambe.com";
 const socialPlaceholders = {

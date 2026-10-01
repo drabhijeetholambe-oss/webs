@@ -247,7 +247,7 @@ export const services = {
   },
   "schizophrenia-psychosis": {
     "title": "Schizophrenia and Psychosis",
-    "heading": "Psychosis Treatment in Malad West, Mumbai",
+    "heading": "Schizophrenia and Psychosis Treatment in Malad West, Mumbai",
     "seoTitle": "Schizophrenia and Psychosis Psychiatrist in Malad West, Mumbai",
     "description": "Psychiatric consultation in Malad West, Mumbai for experiences such as hearing or seeing things others do not, strong unusual beliefs, or changes in thinking.",
     "summary": [
@@ -493,7 +493,7 @@ export const services = {
   },
   "stress-burnout": {
     "title": "Stress and Workplace Burnout",
-    "heading": "Stress and Burnout Consultation in Malad West, Mumbai",
+    "heading": "Stress and Workplace Burnout Consultation in Malad West, Mumbai",
     "seoTitle": "Stress and Burnout Psychiatrist in Malad West, Mumbai",
     "description": "Psychiatric consultation in Malad West, Mumbai for prolonged stress, exhaustion, work-related strain, and changes in sleep or mood.",
     "summary": [
@@ -659,7 +659,7 @@ export const services = {
     "title": "Online Psychiatry Consultation",
     "heading": "Online Psychiatry Consultation in Malad West, Mumbai",
     "seoTitle": "Online Psychiatry Consultation in Malad West, Mumbai",
-    "description": "Book an online psychiatry consultation with Dr. Abhijeet Holambe for mental health concerns, follow-up, and care planning.",
+    "description": "Book an online psychiatry consultation with Dr. Abhijeet Holambe for mental health care and follow-up in Malad West, Mumbai.",
     "summary": [
       "An online psychiatry consultation can be a convenient way to discuss mental health when travel, work, health, or distance makes an in-person visit difficult. You can talk about symptoms, medicines, sleep, stress, and possible next steps from a private space. Some concerns can be assessed online, while others require examination or tests in person.",
       "Before the appointment, the practice can let you know how the session will take place. Use a reliable connection and a quiet, private room where you can speak freely. If you have previous prescriptions, reports, or a current medicine list, keep them nearby. Online care is not suitable for every emergency or every assessment."
