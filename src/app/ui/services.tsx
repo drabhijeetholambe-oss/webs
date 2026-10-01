@@ -2,7 +2,7 @@ import ServicesCards from "@/components/services-cards";
 
 export default function Services() {
   return (
-    <section id="services" className="bg-[#fbfaf7] py-20 sm:py-24">
+    <section id="services" className="scroll-reveal bg-[#fbfaf7] py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#42796d]">Areas of care</p>
