@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./ui/navbar";
@@ -104,6 +105,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteStructuredData) }} /></head>
       <body className={headingFont.variable + " " + bodyFont.variable + " antialiased"}>
         <Analytics />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-ZZRKLK5GYS" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-ZZRKLK5GYS');" }} />
         <Navbar />
         {children}
         <Toaster />
