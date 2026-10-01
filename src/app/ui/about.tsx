@@ -51,6 +51,16 @@ const About = () => {
             <span className="mt-2 block">{Info.SPECIALISATIONS.join(" · ")}</span>
           </div>
           <p className="mt-4 text-xs font-semibold tracking-wide text-[#42796d]">{Info.QUALIFICATIONS.join(" · ")}</p>
+          <div className="mt-7 grid gap-3 border-t border-[#e1e7df] pt-6 sm:grid-cols-2">
+            <div className="rounded-2xl bg-[#eef2eb] p-4">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#42796d]">Consultation languages</p>
+              <p className="mt-2 text-sm font-medium text-[#183b37]">{Info.CONSULTATION_LANGUAGES.join(" · ")}</p>
+            </div>
+            <div className="rounded-2xl bg-[#eef2eb] p-4">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#42796d]">Consultation fees</p>
+              <p className="mt-2 text-sm leading-6 text-[#183b37]">First consultation: {Info.FIRST_CONSULTATION_FEE}<br />Follow-ups: {Info.FOLLOW_UP_CONSULTATION_FEE}</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
