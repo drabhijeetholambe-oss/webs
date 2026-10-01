@@ -4,16 +4,14 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./ui/navbar";
 import Footer from "./ui/footer";
-import "./app.css"
-import { Analytics } from "@vercel/analytics/next"
+import "./app.css";
+import { Analytics } from "@vercel/analytics/next";
 import { Toaster } from "@/components/ui/sonner";
 import WhatsappButton from "@/components/whatsapp-button";
 import GoogleMapsButton from "@/components/google-maps-button";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 const siteStructuredData = {
   "@context": "https://schema.org",
@@ -43,16 +41,17 @@ const siteStructuredData = {
       "telephone": "+91 8169065210",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Sun Multispeciality Hospital",
-        "addressLocality": "Malad West",
+        "streetAddress": "Excel House, No. 6, B. J. Patel Road",
+        "addressLocality": "Malad West, Mumbai",
         "addressRegion": "Maharashtra",
+        "postalCode": "400064",
         "addressCountry": "IN"
       },
       "areaServed": [
         { "@type": "City", "name": "Mumbai" },
         { "@type": "Place", "name": "Malad West" }
       ],
-      "hasMap": "https://www.google.com/maps/search/?api=1&query=Sun+Multispeciality+Hospital+Malad+West+Mumbai"
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Sun+Multispeciality+Hospital+Excel+House+No+6+BJ+Patel+Road+Malad+West+Mumbai+400064"
     },
     {
       "@type": "Person",
@@ -86,11 +85,6 @@ const siteStructuredData = {
     }
   ]
 };
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.drabhijeetholambe.com"),
@@ -132,16 +126,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <head>
         <script type="application/ld+json">{JSON.stringify(siteStructuredData)}</script>
-        {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZRKLK5GYS"></script>
         <script
           dangerouslySetInnerHTML={{
@@ -154,10 +143,7 @@ export default function RootLayout({
           }}
         />
       </head>
-
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Analytics />
         <Navbar />
         <main>{children}</main>
