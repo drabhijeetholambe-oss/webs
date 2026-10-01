@@ -51,7 +51,7 @@ const siteStructuredData = {
         { "@type": "City", "name": "Mumbai" },
         { "@type": "Place", "name": "Malad West" }
       ],
-      "hasMap": "https://www.google.com/maps/search/?api=1&query=Sun+Multispeciality+Hospital+Excel+House+No+6+BJ+Patel+Road+Malad+West+Mumbai+400064"
+      "hasMap": "https://share.google/ZsC1gdVb6fxq6Vq69"
     },
     {
       "@type": "Person",
