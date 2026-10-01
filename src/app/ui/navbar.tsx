@@ -21,7 +21,7 @@ export default function Navbar() {
       <nav aria-label="Main navigation" className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12">
         <Link href="/" className="font-serif text-lg font-medium tracking-tight sm:text-xl" onClick={() => setOpen(false)}>{Info.NAME}</Link>
         <div className="hidden items-center gap-6 lg:flex">
-          {links.map((link) => <Link key={link.href} href={link.href} className="text-sm text-white/75 transition hover:text-white">{link.label}</Link>)}
+          {links.map((link) => <Link key={link.href} href={link.href} prefetch={false} className="text-sm text-white/75 transition hover:text-white">{link.label}</Link>)}
           <a href="https://wa.me/918169065210" target="_blank" rel="noopener noreferrer" className="rounded-full bg-[#b5deca] px-5 py-2.5 text-sm font-semibold text-[#143936] transition hover:bg-white">Book an appointment</a>
         </div>
         <button type="button" aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} onClick={() => setOpen(!open)} className="grid h-11 w-11 place-items-center rounded-full border border-white/20 transition hover:bg-white/10 lg:hidden">
