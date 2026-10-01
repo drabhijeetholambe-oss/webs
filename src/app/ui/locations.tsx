@@ -18,7 +18,7 @@ export default function Locations() {
             Kanchpada, Malad West, Mumbai 400064.
           </address>
           <p className="mt-4 text-sm leading-6 text-[#60736e]">Please confirm this is the doctor’s current consultation location before your visit.</p>
-          <a className="mt-6 inline-flex items-center justify-center rounded-full bg-[#183b37] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#285a50]" href="https://www.google.com/maps/search/?api=1&query=Sun+Multispeciality+Hospital+Excel+House+No+6+BJ+Patel+Road+Malad+West+Mumbai+400064" target="_blank" rel="noopener noreferrer">
+          <a className="mt-6 inline-flex items-center justify-center rounded-full bg-[#183b37] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#285a50]" href="https://share.google/ZsC1gdVb6fxq6Vq69" target="_blank" rel="noopener noreferrer">
             Open directions <span aria-hidden="true" className="ml-2">↗</span>
           </a>
         </div>
