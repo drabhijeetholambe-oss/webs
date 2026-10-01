@@ -659,7 +659,7 @@ export const services = {
     "title": "Online Psychiatry Consultation",
     "heading": "Online Psychiatry Consultation in Malad West, Mumbai",
     "seoTitle": "Online Psychiatry Consultation in Malad West, Mumbai",
-    "description": "Book an online psychiatry consultation with Dr. Abhijeet Holambe for mental health concerns, follow-up, and care planning.",
+    "description": "Book an online psychiatry consultation with Dr. Abhijeet Holambe for mental health care and follow-up in Malad West, Mumbai.",
     "summary": [
       "An online psychiatry consultation can be a convenient way to discuss mental health when travel, work, health, or distance makes an in-person visit difficult. You can talk about symptoms, medicines, sleep, stress, and possible next steps from a private space. Some concerns can be assessed online, while others require examination or tests in person.",
       "Before the appointment, the practice can let you know how the session will take place. Use a reliable connection and a quiet, private room where you can speak freely. If you have previous prescriptions, reports, or a current medicine list, keep them nearby. Online care is not suitable for every emergency or every assessment."
