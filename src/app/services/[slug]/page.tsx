@@ -45,8 +45,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         name: service.seoTitle,
         description: service.description,
         inLanguage: "en-IN",
+        isPartOf: { "@id": siteUrl + "/#website" },
         about: { "@type": "MedicalCondition", name: service.title },
-        author: { "@type": "Physician", name: "Dr. Abhijeet Holambe", url: siteUrl },
+        author: { "@id": siteUrl + "/#person" },
         mainEntity: { "@id": siteUrl + "/services/" + slug + "#faq" },
       },
       {
