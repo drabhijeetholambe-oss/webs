@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: service.description,
       siteName: "Dr. Abhijeet Holambe",
       locale: "en_IN",
-      images: [{ url: "/dr-abhijeet-holambe-brain-model.jpg", alt: "Dr. Abhijeet Holambe, psychiatrist in Malad West, Mumbai" }],
+      images: [{ url: "/dr-abhijeet-holambe-brain-model.jpg", width: 1600, height: 2844, alt: "Dr. Abhijeet Holambe holding a brain model in Malad West, Mumbai" }],
     },
   };
 }
