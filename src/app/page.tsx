@@ -8,7 +8,7 @@ import VisitSteps from "./ui/visit-steps";
 const siteUrl = "https://www.drabhijeetholambe.com";
 
 export const metadata: Metadata = {
-  title: "Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai",
+  title: { absolute: "Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai" },
   description: "Dr. Abhijeet Holambe is a psychiatrist and sexologist in Malad West, Mumbai, with 6 years of clinical experience. Consultations cover mental health, sexual health and de-addiction, in Hindi, Marathi and English.",
   alternates: { canonical: "/", languages: { "en-IN": "/", "hi-IN": "/hi", "mr-IN": "/mr" } },
   openGraph: {
