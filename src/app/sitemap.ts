@@ -9,7 +9,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/faq",
     "/contact",
+    "/workplace-wellness",
     ...serviceSlugs.map((slug) => "/services/" + slug),
+    "/hi",
+    "/hi/about",
+    "/hi/services/anxiety-panic-disorder",
+    "/hi/services/depression",
+    "/hi/services/sexual-health",
+    "/mr",
+    "/mr/about",
+    "/mr/services/anxiety-panic-disorder",
+    "/mr/services/depression",
+    "/mr/services/sexual-health",
   ];
   return pages.map((path) => ({
     url: siteUrl + path,
