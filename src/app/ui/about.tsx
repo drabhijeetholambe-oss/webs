@@ -13,7 +13,7 @@ export default function About() {
         <div className="pt-3 text-center md:text-left">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#38695e]">A little about the practice</p>
           <h2 className="mt-4 font-serif text-4xl font-medium leading-tight tracking-tight text-[#183b37] sm:text-5xl">Care shaped around your story.</h2>
-          <p className="mt-6 whitespace-pre-line text-base leading-8 text-[#53655e]">{Info.ABOUT}</p>
+          <p className="mt-6 whitespace-pre-line text-base leading-8 text-[#53655e]">{Info.ABOUT}</p><p className="mt-4 text-sm leading-7 text-[#53655e]"><span className="font-semibold text-[#183b37]">Role:</span> {Info.ROLE}</p>
           <div className="mt-6 border-t border-[#e1e7df] pt-5 text-sm text-[#53655e]"><span className="font-semibold text-[#183b37]">Clinical areas</span><span className="mt-2 block">{Info.SPECIALISATIONS.join(" · ")}</span></div>
           <p className="mt-4 text-xs font-semibold tracking-wide text-[#38695e]">{Info.QUALIFICATIONS.join(" · ")} · 6 years of clinical experience</p>
           <div className="mt-6 grid gap-3 border-t border-[#e1e7df] pt-6 sm:grid-cols-2">
