@@ -15,8 +15,9 @@ const bodyFont = Cardo({ variable: "--font-body", subsets: ["latin"], weight: ["
 const siteUrl = "https://www.drabhijeetholambe.com";
 const googleMaps = "https://share.google/ZsC1gdVb6fxq6Vq69";
 const practo = "https://www.practo.com/mumbai/doctor/abhijeet-holambe-psychiatrist-1";
-const socialPlaceholders = { youtube: "", linkedin: "" };
-const socialProfiles = [googleMaps, practo, "https://www.instagram.com/drabhijeetholambe/", ...Object.values(socialPlaceholders).filter(Boolean)];
+const youtube = "https://www.youtube.com/@DrAbhijeetHolambe";
+const linkedin = "https://www.linkedin.com/in/abhijeet-holambe-829414295/";
+const socialProfiles = [googleMaps, practo, "https://www.instagram.com/drabhijeetholambe/", youtube, linkedin];
 const weekdays = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
 const openingHours = weekdays.map((day) => ({
   "@type": "OpeningHoursSpecification",
