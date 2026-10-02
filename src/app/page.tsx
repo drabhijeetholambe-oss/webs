@@ -8,9 +8,22 @@ import VisitSteps from "./ui/visit-steps";
 const siteUrl = "https://www.drabhijeetholambe.com";
 
 export const metadata: Metadata = {
-  title: "Psychiatrist in Malad West, Mumbai",
-  description: "Dr. Abhijeet Holambe offers psychiatric consultations in Malad West, Mumbai for anxiety, depression, sleep, sexual health, substance use, and related concerns. Consultations are available in Hindi, Marathi, and English.",
-  alternates: { canonical: "/" },
+  title: "Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai",
+  description: "Dr. Abhijeet Holambe is a psychiatrist and sexologist in Malad West, Mumbai, with 6 years of clinical experience. Consultations cover mental health, sexual health and de-addiction, in Hindi, Marathi and English.",
+  alternates: { canonical: "/", languages: { "en-IN": "/", "hi-IN": "/hi", "mr-IN": "/mr" } },
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    siteName: "Dr. Abhijeet Holambe",
+    title: "Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai",
+    description: "Psychiatrist and sexologist in Malad West, Mumbai, with 6 years of clinical experience. Consultations in Hindi, Marathi and English.",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai",
+    description: "Psychiatrist and sexologist in Malad West, Mumbai, with 6 years of clinical experience.",
+  },
 };
 
 export default function Home() {
@@ -19,8 +32,8 @@ export default function Home() {
     "@type": "WebPage",
     "@id": siteUrl + "/#webpage",
     url: siteUrl + "/",
-    name: "Psychiatrist in Malad West, Mumbai | Dr. Abhijeet Holambe",
-    description: "Psychiatric consultations and clinic information for Malad West, Mumbai.",
+    name: "Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai",
+    description: "Psychiatrist and sexologist in Malad West, Mumbai, with 6 years of clinical experience.",
     isPartOf: { "@id": siteUrl + "/#website" },
     about: { "@id": siteUrl + "/#physician" },
     inLanguage: "en-IN",
