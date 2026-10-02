@@ -124,9 +124,9 @@ export const services = {
   },
   "sexual-health": {
     "title": "Sexual Health",
-    "heading": "Sexual Health Psychiatrist in Malad West, Mumbai",
-    "seoTitle": "Sexual Health Psychiatrist in Malad West, Mumbai",
-    "description": "Confidential, respectful psychiatric consultation in Malad West, Mumbai for erectile difficulties, premature ejaculation, low desire, and performance anxiety.",
+    "heading": "Sexual Health Psychiatrist and Sexologist in Malad West, Mumbai",
+    "seoTitle": "Sexual Health Psychiatrist and Sexologist in Malad West, Mumbai",
+    "description": "Dr. Abhijeet Holambe is a psychiatrist and sexologist in Malad West, Mumbai, offering confidential consultation for erectile difficulties, premature ejaculation, low desire, performance anxiety, and related sexual health concerns.",
     "summary": [
       "Sexual concerns are common and can be influenced by physical health, stress, mood, relationship experiences, medicines, sleep, and other factors. Difficulties with erections, ejaculation, desire, or performance can feel private and hard to bring up. A consultation offers a respectful setting to discuss what is happening without blame or judgement.",
       "A psychiatrist can review the concern, its timing, relevant health history, and its effect on wellbeing or relationships. Some symptoms need assessment by a physician, urologist, or another specialist as well. The purpose of the first conversation is to understand the situation and decide on appropriate next steps, not to assume a cause."
