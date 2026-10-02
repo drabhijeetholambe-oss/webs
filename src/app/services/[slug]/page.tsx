@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: service.seoTitle,
     description: service.description,
-    alternates: { canonical: "/services/" + slug },
+    alternates: { canonical: "/services/" + slug, languages: slug === "anxiety-panic-disorder" ? { "en-IN": "/services/anxiety-panic-disorder", "hi-IN": "/hi/services/anxiety-panic-disorder", "mr-IN": "/mr/services/anxiety-panic-disorder" } : slug === "depression" ? { "en-IN": "/services/depression", "hi-IN": "/hi/services/depression", "mr-IN": "/mr/services/depression" } : slug === "sexual-health" ? { "en-IN": "/services/sexual-health", "hi-IN": "/hi/services/sexual-health", "mr-IN": "/mr/services/sexual-health" } : undefined },
     openGraph: {
       type: "article",
       url: siteUrl + "/services/" + slug,
@@ -78,9 +78,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <Link href="/#services" className="hover:text-[#183b37]">Services</Link><span className="mx-2" aria-hidden="true">/</span><span>{service.title}</span>
         </nav>
         <header className="border-b border-[#e2e7df] pb-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#38695e]">Psychiatric consultation · Malad West, Mumbai</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#38695e]">{slug === "sexual-health" ? "Psychiatrist and sexologist · Malad West, Mumbai" : "Psychiatric consultation · Malad West, Mumbai"}</p>
           <h1 className="mt-4 font-serif text-4xl font-medium leading-tight tracking-tight text-[#183b37] sm:text-5xl">{service.heading}</h1>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-[#53655e]">{service.description}</p>
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-[#53655e]">{slug === "sexual-health" ? "As a psychiatrist and sexologist, Dr. Holambe offers a confidential, respectful setting to discuss sexual health concerns and their psychological, relationship, medication, and general health factors." : service.description}</p>
         </header>
         <section className="mt-10">
           <h2 className="font-serif text-3xl font-medium text-[#183b37]">Understanding {service.title.toLowerCase()}</h2>
@@ -125,6 +125,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </details>)}
           </div>
         </section>
+        <p className="mt-10 border-t border-[#e2e7df] pt-6 text-xs leading-5 text-[#64736d]">Last reviewed by Dr. Abhijeet Holambe, MD Psychiatry — October 2026.</p>
         <section className="mt-12 rounded-3xl border border-[#e6dfcf] bg-[#f3efe5] p-6 sm:p-8">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
             <Image src="/dr-abhijeet-holambe-clinic.jpg" alt="Dr. Abhijeet Holambe, psychiatrist in Malad West" width={1600} height={2844} sizes="96px" className="h-24 w-24 rounded-full object-cover object-[center_25%]" />
