@@ -13,9 +13,10 @@ const headingFont = Cormorant_Garamond({ variable: "--font-heading", subsets: ["
 const bodyFont = Cardo({ variable: "--font-body", subsets: ["latin"], weight: ["400", "700"], display: "swap" });
 
 const siteUrl = "https://www.drabhijeetholambe.com";
-const googleMaps = "https://maps.google.com/maps?cid=13421164145759607217";
+const googleMaps = "https://share.google/ZsC1gdVb6fxq6Vq69";
 const practo = "https://www.practo.com/mumbai/doctor/abhijeet-holambe-psychiatrist-1";
-const socialProfiles = [googleMaps, practo, "https://www.instagram.com/drabhijeetholambe/"];
+const socialPlaceholders = { youtube: "", linkedin: "" };
+const socialProfiles = [googleMaps, practo, "https://www.instagram.com/drabhijeetholambe/", ...Object.values(socialPlaceholders).filter(Boolean)];
 const weekdays = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
 const openingHours = weekdays.map((day) => ({
   "@type": "OpeningHoursSpecification",
@@ -23,6 +24,7 @@ const openingHours = weekdays.map((day) => ({
   opens: "11:00",
   closes: "16:00",
 }));
+const serviceAreas = ["Malad West, Mumbai", "Kandivali, Mumbai", "Goregaon, Mumbai", "Borivali, Mumbai", "Mumbai, Maharashtra, India"].map((name) => ({ "@type": "Place", name }));
 const clinicAddress = {
   "@type": "PostalAddress",
   streetAddress: "Excel House, No. 6, B. J. Patel Road, opposite SNDT College, near Liberty Garden, Kanchpada",
@@ -34,7 +36,32 @@ const clinicAddress = {
 const siteStructuredData = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "WebSite", "@id": siteUrl + "/#website", url: siteUrl + "/", name: "Dr. Abhijeet Holambe", publisher: { "@id": siteUrl + "/#physician" }, inLanguage: "en-IN" },
+    {
+      "@type": "WebSite",
+      "@id": siteUrl + "/#website",
+      url: siteUrl + "/",
+      name: "Dr. Abhijeet Holambe",
+      publisher: { "@id": siteUrl + "/#person" },
+      inLanguage: "en-IN",
+    },
+    {
+      "@type": "Person",
+      "@id": siteUrl + "/#person",
+      name: "Dr. Abhijeet Holambe",
+      url: siteUrl + "/about",
+      image: siteUrl + "/dr-abhijeet-holambe-brain-model.jpg",
+      jobTitle: "Psychiatrist and sexologist",
+      telephone: "+91 8169065210",
+      email: "drabhijeetholambe@gmail.com",
+      knowsLanguage: ["Hindi", "Marathi", "English"],
+      sameAs: socialProfiles,
+      worksFor: { "@id": siteUrl + "/#physician" },
+      alumniOf: [
+        { "@type": "CollegeOrUniversity", name: "Seth GS Medical College and KEM Hospital" },
+        { "@type": "CollegeOrUniversity", name: "Grant Medical College and JJ Hospital, Mumbai" },
+      ],
+      knowsAbout: ["Psychiatry", "Sexual health", "Anxiety", "Depression", "Sleep disorders", "Substance use and de-addiction"],
+    },
     {
       "@type": "MedicalClinic",
       "@id": siteUrl + "/#clinic",
@@ -46,14 +73,12 @@ const siteStructuredData = {
       address: clinicAddress,
       geo: { "@type": "GeoCoordinates", latitude: 19.1902295, longitude: 72.8418623 },
       openingHoursSpecification: openingHours,
-      medicalSpecialty: ["Psychiatry", "Sexology"],
-      priceRange: "₹1,500–₹1,800",
+      medicalSpecialty: "https://schema.org/Psychiatric",
+      areaServed: serviceAreas,
+      priceRange: "INR 1500-1800",
       hasMap: googleMaps,
       sameAs: socialProfiles,
-      availableService: [
-        { "@type": "MedicalTherapy", name: "Psychiatry" },
-        { "@type": "MedicalTherapy", name: "Sexology" }
-      ],
+      employee: { "@id": siteUrl + "/#person" },
     },
     {
       "@type": "Physician",
@@ -66,16 +91,12 @@ const siteStructuredData = {
       address: clinicAddress,
       geo: { "@type": "GeoCoordinates", latitude: 19.1902295, longitude: 72.8418623 },
       openingHoursSpecification: openingHours,
-      medicalSpecialty: ["Psychiatry", "Sexology"],
-      priceRange: "₹1,500–₹1,800",
-      knowsLanguage: ["Hindi","Marathi","English"],
+      medicalSpecialty: "https://schema.org/Psychiatric",
+      areaServed: serviceAreas,
+      priceRange: "INR 1500-1800",
       sameAs: socialProfiles,
-      worksFor: { "@id": siteUrl + "/#clinic" },
-      alumniOf: [
-        { "@type": "CollegeOrUniversity", name: "Seth GS Medical College and KEM Hospital" },
-        { "@type": "CollegeOrUniversity", name: "Grant Medical College and JJ Hospital, Mumbai" },
-      ],
-      knowsAbout: ["Psychiatry","Sexology","Anxiety","Depression","Sleep disorders","Sexual health","Substance use and de-addiction"],
+      parentOrganization: { "@id": siteUrl + "/#clinic" },
+      employee: { "@id": siteUrl + "/#person" },
     },
   ],
 };
@@ -92,7 +113,7 @@ export const metadata: Metadata = {
     siteName: "Dr. Abhijeet Holambe",
     title: "Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai",
     description: "Psychiatrist and sexologist in Malad West, Mumbai, with 6 years of clinical experience. Consultations in Hindi, Marathi and English.",
-    images: [{ url: "/dr-abhijeet-holambe-brain-model.jpg", width: 1600, height: 2844, alt: "Dr. Abhijeet Holambe, psychiatrist and sexologist in Malad West, Mumbai" }],
+    images: [{ url: "/dr-abhijeet-holambe-brain-model.jpg", width: 1600, height: 2844, alt: "Dr. Abhijeet Holambe holding a brain model in Malad West, Mumbai" }],
   },
   twitter: { card: "summary_large_image", title: "Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai", description: "Psychiatrist and sexologist in Malad West, Mumbai, with 6 years of clinical experience.", images: ["/dr-abhijeet-holambe-brain-model.jpg"] },
   robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },

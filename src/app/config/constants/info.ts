@@ -4,7 +4,7 @@ export const EMAIL = "drabhijeetholambe@gmail.com";
 export const PHONE = "+91 8169065210";
 export const ADDRESS = "Sun Multispeciality Hospital, Excel House, No. 6, B. J. Patel Road, opposite SNDT College, near Liberty Garden, Kanchpada, Malad West, Mumbai 400064";
 export const HOURS = "11:00 am–4:00 pm, Monday to Sunday, by prior appointment";
-export const GOOGLE_MAPS = "https://maps.google.com/maps?cid=13421164145759607217";
+export const GOOGLE_MAPS = "https://share.google/ZsC1gdVb6fxq6Vq69";
 export const PRACTO = "https://www.practo.com/mumbai/doctor/abhijeet-holambe-psychiatrist-1";
 export const LATITUDE = 19.1902295;
 export const LONGITUDE = 72.8418623;
