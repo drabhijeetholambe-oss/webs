@@ -15,7 +15,8 @@ const bodyFont = Cardo({ variable: "--font-body", subsets: ["latin"], weight: ["
 const siteUrl = "https://www.drabhijeetholambe.com";
 const googleMaps = "https://share.google/ZsC1gdVb6fxq6Vq69";
 const practo = "https://www.practo.com/mumbai/doctor/abhijeet-holambe-psychiatrist-1";
-const socialProfiles = [googleMaps, practo, "https://www.instagram.com/drabhijeetholambe/"];
+const socialPlaceholders = { youtube: "", linkedin: "" };
+const socialProfiles = [googleMaps, practo, "https://www.instagram.com/drabhijeetholambe/", ...Object.values(socialPlaceholders).filter(Boolean)];
 const weekdays = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
 const openingHours = weekdays.map((day) => ({
   "@type": "OpeningHoursSpecification",
@@ -112,7 +113,7 @@ export const metadata: Metadata = {
     siteName: "Dr. Abhijeet Holambe",
     title: "Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai",
     description: "Psychiatrist and sexologist in Malad West, Mumbai, with 6 years of clinical experience. Consultations in Hindi, Marathi and English.",
-    images: [{ url: "/dr-abhijeet-holambe-brain-model.jpg", width: 1600, height: 2844, alt: "Dr. Abhijeet Holambe, psychiatrist and sexologist in Malad West, Mumbai" }],
+    images: [{ url: "/dr-abhijeet-holambe-brain-model.jpg", width: 1600, height: 2844, alt: "Dr. Abhijeet Holambe holding a brain model in Malad West, Mumbai" }],
   },
   twitter: { card: "summary_large_image", title: "Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai", description: "Psychiatrist and sexologist in Malad West, Mumbai, with 6 years of clinical experience.", images: ["/dr-abhijeet-holambe-brain-model.jpg"] },
   robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
