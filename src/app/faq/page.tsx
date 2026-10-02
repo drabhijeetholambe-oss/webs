@@ -21,7 +21,7 @@ const faqs = [
 ];
 export const metadata: Metadata = {
   title: "Patient FAQs | Psychiatrist in Malad West, Mumbai",
-  description: "Answers about booking, privacy, medicines, fees, online consultations, clinic hours, and first visits with Dr. Abhijeet Holambe in Malad West, Mumbai.",
+  description: "Answers about booking, privacy, medicines, fees, online consultations, clinic hours, and first visits with Dr. Abhijeet Holambe, psychiatrist and sexologist in Malad West, Mumbai.",
   alternates: { canonical: "/faq" },
 };
 export default function FAQPage() {
