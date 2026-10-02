@@ -26,7 +26,7 @@ export default function ContactPage() {
             <a href={"https://wa.me/"+Info.PHONE.replace(/\D/g,"")} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[#315d50]"><MessageCircle className="h-4 w-4" />WhatsApp</a>
             <a href={"mailto:"+Info.EMAIL} className="flex items-center gap-3 text-[#315d50]"><Mail className="h-4 w-4" />{Info.EMAIL}</a>
           </div>
-          <a className="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-[#183b37] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#285a50]" href="https://share.google/ZsC1gdVb6fxq6Vq69" target="_blank" rel="noopener noreferrer">Open Google Maps directions ↗</a>
+          <p className="mt-5 text-sm leading-6 text-[#53655e]"><strong className="text-[#183b37]">Consultation fees:</strong> First consultation ₹1,800 · Follow-up ₹1,500</p><p className="mt-2 text-sm leading-6 text-[#53655e]"><strong className="text-[#183b37]">Languages:</strong> Hindi · Marathi · English</p><a className="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-[#183b37] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#285a50]" href="https://maps.google.com/maps?cid=13421164145759607217" target="_blank" rel="noopener noreferrer">Open Google Maps directions ↗</a>
         </div>
         <div className="min-h-[360px] bg-[#e5ebe4] sm:min-h-[480px]"><iframe title="Sun Multispeciality Hospital location in Malad West, Mumbai" src="https://www.google.com/maps?q=Sun%20Multispeciality%20Hospital%2C%20Malad%20West%2C%20Mumbai&output=embed" width="100%" height="100%" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="min-h-[360px] w-full border-0 sm:min-h-[480px]" /></div>
       </div>
