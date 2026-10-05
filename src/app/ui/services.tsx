@@ -6,7 +6,7 @@ export default function Services() {
     <section id="services" className="scroll-reveal bg-mist py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
         <div className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-olive">Areas of care</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-soft">Areas of care</p>
           <h2 className="mt-4 font-serif text-4xl font-medium tracking-tight text-ink sm:text-5xl">Psychiatric services and areas of care</h2>
           <p className="mx-auto mt-5 max-w-2xl leading-7 text-body">Read patient-friendly guides to concerns such as anxiety, depression, sleep difficulties, sexual health and substance use. Dr. Holambe offers appointments in Malad West and online when suitable; assessment and care recommendations are individual.</p>
         </div>

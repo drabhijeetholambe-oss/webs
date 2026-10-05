@@ -36,33 +36,33 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Brand palette: soft sage surfaces, deep olive charcoal text, olive green accents */
-  --color-porcelain: #f8faf4;
-  --color-mist: #edf2e4;
-  --color-cloud: #dfe8d0;
-  --color-line: #d6dfc7;
-  --color-line-strong: #b7c4a1;
-  --color-ink: #232a1b;
-  --color-ink-soft: #384229;
-  --color-body: #475040;
-  --color-subtle: #646d58;
+  /* Brand palette: neutral grey surfaces with a hint of sage, black and grey text, olive used sparingly for accents */
+  --color-porcelain: #f7f8f6;
+  --color-mist: #f0f2ee;
+  --color-cloud: #e4e8e0;
+  --color-line: #dcdfd8;
+  --color-line-strong: #b8bdb2;
+  --color-ink: #141414;
+  --color-ink-soft: #2e2e2e;
+  --color-body: #3a3a3a;
+  --color-subtle: #5c5c5c;
   --color-olive-dark: #4a5320;
   --color-olive: #5f6b27;
   --color-olive-light: #d5ddb0;
-  --color-sky: #dfe8cc;
+  --color-sky: #e4e8e0;
 }
 
 :root {
   --radius: 0.75rem;
-  --background: #f8faf4;
-  --foreground: #232a1b;
+  --background: #f7f8f6;
+  --foreground: #141414;
 }
 
 html { scroll-behavior: smooth; color-scheme: light; }
 body { background: var(--background); color: var(--foreground); font-family: var(--font-body), var(--font-devanagari), sans-serif; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4 { font-family: var(--font-heading), var(--font-devanagari), Georgia, serif; }
 * { -webkit-overflow-scrolling: touch; }
-::selection { background: #d5ddb0; color: #4a5320; }
+::selection { background: #d5ddb0; color: #141414; }
 a, button { -webkit-tap-highlight-color: transparent; }
 :focus-visible { outline: 2px solid #5f6b27; outline-offset: 3px; }
 

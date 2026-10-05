@@ -19,7 +19,7 @@ export default function WorkplaceWellnessPage() {
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}} />
     <div className="mx-auto max-w-4xl">
       <nav aria-label="Breadcrumb" className="mb-8 text-sm text-subtle"><Link href="/">Home</Link><span className="mx-2">/</span><span>Workplace wellness</span></nav>
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-olive">Workplace wellness</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-soft">Workplace wellness</p>
       <h1 className="mt-4 font-serif text-4xl font-medium leading-tight text-ink sm:text-5xl">Mental health at work, in practical terms.</h1>
       <p className="mt-5 max-w-3xl text-lg leading-8 text-body">Dr. Abhijeet Holambe conducts workplace wellness workshops focused on stress, burnout, and mental health at work. Sessions are designed to give teams clear, practical information and a useful framework for recognising when support may be needed.</p>
       <div className="mt-10 grid gap-5 md:grid-cols-3">
