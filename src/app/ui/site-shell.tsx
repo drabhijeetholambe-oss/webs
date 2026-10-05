@@ -50,7 +50,7 @@ const siteStructuredData = {
       name: "Dr. Abhijeet Holambe",
       url: siteUrl + "/about",
       image: siteUrl + "/dr-abhijeet-holambe-brain-model.jpg",
-      jobTitle: "Psychiatrist and sexologist",
+      jobTitle: "Psychiatrist, de-addiction specialist and sexologist",
       telephone: Info.PHONE,
       email: Info.EMAIL,
       knowsLanguage: ["Hindi", "Marathi", "English"],
@@ -104,7 +104,7 @@ const siteStructuredData = {
 export const siteMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai", template: "%s | Dr. Abhijeet Holambe" },
-  description: "Dr. Abhijeet Holambe is a psychiatrist and sexologist in Malad West, Mumbai, with 6 years of clinical experience. Consultations cover mental health, sexual health and de-addiction.",
+  description: "Dr. Abhijeet Holambe is a psychiatrist, de-addiction specialist and sexologist in Malad West, Mumbai, with 6 years of clinical experience. Consultations cover mental health, sexual health and de-addiction.",
   alternates: { canonical: "/", languages: { "en-IN": "/", "hi-IN": "/hi", "mr-IN": "/mr" } },
   openGraph: {
     type: "website",
@@ -112,10 +112,10 @@ export const siteMetadata: Metadata = {
     url: siteUrl,
     siteName: "Dr. Abhijeet Holambe",
     title: "Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai",
-    description: "Psychiatrist and sexologist in Malad West, Mumbai, with 6 years of clinical experience. Consultations in Hindi, Marathi and English.",
+    description: "Psychiatrist, de-addiction specialist and sexologist in Malad West, Mumbai, with 6 years of clinical experience. Consultations in Hindi, Marathi and English.",
     images: [Info.OG_IMAGE],
   },
-  twitter: { card: "summary_large_image", title: "Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai", description: "Psychiatrist and sexologist in Malad West, Mumbai, with 6 years of clinical experience.", images: [Info.OG_IMAGE.url] },
+  twitter: { card: "summary_large_image", title: "Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai", description: "Psychiatrist, de-addiction specialist and sexologist in Malad West, Mumbai, with 6 years of clinical experience.", images: [Info.OG_IMAGE.url] },
   robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
 };
 
