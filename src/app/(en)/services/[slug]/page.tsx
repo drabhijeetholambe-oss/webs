@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { services, serviceSlugs, type ServiceSlug } from "@/app/config/service-data";
+import { serviceExtras } from "@/app/config/service-extras";
+import { articles } from "@/app/config/articles";
+import YoutubeVideo from "@/components/youtube-video";
 import * as Info from "@/app/config/constants/info";
 
 const siteUrl = "https://www.drabhijeetholambe.com";
@@ -36,6 +39,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   const service = services[slug as ServiceSlug];
   if (!service) notFound();
 
+  const extra = serviceExtras[slug as ServiceSlug] ?? {};
+  const faqs = [...service.faqs, ...(extra.faqs ?? [])];
+  const relatedArticles = articles.filter((article) => article.related.includes(slug as ServiceSlug));
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -54,7 +60,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       {
         "@type": "FAQPage",
         "@id": siteUrl + "/services/" + slug + "#faq",
-        mainEntity: service.faqs.map(([question, answer]) => ({
+        mainEntity: faqs.map(([question, answer]) => ({
           "@type": "Question",
           name: question,
           acceptedAnswer: { "@type": "Answer", text: answer },
@@ -90,6 +96,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             {service.summary.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
         </section>
+        {extra.details?.map((detail) => <section key={detail.heading} className="mt-10">
+          <h2 className="font-serif text-3xl font-medium text-ink">{detail.heading}</h2>
+          <div className="mt-5 space-y-4 text-base leading-8 text-body">{detail.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
+        </section>)}
         <section className="mt-10 rounded-3xl border border-line bg-white p-6 sm:p-8">
           <h2 className="font-serif text-2xl font-medium text-ink">Common signs and symptoms</h2>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
@@ -121,12 +131,20 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <section className="mt-12">
           <h2 className="font-serif text-3xl font-medium text-ink">Frequently asked questions</h2>
           <div className="mt-5 divide-y divide-line border-y border-line">
-            {service.faqs.map(([question, answer]) => <details key={question} className="group py-5">
+            {faqs.map(([question, answer]) => <details key={question} className="group py-5">
               <summary className="cursor-pointer list-none pr-8 font-medium text-ink marker:hidden">{question}<span aria-hidden="true" className="float-right text-ink-soft transition group-open:rotate-45">＋</span></summary>
               <p className="mt-3 max-w-3xl text-sm leading-7 text-body">{answer}</p>
             </details>)}
           </div>
         </section>
+        {extra.videos && <section className="mt-12 rounded-3xl bg-mist p-6 sm:p-8">
+          <h2 className="font-serif text-2xl font-medium text-ink">Watch: Dr. Holambe explains</h2>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">{extra.videos.map((video) => <YoutubeVideo key={video.id} id={video.id} title={video.title} />)}</div>
+        </section>}
+        {relatedArticles.length > 0 && <section className="mt-12">
+          <h2 className="font-serif text-2xl font-medium text-ink">Read more</h2>
+          <ul className="mt-4 space-y-3">{relatedArticles.map((article) => <li key={article.slug}><Link href={"/articles/" + article.slug} className="text-base text-ink underline decoration-line-strong underline-offset-4 hover:decoration-ink">{article.title}</Link></li>)}</ul>
+        </section>}
         <p className="mt-10 border-t border-line pt-6 text-xs leading-5 text-subtle">Last reviewed by Dr. Abhijeet Holambe, MD Psychiatry — October 2026.</p>
         <section className="mt-12 rounded-3xl border border-line bg-mist p-6 sm:p-8">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
