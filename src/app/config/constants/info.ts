@@ -9,7 +9,7 @@ export const PRACTO = "https://www.practo.com/mumbai/doctor/abhijeet-holambe-psy
 export const LATITUDE = 19.1902295;
 export const LONGITUDE = 72.8418623;
 export const REGISTRATION = "Maharashtra Medical Council registration no. 2020042727 (2020)";
-export const ABOUT = `Dr. Abhijeet Holambe is a psychiatrist and sexologist in Mumbai with MBBS from Seth GS Medical College and KEM Hospital, and MD Psychiatry from Grant Medical College and JJ Hospital, Mumbai. He has 6 years of clinical experience. His clinical areas include anxiety, depression, mood disorders, sleep difficulties, sexual health, substance use and de-addiction, and other psychiatric concerns. Each consultation begins with an individual assessment and a discussion of appropriate next steps.
+export const ABOUT = `Dr. Abhijeet Holambe is a psychiatrist and sexologist in Mumbai and an alumnus of KEM Hospital and JJ Hospital. He completed his MBBS at Seth GS Medical College and KEM Hospital, and his MD Psychiatry at Grant Medical College and JJ Hospital, Mumbai. He has 6 years of clinical experience. His clinical areas include anxiety, depression, mood disorders, sleep difficulties, sexual health, substance use and de-addiction, and other psychiatric concerns. Each consultation begins with an individual assessment and a discussion of appropriate next steps.
 
 Consultations are available in Hindi, Marathi, and English. In-person appointments are at Sun Multispeciality Hospital in Malad West, Mumbai, by prior appointment, and online consultation options are available.`;
 export const SPECIALISATIONS = ["Anxiety and panic", "Depression and mood concerns", "Sleep difficulties", "Sexual health", "Substance use and de-addiction"];

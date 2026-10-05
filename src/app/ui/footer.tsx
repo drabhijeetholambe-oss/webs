@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid gap-10 border-b border-white/15 pb-10 md:grid-cols-[1.15fr_0.85fr]">
           <div className="max-w-xl">
             <h2 className="flex items-center gap-3 font-serif text-2xl font-medium"><span className="grid h-10 w-10 place-items-center rounded-full border border-white/20 bg-white/[0.06]" aria-hidden="true"><Heart className="h-4 w-4 text-[#b5deca]" /></span>{Info.NAME}</h2>
-            <p className="mt-5 leading-7 text-white/70">Psychiatrist and sexologist in Malad West, Mumbai. Appointments by prior booking.</p>
+            <p className="mt-5 leading-7 text-white/80">Psychiatrist and sexologist in Malad West, Mumbai. Appointments by prior booking.</p>
             <address className="mt-5 flex gap-3 not-italic text-sm leading-7 text-white/75"><MapPin className="mt-1 h-4 w-4 shrink-0 text-[#b5deca]" /><span>{Info.ADDRESS}</span></address>
           </div>
           <div className="space-y-4 text-sm text-white/75">
