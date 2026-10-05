@@ -1,4 +1,5 @@
 import ServicesCards from "@/components/services-cards";
+import * as Info from "@/app/config/constants/info";
 
 export default function Services() {
   return (
@@ -10,7 +11,7 @@ export default function Services() {
           <p className="mx-auto mt-5 max-w-2xl leading-7 text-[#53655e]">Read patient-friendly guides to concerns such as anxiety, depression, sleep difficulties, sexual health and substance use. Dr. Holambe offers appointments in Malad West and online when suitable; assessment and care recommendations are individual.</p>
         </div>
         <ServicesCards />
-        <div className="mt-12 rounded-3xl bg-[#edf2eb] p-6 text-center sm:p-8"><p className="font-serif text-2xl text-[#183b37]">Not sure where to start?</p><p className="mx-auto mt-2 max-w-2xl text-sm leading-6 text-[#53655e]">Describe what has been troubling you and the practice can help you choose an appointment.</p><a href="https://wa.me/918169065210" target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex min-h-11 items-center justify-center rounded-full bg-[#183b37] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#285a50]">Ask about an appointment</a></div>
+        <div className="mt-12 rounded-3xl bg-[#edf2eb] p-6 text-center sm:p-8"><p className="font-serif text-2xl text-[#183b37]">Not sure where to start?</p><p className="mx-auto mt-2 max-w-2xl text-sm leading-6 text-[#53655e]">Describe what has been troubling you and the practice can help you choose an appointment.</p><a href={Info.WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex min-h-11 items-center justify-center rounded-full bg-[#183b37] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#285a50]">Ask about an appointment</a></div>
       </div>
     </section>
   );

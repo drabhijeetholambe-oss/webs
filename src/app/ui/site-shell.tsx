@@ -1,23 +1,20 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Cardo, Cormorant_Garamond } from "next/font/google";
-import "./globals.css";
-import Navbar from "./ui/navbar";
-import Footer from "./ui/footer";
+import "@/app/globals.css";
+import Navbar from "./navbar";
+import Footer from "./footer";
 import { Analytics } from "@vercel/analytics/next";
 import WhatsappButton from "@/components/whatsapp-button";
 import GoogleMapsButton from "@/components/google-maps-button";
 import MobileContactBar from "@/components/mobile-contact-bar";
+import * as Info from "@/app/config/constants/info";
 
 const headingFont = Cormorant_Garamond({ variable: "--font-heading", subsets: ["latin"], weight: ["400","500","600"], display: "swap" });
 const bodyFont = Cardo({ variable: "--font-body", subsets: ["latin"], weight: ["400", "700"], display: "swap" });
 
 const siteUrl = "https://www.drabhijeetholambe.com";
-const googleMaps = "https://share.google/ZsC1gdVb6fxq6Vq69";
-const practo = "https://www.practo.com/mumbai/doctor/abhijeet-holambe-psychiatrist-1";
-const youtube = "https://www.youtube.com/@DrAbhijeetHolambe";
-const linkedin = "https://www.linkedin.com/in/abhijeet-holambe-829414295/";
-const socialProfiles = [googleMaps, practo, "https://www.instagram.com/drabhijeetholambe/", youtube, linkedin];
+const socialProfiles = [Info.GOOGLE_MAPS, Info.PRACTO, Info.INSTAGRAM, Info.YOUTUBE, Info.LINKEDIN];
 const weekdays = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
 const openingHours = weekdays.map((day) => ({
   "@type": "OpeningHoursSpecification",
@@ -52,8 +49,8 @@ const siteStructuredData = {
       url: siteUrl + "/about",
       image: siteUrl + "/dr-abhijeet-holambe-brain-model.jpg",
       jobTitle: "Psychiatrist and sexologist",
-      telephone: "+91 8169065210",
-      email: "drabhijeetholambe@gmail.com",
+      telephone: Info.PHONE,
+      email: Info.EMAIL,
       knowsLanguage: ["Hindi", "Marathi", "English"],
       sameAs: socialProfiles,
       worksFor: { "@id": siteUrl + "/#physician" },
@@ -69,15 +66,15 @@ const siteStructuredData = {
       name: "Sun Multispeciality Hospital — Dr. Abhijeet Holambe",
       url: siteUrl + "/",
       image: siteUrl + "/dr-abhijeet-holambe-clinic.jpg",
-      telephone: "+91 8169065210",
-      email: "drabhijeetholambe@gmail.com",
+      telephone: Info.PHONE,
+      email: Info.EMAIL,
       address: clinicAddress,
       geo: { "@type": "GeoCoordinates", latitude: 19.1902295, longitude: 72.8418623 },
       openingHoursSpecification: openingHours,
       medicalSpecialty: "https://schema.org/Psychiatric",
       areaServed: serviceAreas,
       priceRange: "INR 1500-1800",
-      hasMap: googleMaps,
+      hasMap: Info.GOOGLE_MAPS,
       sameAs: socialProfiles,
       employee: { "@id": siteUrl + "/#person" },
     },
@@ -87,8 +84,8 @@ const siteStructuredData = {
       name: "Dr. Abhijeet Holambe",
       url: siteUrl + "/about",
       image: siteUrl + "/dr-abhijeet-holambe-brain-model.jpg",
-      telephone: "+91 8169065210",
-      email: "drabhijeetholambe@gmail.com",
+      telephone: Info.PHONE,
+      email: Info.EMAIL,
       address: clinicAddress,
       geo: { "@type": "GeoCoordinates", latitude: 19.1902295, longitude: 72.8418623 },
       openingHoursSpecification: openingHours,
@@ -102,7 +99,7 @@ const siteStructuredData = {
   ],
 };
 
-export const metadata: Metadata = {
+export const siteMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai", template: "%s | Dr. Abhijeet Holambe" },
   description: "Dr. Abhijeet Holambe is a psychiatrist and sexologist in Malad West, Mumbai, with 6 years of clinical experience. Consultations cover mental health, sexual health and de-addiction.",
@@ -114,15 +111,15 @@ export const metadata: Metadata = {
     siteName: "Dr. Abhijeet Holambe",
     title: "Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai",
     description: "Psychiatrist and sexologist in Malad West, Mumbai, with 6 years of clinical experience. Consultations in Hindi, Marathi and English.",
-    images: [{ url: "/dr-abhijeet-holambe-brain-model.jpg", width: 1600, height: 2844, alt: "Dr. Abhijeet Holambe holding a brain model in Malad West, Mumbai" }],
+    images: [Info.OG_IMAGE],
   },
-  twitter: { card: "summary_large_image", title: "Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai", description: "Psychiatrist and sexologist in Malad West, Mumbai, with 6 years of clinical experience.", images: ["/dr-abhijeet-holambe-brain-model.jpg"] },
+  twitter: { card: "summary_large_image", title: "Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai", description: "Psychiatrist and sexologist in Malad West, Mumbai, with 6 years of clinical experience.", images: [Info.OG_IMAGE.url] },
   robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function SiteShell({ lang, children }: Readonly<{ lang: string; children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang={lang}>
       <head><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteStructuredData) }} /></head>
       <body className={headingFont.variable + " " + bodyFont.variable + " antialiased"}>
         <Analytics />

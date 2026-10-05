@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import * as Info from "@/app/config/constants/info";
 
 const siteUrl = "https://www.drabhijeetholambe.com";
 
@@ -31,7 +32,7 @@ export default function WorkplaceWellnessPage() {
       <section className="mt-10 rounded-3xl bg-[#edf2eb] p-6 sm:p-8">
         <h2 className="font-serif text-2xl text-[#183b37]">Workshop enquiries</h2>
         <p className="mt-3 text-sm leading-7 text-[#53655e]">For organisations interested in a workplace wellness session, contact Dr. Holambe on WhatsApp with the organisation name, approximate group size, and the topic you would like to discuss.</p>
-        <a href="https://wa.me/918169065210?text=Hello%20Dr.%20Holambe%2C%20I%20would%20like%20to%20enquire%20about%20a%20workplace%20wellness%20workshop." target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex min-h-12 items-center justify-center rounded-full bg-[#183b37] px-6 py-3 text-sm font-semibold text-white">WhatsApp enquiry</a>
+        <a href={Info.WHATSAPP_WORKSHOP_LINK} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex min-h-12 items-center justify-center rounded-full bg-[#183b37] px-6 py-3 text-sm font-semibold text-white">WhatsApp enquiry</a>
       </section>
     </div>
   </div>;

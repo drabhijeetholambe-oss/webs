@@ -2,7 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { services, serviceSlugs, type ServiceSlug } from "../service-data";
+import { services, serviceSlugs, type ServiceSlug } from "@/app/config/service-data";
+import * as Info from "@/app/config/constants/info";
 
 const siteUrl = "https://www.drabhijeetholambe.com";
 
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: service.description,
       siteName: "Dr. Abhijeet Holambe",
       locale: "en_IN",
-      images: [{ url: "/dr-abhijeet-holambe-brain-model.jpg", width: 1600, height: 2844, alt: "Dr. Abhijeet Holambe holding a brain model in Malad West, Mumbai" }],
+      images: [Info.OG_IMAGE],
     },
   };
 }
@@ -114,7 +115,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#b5deca]">Online consultation</p>
             <h2 className="mt-3 font-serif text-2xl font-medium">Care from a private space</h2>
             <p className="mt-3 text-sm leading-7 text-white/75">Online appointments are available by arrangement. Choose a private, quiet place and keep any reports or medicine details nearby. Some concerns need an in-person visit, examination, or further tests; if so, the doctor will explain why and discuss the next step. Online appointments are not a substitute for urgent emergency care.</p>
-            <a href="https://wa.me/918169065210" target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex rounded-full bg-[#b5deca] px-5 py-3 text-sm font-semibold text-[#183b37] transition hover:bg-white">Ask about an online appointment</a>
+            <a href={Info.WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex rounded-full bg-[#b5deca] px-5 py-3 text-sm font-semibold text-[#183b37] transition hover:bg-white">Ask about an online appointment</a>
           </div>
         </section>
         <section className="mt-12">
@@ -137,8 +138,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </div>
           </div>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a href="https://wa.me/918169065210" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#183b37] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#285a50]">Book on WhatsApp</a>
-            <a href="tel:+918169065210" className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#b5cfc0] px-6 py-3 text-sm font-semibold text-[#183b37] transition hover:bg-white">Call now</a>
+            <a href={Info.WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#183b37] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#285a50]">Book on WhatsApp</a>
+            <a href={Info.PHONE_LINK} className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#b5cfc0] px-6 py-3 text-sm font-semibold text-[#183b37] transition hover:bg-white">Call now</a>
           </div>
         </section>
         <section className="mt-12">

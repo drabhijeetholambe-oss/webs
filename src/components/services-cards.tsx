@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Activity, Brain, BriefcaseBusiness, HeartHandshake, Moon, Shield, Sparkles, Users, Wind } from "lucide-react";
-import { serviceCards } from "@/app/services/service-data";
+import { serviceCards } from "@/app/config/service-data";
 
 const icons = [Wind, Brain, Moon, HeartHandshake, Shield, Activity, Sparkles, Brain, Users, Shield, HeartHandshake, Activity, BriefcaseBusiness, Sparkles, Users, Activity, HeartHandshake];
 
