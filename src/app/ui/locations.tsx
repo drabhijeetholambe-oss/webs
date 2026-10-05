@@ -14,7 +14,7 @@ export default function Locations() {
             <p className="mt-5 flex gap-3 text-sm leading-6 text-body"><Clock3 className="mt-0.5 h-4 w-4 shrink-0 text-ink-soft" /><span><strong className="text-ink">Hours</strong><br />{Info.HOURS}<br />Appointments by prior booking.</span></p>
             <a href={Info.PHONE_LINK} className="mt-5 flex items-center gap-3 text-sm font-medium text-ink-soft"><Phone aria-hidden="true" className="h-4 w-4" />{Info.PHONE}</a>
             <Link href="/contact" className="mt-5 inline-flex text-sm font-semibold text-ink-soft underline decoration-line-strong underline-offset-4 hover:text-ink">Full address, hours and contact details</Link>
-            <a className="mt-7 inline-flex items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink-soft" href={Info.GOOGLE_MAPS} target="_blank" rel="noopener noreferrer">Open directions <span aria-hidden="true" className="ml-2">↗</span></a>
+            <a className="mt-7 inline-flex items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-soft" href={Info.GOOGLE_MAPS} target="_blank" rel="noopener noreferrer">Open directions <span aria-hidden="true" className="ml-2">↗</span></a>
           </div>
           <div className="min-h-[340px] bg-cloud sm:min-h-[420px]"><iframe title="Map to Sun Multispeciality Hospital in Malad West, Mumbai" src="https://www.google.com/maps?q=Sun%20Multispeciality%20Hospital%2C%20Malad%20West%2C%20Mumbai&output=embed" width="100%" height="100%" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="min-h-[340px] w-full border-0 sm:min-h-[420px]" /></div>
         </div>

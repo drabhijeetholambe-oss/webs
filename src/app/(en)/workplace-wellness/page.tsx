@@ -32,7 +32,7 @@ export default function WorkplaceWellnessPage() {
       <section className="mt-10 rounded-3xl bg-mist p-6 sm:p-8">
         <h2 className="font-serif text-2xl text-ink">Workshop enquiries</h2>
         <p className="mt-3 text-sm leading-7 text-body">For organisations interested in a workplace wellness session, contact Dr. Holambe on WhatsApp with the organisation name, approximate group size, and the topic you would like to discuss.</p>
-        <a href={Info.WHATSAPP_WORKSHOP_LINK} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex min-h-12 items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white">WhatsApp enquiry</a>
+        <a href={Info.WHATSAPP_WORKSHOP_LINK} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white">WhatsApp enquiry</a>
       </section>
     </div>
   </div>;

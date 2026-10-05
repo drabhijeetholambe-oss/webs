@@ -10,7 +10,7 @@ export default function GlobalNotFound() {
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-soft">Page not found</p>
       <h1 className="mt-4 font-serif text-4xl font-medium text-ink sm:text-5xl">This page could not be found.</h1>
       <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-body">The link may be old or mistyped. You can return to the homepage or contact the practice directly.</p>
-      <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><Link href="/" className="inline-flex min-h-12 items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink-soft">Go to homepage</Link><Link href="/contact" className="inline-flex min-h-12 items-center justify-center rounded-full border border-line-strong bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:bg-mist">Contact the practice</Link></div>
+      <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><Link href="/" className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-soft">Go to homepage</Link><Link href="/contact" className="inline-flex min-h-12 items-center justify-center rounded-full border border-line-strong bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:bg-mist">Contact the practice</Link></div>
     </div>
   </SiteShell>;
 }
