@@ -8,7 +8,7 @@ export default function About() {
     <section id="about" className="scroll-reveal bg-white py-20 sm:py-24">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 md:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-10">
         <div className="relative mx-auto w-full max-w-md">
-          <div aria-hidden="true" className="absolute -inset-3 rounded-[2rem] border border-line-strong" />
+          <div aria-hidden="true" className="absolute -inset-3 rounded-[2rem] border border-gold/60" />
           <Image src="/dr-abhijeet-holambe-clinic.jpg" alt="Dr. Abhijeet Holambe in his clinic in Malad West, Mumbai" width={1600} height={2844} sizes="(max-width: 768px) 90vw, 400px" loading="lazy" className="relative aspect-[4/5] w-full rounded-[1.75rem] object-cover object-[center_30%] shadow-xl" />
         </div>
         <div className="pt-3">

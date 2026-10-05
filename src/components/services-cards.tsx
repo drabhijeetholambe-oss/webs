@@ -12,7 +12,7 @@ export default function ServicesCards() {
         {serviceCards.slice(0, FEATURED_COUNT).map((service, index) => {
           const Icon = icons[index % icons.length];
           return <Link key={service.slug} href={"/services/" + service.slug} prefetch={false} className="group flex flex-col rounded-3xl border border-line bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-xl hover:shadow-ink/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
-            <span className="grid h-12 w-12 place-items-center rounded-2xl bg-mist transition group-hover:bg-cloud"><Icon aria-hidden="true" className="h-5 w-5 text-bronze" strokeWidth={1.7} /></span>
+            <span className="grid h-12 w-12 place-items-center rounded-2xl bg-ink transition group-hover:bg-ink-soft"><Icon aria-hidden="true" className="h-5 w-5 text-gold-light" strokeWidth={1.7} /></span>
             <h3 className="mt-5 font-serif text-2xl font-medium leading-snug text-ink">{service.title}</h3>
             <p className="mt-2 flex-1 text-sm leading-6 text-body">{service.description}</p>
             <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-bronze">Read the guide <span aria-hidden="true" className="transition group-hover:translate-x-1">→</span></span>

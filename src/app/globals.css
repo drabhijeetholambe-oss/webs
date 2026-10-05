@@ -36,34 +36,37 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Brand palette: porcelain and mist blue surfaces, deep navy text, muted gold accents */
-  --color-porcelain: #fafbfc;
-  --color-mist: #eef3f7;
-  --color-cloud: #e3eaf0;
-  --color-line: #dde4eb;
-  --color-line-strong: #c3cfdb;
-  --color-ink: #14233a;
-  --color-ink-soft: #263b5a;
-  --color-body: #465366;
-  --color-subtle: #66717f;
-  --color-gold: #a8823f;
-  --color-sky: #dbe5ef;
-  --color-bronze: #8a6a2f;
+  /* Brand palette: blue tinted surfaces, deep navy text, bright metallic gold accents */
+  --color-porcelain: #f6f9fd;
+  --color-mist: #e8f0fa;
+  --color-cloud: #d6e4f4;
+  --color-line: #d2deec;
+  --color-line-strong: #afc3da;
+  --color-ink: #13213a;
+  --color-ink-soft: #22385c;
+  --color-body: #3e4b60;
+  --color-subtle: #5a6679;
+  --color-gold: #c99a2e;
+  --color-gold-light: #e9c766;
+  --color-sky: #cfe0f4;
+  --color-bronze: #94690f;
 }
 
 :root {
   --radius: 0.75rem;
-  --background: #fafbfc;
-  --foreground: #14233a;
+  --background: #f6f9fd;
+  --foreground: #13213a;
 }
 
 html { scroll-behavior: smooth; color-scheme: light; }
 body { background: var(--background); color: var(--foreground); font-family: var(--font-body), var(--font-devanagari), sans-serif; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4 { font-family: var(--font-heading), var(--font-devanagari), Georgia, serif; }
 * { -webkit-overflow-scrolling: touch; }
-::selection { background: #dbe5ef; color: #14233a; }
+::selection { background: #e9c766; color: #13213a; }
 a, button { -webkit-tap-highlight-color: transparent; }
-:focus-visible { outline: 2px solid #a8823f; outline-offset: 3px; }
+.text-gold-gradient { background: linear-gradient(100deg, #9a6d0c 0%, #c7962a 40%, #dfb653 58%, #a87a14 100%); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-box-decoration-break: clone; box-decoration-break: clone; padding-right: 0.12em; }
+.bg-gold-gradient { background: linear-gradient(100deg, #c39228 0%, #e9c766 50%, #c99a2e 100%); }
+:focus-visible { outline: 2px solid #c99a2e; outline-offset: 3px; }
 
 @media (prefers-reduced-motion: no-preference) and (supports (animation-timeline: view())) {
   .scroll-reveal { animation: scroll-reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 30%; }

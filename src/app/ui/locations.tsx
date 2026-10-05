@@ -4,7 +4,7 @@ import * as Info from "@/app/config/constants/info";
 
 export default function Locations() {
   return (
-    <section id="locations" className="scroll-reveal bg-mist py-20 text-ink sm:py-24">
+    <section id="locations" className="scroll-reveal bg-cloud py-20 text-ink sm:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
         <div className="mb-9 max-w-xl"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-bronze">Clinic information</p><h2 className="mt-4 font-serif text-4xl font-medium leading-tight tracking-tight sm:text-5xl">Psychiatric consultations in Malad West, Mumbai</h2><p className="mt-5 leading-7 text-body">In-person appointments are at Sun Multispeciality Hospital in Malad West. People from nearby Kandivali, Goregaon and Borivali can request an appointment; online consultations are also available by arrangement.</p></div>
         <div className="grid overflow-hidden rounded-3xl bg-porcelain text-ink shadow-2xl shadow-black/10 lg:grid-cols-[0.78fr_1.22fr]">

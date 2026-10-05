@@ -8,7 +8,7 @@ const steps = [
 
 export default function VisitSteps() {
   return (
-    <section id="first-visit" className="scroll-reveal bg-porcelain py-16 sm:py-20">
+    <section id="first-visit" className="scroll-reveal bg-mist py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-2xl text-center"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-bronze">Your first visit</p><h2 className="mt-3 font-serif text-4xl font-medium tracking-tight text-ink sm:text-5xl">What to expect at your first appointment</h2><p className="mt-4 leading-7 text-body">Know what to expect before you book a consultation.</p></div>
         <ol className="mt-10 grid gap-5 md:grid-cols-3">
