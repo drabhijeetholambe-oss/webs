@@ -22,7 +22,7 @@ const faqs = [
 ];
 export const metadata: Metadata = {
   title: "Patient FAQs | Psychiatrist in Malad West, Mumbai",
-  description: "Answers about booking, privacy, medicines, fees, online consultations, clinic hours, and first visits with Dr. Abhijeet Holambe, psychiatrist and sexologist in Malad West, Mumbai.",
+  description: "Answers about booking, privacy, medicines, fees, online consultations, clinic hours, and first visits with Dr. Abhijeet Holambe, psychiatrist, de-addiction specialist and sexologist in Malad West, Mumbai.",
   alternates: { canonical: "/faq" },
 };
 export default function FAQPage() {
@@ -30,14 +30,14 @@ export default function FAQPage() {
     {"@type":"FAQPage","mainEntity":faqs.map(([question,answer])=>({"@type":"Question",name:question,acceptedAnswer:{"@type":"Answer",text:answer}}))},
     {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem",position:1,name:"Home",item:siteUrl+"/"},{"@type":"ListItem",position:2,name:"FAQ",item:siteUrl+"/faq"}]}
   ]};
-  return <div className="min-h-screen bg-[#fbfaf7] px-5 pb-16 pt-28 sm:px-8 sm:pt-36">
+  return <div className="min-h-screen bg-ivory px-5 pb-16 pt-28 sm:px-8 sm:pt-36">
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}} />
     <div className="mx-auto max-w-4xl">
-      <nav aria-label="Breadcrumb" className="mb-8 text-sm text-[#55645e]"><Link href="/" className="hover:text-[#183b37]">Home</Link><span className="mx-2">/</span><span>FAQ</span></nav>
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#38695e]">Before your visit</p><h1 className="mt-4 font-serif text-4xl font-medium leading-tight text-[#183b37] sm:text-5xl">Frequently asked questions</h1>
-      <p className="mt-5 max-w-2xl text-base leading-7 text-[#45564f]">Straightforward information about consultations with Dr. Abhijeet Holambe.</p>
-      <div className="mt-9 divide-y divide-[#e2e7df] border-y border-[#e2e7df]">{faqs.map(([question,answer])=><details key={question} className="group py-5"><summary className="cursor-pointer list-none pr-8 font-medium text-[#183b37]">{question}<span aria-hidden="true" className="float-right text-[#a9844b] transition group-open:rotate-45">＋</span></summary><p className="mt-3 max-w-3xl text-sm leading-7 text-[#45564f]">{answer}</p></details>)}</div>
-      <div className="mt-10 rounded-3xl bg-[#edf2eb] p-6 sm:p-8"><h2 className="font-serif text-2xl text-[#183b37]">Need help booking?</h2><p className="mt-2 text-sm leading-6 text-[#45564f]">Contact the practice to request an in-person or online appointment.</p><div className="mt-5 flex flex-col gap-3 sm:flex-row"><a href={Info.WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#183b37] px-6 py-3 text-sm font-semibold text-white">Book on WhatsApp</a><a href={Info.PHONE_LINK} className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#b5cfc0] bg-white px-6 py-3 text-sm font-semibold text-[#183b37]">Call now</a></div></div>
+      <nav aria-label="Breadcrumb" className="mb-8 text-sm text-subtle"><Link href="/" className="hover:text-ink">Home</Link><span className="mx-2">/</span><span>FAQ</span></nav>
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-bronze">Before your visit</p><h1 className="mt-4 font-serif text-4xl font-medium leading-tight text-ink sm:text-5xl">Frequently asked questions</h1>
+      <p className="mt-5 max-w-2xl text-base leading-7 text-body">Straightforward information about consultations with Dr. Abhijeet Holambe.</p>
+      <div className="mt-9 divide-y divide-line border-y border-line">{faqs.map(([question,answer])=><details key={question} className="group py-5"><summary className="cursor-pointer list-none pr-8 font-medium text-ink">{question}<span aria-hidden="true" className="float-right text-gold transition group-open:rotate-45">＋</span></summary><p className="mt-3 max-w-3xl text-sm leading-7 text-body">{answer}</p></details>)}</div>
+      <div className="mt-10 rounded-3xl bg-sand p-6 sm:p-8"><h2 className="font-serif text-2xl text-ink">Need help booking?</h2><p className="mt-2 text-sm leading-6 text-body">Contact the practice to request an in-person or online appointment.</p><div className="mt-5 flex flex-col gap-3 sm:flex-row"><a href={Info.WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white">Book on WhatsApp</a><a href={Info.PHONE_LINK} className="inline-flex min-h-12 items-center justify-center rounded-full border border-line-strong bg-white px-6 py-3 text-sm font-semibold text-ink">Call now</a></div></div>
     </div>
   </div>;
 }

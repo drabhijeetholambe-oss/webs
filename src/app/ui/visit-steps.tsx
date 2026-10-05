@@ -8,11 +8,11 @@ const steps = [
 
 export default function VisitSteps() {
   return (
-    <section id="first-visit" className="scroll-reveal bg-[#f3efe5] py-16 sm:py-20">
+    <section id="first-visit" className="scroll-reveal bg-ivory py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
-        <div className="mx-auto max-w-2xl text-center"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#38695e]">Your first visit</p><h2 className="mt-3 font-serif text-4xl font-medium tracking-tight text-[#183b37] sm:text-5xl">What to expect at your first appointment</h2><p className="mt-4 leading-7 text-[#45564f]">Know what to expect before you book a consultation.</p></div>
+        <div className="mx-auto max-w-2xl text-center"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-bronze">Your first visit</p><h2 className="mt-3 font-serif text-4xl font-medium tracking-tight text-ink sm:text-5xl">What to expect at your first appointment</h2><p className="mt-4 leading-7 text-body">Know what to expect before you book a consultation.</p></div>
         <ol className="mt-10 grid gap-5 md:grid-cols-3">
-          {steps.map(({number,icon:Icon,title,text}) => <li key={number} className="rounded-3xl border border-[#e2e1d8] bg-[#fbfaf7] p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-7"><div className="flex items-center justify-between"><span className="font-serif text-3xl text-[#a9844b]">{number}</span><Icon aria-hidden="true" className="h-5 w-5 text-[#38695e]" /></div><h3 className="mt-6 font-serif text-2xl font-medium text-[#183b37]">{title}</h3><p className="mt-3 text-sm leading-7 text-[#45564f]">{text}</p></li>)}
+          {steps.map(({number,icon:Icon,title,text}) => <li key={number} className="rounded-3xl border border-line bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-7"><div className="flex items-center justify-between"><span className="font-serif text-3xl text-gold">{number}</span><Icon aria-hidden="true" className="h-5 w-5 text-bronze" /></div><h3 className="mt-6 font-serif text-2xl font-medium text-ink">{title}</h3><p className="mt-3 text-sm leading-7 text-body">{text}</p></li>)}
         </ol>
       </div>
     </section>
