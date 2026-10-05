@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Cardo, Cormorant_Garamond } from "next/font/google";
+import { Cardo, Cormorant_Garamond, Noto_Serif_Devanagari } from "next/font/google";
 import "@/app/globals.css";
 import Navbar from "./navbar";
 import Footer from "./footer";
@@ -12,6 +12,8 @@ import * as Info from "@/app/config/constants/info";
 
 const headingFont = Cormorant_Garamond({ variable: "--font-heading", subsets: ["latin"], weight: ["400","500","600"], display: "swap" });
 const bodyFont = Cardo({ variable: "--font-body", subsets: ["latin"], weight: ["400", "700"], display: "swap" });
+// Cardo and Cormorant have no Devanagari letters, so Hindi and Marathi text falls through to this font
+const devanagariFont = Noto_Serif_Devanagari({ variable: "--font-devanagari", subsets: ["devanagari"], weight: ["400", "500", "600"], display: "swap", preload: false });
 
 const siteUrl = "https://www.drabhijeetholambe.com";
 const socialProfiles = [Info.GOOGLE_MAPS, Info.PRACTO, Info.INSTAGRAM, Info.YOUTUBE, Info.LINKEDIN];
@@ -121,11 +123,11 @@ export default function SiteShell({ lang, children }: Readonly<{ lang: string; c
   return (
     <html lang={lang}>
       <head><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteStructuredData) }} /></head>
-      <body className={headingFont.variable + " " + bodyFont.variable + " antialiased"}>
+      <body className={headingFont.variable + " " + bodyFont.variable + " " + devanagariFont.variable + " antialiased"}>
         <Analytics />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-ZZRKLK5GYS" strategy="lazyOnload" />
         <Script id="google-analytics" strategy="lazyOnload" dangerouslySetInnerHTML={{ __html: "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-ZZRKLK5GYS');" }} />
-        <Navbar />
+        <Navbar locale={lang.slice(0, 2)} />
         <main id="main-content">{children}</main>
         <GoogleMapsButton />
         <WhatsappButton />
