@@ -36,26 +36,30 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* PALETTE: Navy and teal. Text stays black and grey; brand colors buttons and bands, accent colors frames and details */
-  --color-porcelain: #f5f8fb;
-  --color-mist: #e6eef6;
-  --color-cloud: #cfdeec;
-  --color-line: #d3dde7;
-  --color-line-strong: #a9bccf;
+  /* PALETTE: Rich green and teal. Deep green banner and footer with mint highlights, mint tinted sections,
+     teal band. Text on light surfaces stays black and grey */
+  --color-porcelain: #f6faf8;
+  --color-mist: #e6f2ec;
+  --color-cloud: #d2e8dd;
+  --color-line: #d4e3db;
+  --color-line-strong: #a9c7b8;
   --color-ink: #141414;
   --color-ink-soft: #2e2e2e;
   --color-body: #3a3a3a;
   --color-subtle: #5c5c5c;
-  --color-brand: #1d3557;
-  --color-brand-soft: #2c4a76;
+  --color-brand-deep: #143936;
+  --color-brand: #183b37;
+  --color-brand-soft: #285a50;
+  --color-mint: #b5deca;
   --color-accent: #2a8c80;
+  --color-accent-deep: #1f6b62;
   --color-accent-light: #cdeae5;
   --color-sky: #cdeae5;
 }
 
 :root {
   --radius: 0.75rem;
-  --background: #f5f8fb;
+  --background: #f6faf8;
   --foreground: #141414;
 }
 
@@ -63,7 +67,7 @@ html { scroll-behavior: smooth; color-scheme: light; }
 body { background: var(--background); color: var(--foreground); font-family: var(--font-body), var(--font-devanagari), sans-serif; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4 { font-family: var(--font-heading), var(--font-devanagari), Georgia, serif; }
 * { -webkit-overflow-scrolling: touch; }
-::selection { background: #cdeae5; color: #141414; }
+::selection { background: #b5deca; color: #141414; }
 a, button { -webkit-tap-highlight-color: transparent; }
 :focus-visible { outline: 2px solid #2a8c80; outline-offset: 3px; }
 
