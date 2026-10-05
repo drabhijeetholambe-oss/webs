@@ -36,7 +36,7 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Brand palette: blue tinted surfaces, deep navy text, dark green accents */
+  /* Brand palette: blue tinted surfaces, deep navy text, olive green accents */
   --color-porcelain: #f6f9fd;
   --color-mist: #e8f0fa;
   --color-cloud: #d6e4f4;
@@ -46,9 +46,9 @@
   --color-ink-soft: #22385c;
   --color-body: #3e4b60;
   --color-subtle: #5a6679;
-  --color-green-dark: #183b37;
-  --color-green: #38695e;
-  --color-mint: #b5deca;
+  --color-olive-dark: #4a5320;
+  --color-olive: #5f6b27;
+  --color-olive-light: #d5ddb0;
   --color-sky: #cfe0f4;
 }
 
@@ -62,9 +62,9 @@ html { scroll-behavior: smooth; color-scheme: light; }
 body { background: var(--background); color: var(--foreground); font-family: var(--font-body), var(--font-devanagari), sans-serif; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4 { font-family: var(--font-heading), var(--font-devanagari), Georgia, serif; }
 * { -webkit-overflow-scrolling: touch; }
-::selection { background: #b5deca; color: #183b37; }
+::selection { background: #d5ddb0; color: #4a5320; }
 a, button { -webkit-tap-highlight-color: transparent; }
-:focus-visible { outline: 2px solid #38695e; outline-offset: 3px; }
+:focus-visible { outline: 2px solid #5f6b27; outline-offset: 3px; }
 
 @media (prefers-reduced-motion: no-preference) and (supports (animation-timeline: view())) {
   .scroll-reveal { animation: scroll-reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 30%; }

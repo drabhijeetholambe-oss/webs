@@ -80,7 +80,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <Link href="/#services" className="hover:text-ink">Services</Link><span className="mx-2" aria-hidden="true">/</span><span>{service.title}</span>
         </nav>
         <header className="border-b border-line pb-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-green">{slug === "sexual-health" ? "Psychiatrist and sexologist · Malad West, Mumbai" : "Psychiatric consultation · Malad West, Mumbai"}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-olive">{slug === "sexual-health" ? "Psychiatrist and sexologist · Malad West, Mumbai" : "Psychiatric consultation · Malad West, Mumbai"}</p>
           <h1 className="mt-4 font-serif text-4xl font-medium leading-tight tracking-tight text-ink sm:text-5xl">{service.heading}</h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-body">{slug === "sexual-health" ? "As a psychiatrist and sexologist, Dr. Holambe offers a confidential, respectful setting to discuss sexual health concerns and their psychological, relationship, medication, and general health factors." : service.description}</p>
         </header>
@@ -93,7 +93,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <section className="mt-10 rounded-3xl border border-line bg-white p-6 sm:p-8">
           <h2 className="font-serif text-2xl font-medium text-ink">Common signs and symptoms</h2>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-            {service.signs.map((sign) => <li key={sign} className="flex gap-3 rounded-2xl bg-mist p-4 text-sm leading-6 text-body"><span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-green" />{sign}</li>)}
+            {service.signs.map((sign) => <li key={sign} className="flex gap-3 rounded-2xl bg-mist p-4 text-sm leading-6 text-body"><span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-olive" />{sign}</li>)}
           </ul>
         </section>
         <section className="mt-10">
@@ -107,7 +107,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </section>
         <section className="mt-10 grid gap-5 md:grid-cols-2">
           <div className="rounded-3xl bg-mist p-6 sm:p-7">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green">Your first appointment</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-olive">Your first appointment</p>
             <h2 className="mt-3 font-serif text-2xl font-medium text-ink">A conversation at your pace</h2>
             <p className="mt-3 text-sm leading-7 text-body">The first visit is a chance to explain what has been troubling you, when it began, and what you hope will change. Dr. Holambe will ask about your health, sleep, daily life, and any medicines or past care that may be relevant. You can ask questions and share only what you feel ready to discuss. Together, you can consider an assessment and agree on next steps. Bring a current medicine list or previous reports if you have them; they are helpful but not required to begin.</p>
           </div>
@@ -122,7 +122,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <h2 className="font-serif text-3xl font-medium text-ink">Frequently asked questions</h2>
           <div className="mt-5 divide-y divide-line border-y border-line">
             {service.faqs.map(([question, answer]) => <details key={question} className="group py-5">
-              <summary className="cursor-pointer list-none pr-8 font-medium text-ink marker:hidden">{question}<span aria-hidden="true" className="float-right text-green transition group-open:rotate-45">＋</span></summary>
+              <summary className="cursor-pointer list-none pr-8 font-medium text-ink marker:hidden">{question}<span aria-hidden="true" className="float-right text-olive transition group-open:rotate-45">＋</span></summary>
               <p className="mt-3 max-w-3xl text-sm leading-7 text-body">{answer}</p>
             </details>)}
           </div>
@@ -132,7 +132,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
             <Image src="/dr-abhijeet-holambe-clinic.jpg" alt="Dr. Abhijeet Holambe, psychiatrist in Malad West" width={1600} height={2844} sizes="96px" className="h-24 w-24 rounded-full object-cover object-[center_25%]" />
             <div className="flex-1">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green">About the psychiatrist</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-olive">About the psychiatrist</p>
               <h2 className="mt-2 font-serif text-2xl font-medium text-ink">Dr. Abhijeet Holambe</h2>
               <p className="mt-2 text-sm leading-6 text-body">MBBS, Seth GS Medical College and KEM Hospital · MD Psychiatry, Grant Medical College and JJ Hospital · 6 years of clinical experience · Consultations in Hindi, Marathi, and English.</p>
             </div>
@@ -147,7 +147,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="mt-4 flex flex-wrap gap-3">
             {service.related.map((relatedSlug) => {
               const relatedService = services[relatedSlug as ServiceSlug];
-              return <Link key={relatedSlug} href={"/services/" + relatedSlug} className="rounded-full border border-line bg-white px-4 py-2 text-sm text-green transition hover:border-green hover:bg-mist">{relatedService.title}</Link>;
+              return <Link key={relatedSlug} href={"/services/" + relatedSlug} className="rounded-full border border-line bg-white px-4 py-2 text-sm text-olive transition hover:border-olive hover:bg-mist">{relatedService.title}</Link>;
             })}
           </div>
         </section>
