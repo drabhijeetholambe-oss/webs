@@ -21,7 +21,7 @@ export default function TranslationPage({ locale, title, intro, paragraphs, sect
     {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":locale === "hi" ? "होम" : "मुख्यपृष्ठ","item":siteUrl+"/"+locale},{"@type":"ListItem","position":2,"name":title,"item":siteUrl+currentPath}]},
     ...(faqs.length ? [{"@type":"FAQPage","mainEntity":faqs.map(([question,answer])=>({"@type":"Question",name:question,acceptedAnswer:{"@type":"Answer",text:answer}}))}] : [])
   ]};
-  return <div className="min-h-screen bg-ivory px-5 pb-16 pt-28 sm:px-8 sm:pt-36">
+  return <div className="min-h-screen bg-porcelain px-5 pb-16 pt-28 sm:px-8 sm:pt-36">
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}} />
     <div className="mx-auto max-w-4xl">
       <nav aria-label="Breadcrumb" className="mb-8 text-sm text-subtle"><Link href={"/"+locale}>{locale === "hi" ? "होम" : "मुख्यपृष्ठ"}</Link><span className="mx-2">/</span><span>{title}</span></nav>

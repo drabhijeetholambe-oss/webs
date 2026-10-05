@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 export default function ContactPage() {
   const schema={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem",position:1,name:"Home",item:siteUrl+"/"},{"@type":"ListItem",position:2,name:"Contact",item:siteUrl+"/contact"}]};
-  return <div className="min-h-screen bg-ivory px-5 pb-16 pt-28 sm:px-8 sm:pt-36">
+  return <div className="min-h-screen bg-porcelain px-5 pb-16 pt-28 sm:px-8 sm:pt-36">
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}} />
     <div className="mx-auto max-w-6xl">
       <nav aria-label="Breadcrumb" className="mb-8 text-sm text-subtle"><Link href="/" className="hover:text-ink">Home</Link><span className="mx-2">/</span><span>Contact</span></nav>
@@ -28,7 +28,7 @@ export default function ContactPage() {
           </div>
           <p className="mt-5 text-sm leading-6 text-body"><strong className="text-ink">Consultation fees:</strong> First consultation ₹1,800 · Follow-up ₹1,500</p><p className="mt-2 text-sm leading-6 text-body"><strong className="text-ink">Languages:</strong> Hindi · Marathi · English</p><a className="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink-soft" href={Info.GOOGLE_MAPS} target="_blank" rel="noopener noreferrer">Open Google Maps directions ↗</a>
         </div>
-        <div className="min-h-[360px] bg-stone sm:min-h-[480px]"><iframe title="Sun Multispeciality Hospital location in Malad West, Mumbai" src="https://www.google.com/maps?q=Sun%20Multispeciality%20Hospital%2C%20Malad%20West%2C%20Mumbai&output=embed" width="100%" height="100%" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="min-h-[360px] w-full border-0 sm:min-h-[480px]" /></div>
+        <div className="min-h-[360px] bg-cloud sm:min-h-[480px]"><iframe title="Sun Multispeciality Hospital location in Malad West, Mumbai" src="https://www.google.com/maps?q=Sun%20Multispeciality%20Hospital%2C%20Malad%20West%2C%20Mumbai&output=embed" width="100%" height="100%" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="min-h-[360px] w-full border-0 sm:min-h-[480px]" /></div>
       </div>
       <p className="mt-8 text-sm text-body">For information about what to expect, visit <Link className="font-medium text-bronze underline underline-offset-4" href="/faq">frequently asked questions</Link>.</p>
     </div>

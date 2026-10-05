@@ -12,7 +12,7 @@ export default function Reviews() {
       <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-2xl text-center"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-bronze">Patient reviews</p><h2 className="mt-4 font-serif text-3xl font-medium tracking-tight text-ink sm:text-4xl">Hear from people who have visited</h2><p className="mt-4 text-sm leading-6 text-body">Independent reviews are published on Google and Practo.</p></div>
         <div className="mx-auto mt-9 grid max-w-3xl gap-4 sm:grid-cols-2">
-          {sources.map((source) => <a key={source.name} href={source.href} target="_blank" rel="noopener noreferrer" className="group rounded-3xl border border-line bg-ivory p-6 transition hover:-translate-y-0.5 hover:border-line-strong hover:shadow-md">
+          {sources.map((source) => <a key={source.name} href={source.href} target="_blank" rel="noopener noreferrer" className="group rounded-3xl border border-line bg-porcelain p-6 transition hover:-translate-y-0.5 hover:border-line-strong hover:shadow-md">
             <Quote aria-hidden="true" className="h-5 w-5 text-gold" />
             <p className="mt-4 font-serif text-2xl text-ink">{source.name}</p>
             <p className="mt-1 text-sm leading-6 text-body">{source.text}</p>

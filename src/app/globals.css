@@ -36,34 +36,34 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Brand palette: ivory and warm sand surfaces, deep ink text, champagne gold accents */
-  --color-ivory: #fbf9f5;
-  --color-sand: #f4efe7;
-  --color-stone: #ece5d9;
-  --color-line: #e6ded1;
-  --color-line-strong: #d6c9b4;
-  --color-ink: #1d2f2c;
-  --color-ink-soft: #2f4541;
-  --color-body: #4a5652;
-  --color-subtle: #6a736f;
-  --color-gold: #b08d57;
-  --color-gold-soft: #e9dcc6;
-  --color-bronze: #85663a;
+  /* Brand palette: porcelain and mist blue surfaces, deep navy text, muted gold accents */
+  --color-porcelain: #fafbfc;
+  --color-mist: #eef3f7;
+  --color-cloud: #e3eaf0;
+  --color-line: #dde4eb;
+  --color-line-strong: #c3cfdb;
+  --color-ink: #14233a;
+  --color-ink-soft: #263b5a;
+  --color-body: #465366;
+  --color-subtle: #66717f;
+  --color-gold: #a8823f;
+  --color-sky: #dbe5ef;
+  --color-bronze: #8a6a2f;
 }
 
 :root {
   --radius: 0.75rem;
-  --background: #fbf9f5;
-  --foreground: #1d2f2c;
+  --background: #fafbfc;
+  --foreground: #14233a;
 }
 
 html { scroll-behavior: smooth; color-scheme: light; }
 body { background: var(--background); color: var(--foreground); font-family: var(--font-body), var(--font-devanagari), sans-serif; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4 { font-family: var(--font-heading), var(--font-devanagari), Georgia, serif; }
 * { -webkit-overflow-scrolling: touch; }
-::selection { background: #e9dcc6; color: #1d2f2c; }
+::selection { background: #dbe5ef; color: #14233a; }
 a, button { -webkit-tap-highlight-color: transparent; }
-:focus-visible { outline: 2px solid #b08d57; outline-offset: 3px; }
+:focus-visible { outline: 2px solid #a8823f; outline-offset: 3px; }
 
 @media (prefers-reduced-motion: no-preference) and (supports (animation-timeline: view())) {
   .scroll-reveal { animation: scroll-reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 30%; }

@@ -15,7 +15,7 @@ export default function WorkplaceWellnessPage() {
     {"@type":"ListItem","position":1,"name":"Home","item":siteUrl+"/"},
     {"@type":"ListItem","position":2,"name":"Workplace wellness","item":siteUrl+"/workplace-wellness"}
   ]};
-  return <div className="min-h-screen bg-ivory px-5 pb-16 pt-28 sm:px-8 sm:pt-36">
+  return <div className="min-h-screen bg-porcelain px-5 pb-16 pt-28 sm:px-8 sm:pt-36">
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}} />
     <div className="mx-auto max-w-4xl">
       <nav aria-label="Breadcrumb" className="mb-8 text-sm text-subtle"><Link href="/">Home</Link><span className="mx-2">/</span><span>Workplace wellness</span></nav>
@@ -29,7 +29,7 @@ export default function WorkplaceWellnessPage() {
           ["Mental health at work","Building everyday awareness, reducing stigma, and knowing how to seek appropriate support."]
         ].map(([title,text])=><section key={title} className="rounded-3xl border border-line bg-white p-6"><h2 className="font-serif text-2xl text-ink">{title}</h2><p className="mt-3 text-sm leading-7 text-body">{text}</p></section>)}
       </div>
-      <section className="mt-10 rounded-3xl bg-sand p-6 sm:p-8">
+      <section className="mt-10 rounded-3xl bg-mist p-6 sm:p-8">
         <h2 className="font-serif text-2xl text-ink">Workshop enquiries</h2>
         <p className="mt-3 text-sm leading-7 text-body">For organisations interested in a workplace wellness session, contact Dr. Holambe on WhatsApp with the organisation name, approximate group size, and the topic you would like to discuss.</p>
         <a href={Info.WHATSAPP_WORKSHOP_LINK} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex min-h-12 items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white">WhatsApp enquiry</a>

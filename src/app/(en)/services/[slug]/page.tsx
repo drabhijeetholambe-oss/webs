@@ -72,7 +72,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   };
 
   return (
-    <div className="min-h-screen bg-ivory pt-24">
+    <div className="min-h-screen bg-porcelain pt-24">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
       <article className="mx-auto max-w-4xl px-5 py-12 sm:px-8 sm:py-16">
         <nav aria-label="Breadcrumb" className="mb-8 text-sm text-subtle">
@@ -93,7 +93,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <section className="mt-10 rounded-3xl border border-line bg-white p-6 sm:p-8">
           <h2 className="font-serif text-2xl font-medium text-ink">Common signs and symptoms</h2>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-            {service.signs.map((sign) => <li key={sign} className="flex gap-3 rounded-2xl bg-sand p-4 text-sm leading-6 text-body"><span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />{sign}</li>)}
+            {service.signs.map((sign) => <li key={sign} className="flex gap-3 rounded-2xl bg-mist p-4 text-sm leading-6 text-body"><span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />{sign}</li>)}
           </ul>
         </section>
         <section className="mt-10">
@@ -106,16 +106,16 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <p className="mt-4 text-base leading-8 text-body">Medication is prescribed only after an individual assessment and discussion. You can ask about the purpose, possible side effects, alternatives, and how follow-up will work. There are no guaranteed results; the plan is reviewed as your needs and circumstances change.</p>
         </section>
         <section className="mt-10 grid gap-5 md:grid-cols-2">
-          <div className="rounded-3xl bg-sand p-6 sm:p-7">
+          <div className="rounded-3xl bg-mist p-6 sm:p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-bronze">Your first appointment</p>
             <h2 className="mt-3 font-serif text-2xl font-medium text-ink">A conversation at your pace</h2>
             <p className="mt-3 text-sm leading-7 text-body">The first visit is a chance to explain what has been troubling you, when it began, and what you hope will change. Dr. Holambe will ask about your health, sleep, daily life, and any medicines or past care that may be relevant. You can ask questions and share only what you feel ready to discuss. Together, you can consider an assessment and agree on next steps. Bring a current medicine list or previous reports if you have them; they are helpful but not required to begin.</p>
           </div>
           <div className="rounded-3xl bg-ink p-6 text-white sm:p-7">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-soft">Online consultation</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky">Online consultation</p>
             <h2 className="mt-3 font-serif text-2xl font-medium">Care from a private space</h2>
             <p className="mt-3 text-sm leading-7 text-white/75">Online appointments are available by arrangement. Choose a private, quiet place and keep any reports or medicine details nearby. Some concerns need an in-person visit, examination, or further tests; if so, the doctor will explain why and discuss the next step. Online appointments are not a substitute for urgent emergency care.</p>
-            <a href={Info.WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex rounded-full bg-gold-soft px-5 py-3 text-sm font-semibold text-ink transition hover:bg-white">Ask about an online appointment</a>
+            <a href={Info.WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex rounded-full bg-sky px-5 py-3 text-sm font-semibold text-ink transition hover:bg-white">Ask about an online appointment</a>
           </div>
         </section>
         <section className="mt-12">
@@ -128,7 +128,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </div>
         </section>
         <p className="mt-10 border-t border-line pt-6 text-xs leading-5 text-subtle">Last reviewed by Dr. Abhijeet Holambe, MD Psychiatry — October 2026.</p>
-        <section className="mt-12 rounded-3xl border border-line bg-sand p-6 sm:p-8">
+        <section className="mt-12 rounded-3xl border border-line bg-mist p-6 sm:p-8">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
             <Image src="/dr-abhijeet-holambe-clinic.jpg" alt="Dr. Abhijeet Holambe, psychiatrist in Malad West" width={1600} height={2844} sizes="96px" className="h-24 w-24 rounded-full object-cover object-[center_25%]" />
             <div className="flex-1">
@@ -147,7 +147,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="mt-4 flex flex-wrap gap-3">
             {service.related.map((relatedSlug) => {
               const relatedService = services[relatedSlug as ServiceSlug];
-              return <Link key={relatedSlug} href={"/services/" + relatedSlug} className="rounded-full border border-line bg-white px-4 py-2 text-sm text-bronze transition hover:border-gold hover:bg-sand">{relatedService.title}</Link>;
+              return <Link key={relatedSlug} href={"/services/" + relatedSlug} className="rounded-full border border-line bg-white px-4 py-2 text-sm text-bronze transition hover:border-gold hover:bg-mist">{relatedService.title}</Link>;
             })}
           </div>
         </section>
