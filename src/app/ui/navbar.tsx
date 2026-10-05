@@ -21,6 +21,7 @@ const copy: Record<string, NavCopy> = {
       { label: "About", href: "/about" },
       { label: "Areas of care", href: "/#services" },
       { label: "How visits work", href: "/#first-visit" },
+      { label: "Articles", href: "/articles" },
       { label: "FAQ", href: "/faq" },
       { label: "Contact", href: "/contact" },
     ],
