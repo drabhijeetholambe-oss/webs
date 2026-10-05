@@ -93,7 +93,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <section className="mt-10 rounded-3xl border border-line bg-white p-6 sm:p-8">
           <h2 className="font-serif text-2xl font-medium text-ink">Common signs and symptoms</h2>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-            {service.signs.map((sign) => <li key={sign} className="flex gap-3 rounded-2xl bg-mist p-4 text-sm leading-6 text-body"><span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-olive" />{sign}</li>)}
+            {service.signs.map((sign) => <li key={sign} className="flex gap-3 rounded-2xl bg-mist p-4 text-sm leading-6 text-body"><span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />{sign}</li>)}
           </ul>
         </section>
         <section className="mt-10">
@@ -111,7 +111,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <h2 className="mt-3 font-serif text-2xl font-medium text-ink">A conversation at your pace</h2>
             <p className="mt-3 text-sm leading-7 text-body">The first visit is a chance to explain what has been troubling you, when it began, and what you hope will change. Dr. Holambe will ask about your health, sleep, daily life, and any medicines or past care that may be relevant. You can ask questions and share only what you feel ready to discuss. Together, you can consider an assessment and agree on next steps. Bring a current medicine list or previous reports if you have them; they are helpful but not required to begin.</p>
           </div>
-          <div className="rounded-3xl bg-ink p-6 text-white sm:p-7">
+          <div className="rounded-3xl bg-brand p-6 text-white sm:p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky">Online consultation</p>
             <h2 className="mt-3 font-serif text-2xl font-medium">Care from a private space</h2>
             <p className="mt-3 text-sm leading-7 text-white/75">Online appointments are available by arrangement. Choose a private, quiet place and keep any reports or medicine details nearby. Some concerns need an in-person visit, examination, or further tests; if so, the doctor will explain why and discuss the next step. Online appointments are not a substitute for urgent emergency care.</p>
@@ -138,7 +138,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </div>
           </div>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a href={Info.WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink-soft">Book on WhatsApp</a>
+            <a href={Info.WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-soft">Book on WhatsApp</a>
             <a href={Info.PHONE_LINK} className="inline-flex min-h-12 items-center justify-center rounded-full border border-line-strong px-6 py-3 text-sm font-semibold text-ink transition hover:bg-white">Call now</a>
           </div>
         </section>
@@ -147,7 +147,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="mt-4 flex flex-wrap gap-3">
             {service.related.map((relatedSlug) => {
               const relatedService = services[relatedSlug as ServiceSlug];
-              return <Link key={relatedSlug} href={"/services/" + relatedSlug} className="rounded-full border border-line bg-white px-4 py-2 text-sm text-ink-soft transition hover:border-olive hover:bg-mist">{relatedService.title}</Link>;
+              return <Link key={relatedSlug} href={"/services/" + relatedSlug} className="rounded-full border border-line bg-white px-4 py-2 text-sm text-ink-soft transition hover:border-accent hover:bg-mist">{relatedService.title}</Link>;
             })}
           </div>
         </section>

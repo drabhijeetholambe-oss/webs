@@ -36,25 +36,26 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Brand palette: neutral grey surfaces with a hint of sage, black and grey text, olive used sparingly for accents */
-  --color-porcelain: #f7f8f6;
-  --color-mist: #f0f2ee;
-  --color-cloud: #e4e8e0;
-  --color-line: #dcdfd8;
-  --color-line-strong: #b8bdb2;
+  /* PALETTE: Navy and teal. Text stays black and grey; brand colors buttons and bands, accent colors frames and details */
+  --color-porcelain: #f5f8fb;
+  --color-mist: #e6eef6;
+  --color-cloud: #cfdeec;
+  --color-line: #d3dde7;
+  --color-line-strong: #a9bccf;
   --color-ink: #141414;
   --color-ink-soft: #2e2e2e;
   --color-body: #3a3a3a;
   --color-subtle: #5c5c5c;
-  --color-olive-dark: #4a5320;
-  --color-olive: #5f6b27;
-  --color-olive-light: #d5ddb0;
-  --color-sky: #e4e8e0;
+  --color-brand: #1d3557;
+  --color-brand-soft: #2c4a76;
+  --color-accent: #2a8c80;
+  --color-accent-light: #cdeae5;
+  --color-sky: #cdeae5;
 }
 
 :root {
   --radius: 0.75rem;
-  --background: #f7f8f6;
+  --background: #f5f8fb;
   --foreground: #141414;
 }
 
@@ -62,9 +63,9 @@ html { scroll-behavior: smooth; color-scheme: light; }
 body { background: var(--background); color: var(--foreground); font-family: var(--font-body), var(--font-devanagari), sans-serif; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4 { font-family: var(--font-heading), var(--font-devanagari), Georgia, serif; }
 * { -webkit-overflow-scrolling: touch; }
-::selection { background: #d5ddb0; color: #141414; }
+::selection { background: #cdeae5; color: #141414; }
 a, button { -webkit-tap-highlight-color: transparent; }
-:focus-visible { outline: 2px solid #5f6b27; outline-offset: 3px; }
+:focus-visible { outline: 2px solid #2a8c80; outline-offset: 3px; }
 
 @media (prefers-reduced-motion: no-preference) and (supports (animation-timeline: view())) {
   .scroll-reveal { animation: scroll-reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 30%; }
