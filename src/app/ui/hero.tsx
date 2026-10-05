@@ -5,6 +5,8 @@ import * as Info from "@/app/config/constants/info";
 export default function Hero() {
   return (
     <section id="hero" className="relative isolate overflow-hidden bg-gradient-to-br from-cloud via-mist to-porcelain pt-[72px] text-ink">
+      <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-32 -z-10 h-[30rem] w-[30rem] rounded-full bg-olive-light/50 blur-3xl" />
+      <div aria-hidden="true" className="pointer-events-none absolute -bottom-40 right-0 -z-10 h-[34rem] w-[34rem] rounded-full bg-cloud blur-3xl" />
       <div aria-hidden="true" className="pointer-events-none absolute -right-40 -top-40 h-[36rem] w-[36rem] rounded-full border border-olive/30" />
       <div aria-hidden="true" className="pointer-events-none absolute -right-12 -top-10 h-[26rem] w-[26rem] rounded-full border border-olive/20" />
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-16 pt-12 sm:px-8 sm:pb-20 lg:min-h-[690px] lg:grid-cols-[1.08fr_0.92fr] lg:gap-16 lg:px-12">

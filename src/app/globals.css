@@ -36,26 +36,26 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Brand palette: blue tinted surfaces, deep navy text, olive green accents */
-  --color-porcelain: #f6f9fd;
-  --color-mist: #e8f0fa;
-  --color-cloud: #d6e4f4;
-  --color-line: #d2deec;
-  --color-line-strong: #afc3da;
-  --color-ink: #13213a;
-  --color-ink-soft: #22385c;
-  --color-body: #3e4b60;
-  --color-subtle: #5a6679;
+  /* Brand palette: soft sage surfaces, deep olive charcoal text, olive green accents */
+  --color-porcelain: #f8faf4;
+  --color-mist: #edf2e4;
+  --color-cloud: #dfe8d0;
+  --color-line: #d6dfc7;
+  --color-line-strong: #b7c4a1;
+  --color-ink: #232a1b;
+  --color-ink-soft: #384229;
+  --color-body: #475040;
+  --color-subtle: #646d58;
   --color-olive-dark: #4a5320;
   --color-olive: #5f6b27;
   --color-olive-light: #d5ddb0;
-  --color-sky: #cfe0f4;
+  --color-sky: #dfe8cc;
 }
 
 :root {
   --radius: 0.75rem;
-  --background: #f6f9fd;
-  --foreground: #13213a;
+  --background: #f8faf4;
+  --foreground: #232a1b;
 }
 
 html { scroll-behavior: smooth; color-scheme: light; }
