@@ -24,11 +24,8 @@ export default function TranslationPage({ locale, title, intro, paragraphs, sect
   return <div className="min-h-screen bg-[#fbfaf7] px-5 pb-16 pt-28 sm:px-8 sm:pt-36">
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}} />
     <div className="mx-auto max-w-4xl">
-      <div className="mb-8 rounded-2xl border border-[#d8c9a9] bg-[#f6f0e2] px-4 py-3 text-xs font-semibold tracking-wide text-[#6d5a35]">
-        {locale === "hi" ? "अनुवाद ड्राफ्ट — प्रकाशित करने से पहले समीक्षा आवश्यक है।" : "भाषांतर मसुदा — प्रकाशित करण्यापूर्वी तुमची समीक्षा आवश्यक आहे."}
-      </div>
       <nav aria-label="Breadcrumb" className="mb-8 text-sm text-[#64736d]"><Link href={"/"+locale}>{locale === "hi" ? "होम" : "मुख्यपृष्ठ"}</Link><span className="mx-2">/</span><span>{title}</span></nav>
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#38695e]">{locale === "hi" ? "ड्राफ्ट अनुवाद" : "भाषांतर मसुदा"}</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#38695e]">{locale === "hi" ? "मलाड वेस्ट, मुंबई" : "मालाड वेस्ट, मुंबई"}</p>
       <h1 className="mt-4 font-serif text-4xl font-medium leading-tight text-[#183b37] sm:text-5xl">{title}</h1>
       <p className="mt-5 text-lg leading-8 text-[#53655e]">{intro}</p>
       <div className="mt-8 space-y-5 text-base leading-8 text-[#4f615b]">{paragraphs.map(p=><p key={p}>{p}</p>)}</div>

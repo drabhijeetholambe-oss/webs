@@ -17,3 +17,10 @@ export const QUALIFICATIONS = ["MBBS (Seth GS Medical College and KEM Hospital)"
 export const CONSULTATION_LANGUAGES = ["Hindi", "Marathi", "English"];
 export const FIRST_CONSULTATION_FEE = "₹1,800";
 export const FOLLOW_UP_CONSULTATION_FEE = "₹1,500";
+export const PHONE_LINK = "tel:" + PHONE.replace(/[^+\d]/g, "");
+export const WHATSAPP_LINK = "https://wa.me/" + PHONE.replace(/\D/g, "") + "?text=" + encodeURIComponent("Hello Dr. Holambe, I would like to book a consultation.");
+export const WHATSAPP_WORKSHOP_LINK = "https://wa.me/" + PHONE.replace(/\D/g, "") + "?text=" + encodeURIComponent("Hello Dr. Holambe, I would like to enquire about a workplace wellness workshop.");
+export const YOUTUBE = "https://www.youtube.com/@DrAbhijeetHolambe";
+export const LINKEDIN = "https://www.linkedin.com/in/abhijeet-holambe-829414295/";
+export const INSTAGRAM = "https://www.instagram.com/drabhijeetholambe/";
+export const OG_IMAGE = { url: "/og-image.jpg", width: 1200, height: 630, alt: "Dr. Abhijeet Holambe, psychiatrist and sexologist in Malad West, Mumbai" };

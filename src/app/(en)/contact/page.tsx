@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Clock3, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
-import * as Info from "../config/constants/info";
+import * as Info from "@/app/config/constants/info";
 
 const siteUrl = "https://www.drabhijeetholambe.com";
 export const metadata: Metadata = {
@@ -22,8 +22,8 @@ export default function ContactPage() {
           <address className="mt-5 flex gap-3 not-italic text-sm leading-7 text-[#53655e]"><MapPin className="mt-1 h-4 w-4 shrink-0 text-[#38695e]" /><span>{Info.ADDRESS}</span></address>
           <p className="mt-5 flex gap-3 text-sm leading-6 text-[#53655e]"><Clock3 className="mt-0.5 h-4 w-4 shrink-0 text-[#38695e]" /><span><strong className="text-[#183b37]">Consultation hours</strong><br />{Info.HOURS}<br />Appointments by prior booking.</span></p>
           <div className="mt-6 space-y-4 text-sm">
-            <a href={"tel:"+Info.PHONE.replace(/[^+\d]/g,"")} className="flex items-center gap-3 text-[#315d50]"><Phone className="h-4 w-4" />{Info.PHONE}</a>
-            <a href={"https://wa.me/"+Info.PHONE.replace(/\D/g,"")} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[#315d50]"><MessageCircle className="h-4 w-4" />WhatsApp</a>
+            <a href={Info.PHONE_LINK} className="flex items-center gap-3 text-[#315d50]"><Phone className="h-4 w-4" />{Info.PHONE}</a>
+            <a href={Info.WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[#315d50]"><MessageCircle className="h-4 w-4" />WhatsApp</a>
             <a href={"mailto:"+Info.EMAIL} className="flex items-center gap-3 text-[#315d50]"><Mail className="h-4 w-4" />{Info.EMAIL}</a>
           </div>
           <p className="mt-5 text-sm leading-6 text-[#53655e]"><strong className="text-[#183b37]">Consultation fees:</strong> First consultation ₹1,800 · Follow-up ₹1,500</p><p className="mt-2 text-sm leading-6 text-[#53655e]"><strong className="text-[#183b37]">Languages:</strong> Hindi · Marathi · English</p><a className="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-[#183b37] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#285a50]" href={Info.GOOGLE_MAPS} target="_blank" rel="noopener noreferrer">Open Google Maps directions ↗</a>

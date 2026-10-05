@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { serviceSlugs } from "./services/service-data";
+import { serviceSlugs } from "./config/service-data";
 
 const siteUrl = "https://www.drabhijeetholambe.com";
 
