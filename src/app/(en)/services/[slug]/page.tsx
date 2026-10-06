@@ -19,13 +19,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const service = services[slug as ServiceSlug];
   if (!service) return {};
   return {
-    title: service.seoTitle,
+    title: { absolute: service.seoTitle },
     description: service.description,
     alternates: { canonical: "/services/" + slug, languages: slug === "anxiety-panic-disorder" ? { "en-IN": "/services/anxiety-panic-disorder", "hi-IN": "/hi/services/anxiety-panic-disorder", "mr-IN": "/mr/services/anxiety-panic-disorder" } : slug === "depression" ? { "en-IN": "/services/depression", "hi-IN": "/hi/services/depression", "mr-IN": "/mr/services/depression" } : slug === "sexual-health" ? { "en-IN": "/services/sexual-health", "hi-IN": "/hi/services/sexual-health", "mr-IN": "/mr/services/sexual-health" } : undefined },
     openGraph: {
       type: "article",
       url: siteUrl + "/services/" + slug,
-      title: service.seoTitle,
+      title: { absolute: service.seoTitle },
       description: service.description,
       siteName: "Dr. Abhijeet Holambe",
       locale: "en_IN",

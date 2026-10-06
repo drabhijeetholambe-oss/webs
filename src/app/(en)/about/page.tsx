@@ -6,8 +6,8 @@ import { ABOUT, CONSULTATION_LANGUAGES, FIRST_CONSULTATION_FEE, FOLLOW_UP_CONSUL
 const siteUrl = "https://www.drabhijeetholambe.com";
 
 export const metadata: Metadata = {
-  title: "About Dr. Abhijeet Holambe | Psychiatrist, De-addiction Specialist and Sexologist in Malad West, Mumbai",
-  description: "Meet Dr. Abhijeet Holambe, psychiatrist, de-addiction specialist and sexologist in Malad West, Mumbai. Read about his KEM and JJ training, 6 years of clinical experience, registration, workplace wellness work, languages, and fees.",
+  title: { absolute: "About Dr. Abhijeet Holambe | Psychiatrist in Malad West, Mumbai" },
+  description: "Dr. Abhijeet Holambe, psychiatrist, de-addiction specialist and sexologist in Malad West, Mumbai: KEM and JJ training, 6 years of experience, fees and languages.",
   alternates: { canonical: "/about", languages: { "en-IN": "/about", "hi-IN": "/hi/about", "mr-IN": "/mr/about" } },
 };
 
