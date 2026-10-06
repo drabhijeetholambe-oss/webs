@@ -5,7 +5,7 @@ import * as Info from "@/app/config/constants/info";
 const siteUrl = "https://www.drabhijeetholambe.com";
 
 export const metadata: Metadata = {
-  title: "Workplace Wellness Workshops | Dr. Abhijeet Holambe",
+  title: "Workplace Wellness Workshops",
   description: "Workplace wellness workshops by Dr. Abhijeet Holambe on stress, burnout, and mental health at work.",
   alternates: { canonical: "/workplace-wellness" },
 };

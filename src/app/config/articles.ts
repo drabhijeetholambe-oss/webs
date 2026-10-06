@@ -20,7 +20,7 @@ export const articles: Article[] = [
   {
     slug: "psychiatrist-fees-in-mumbai",
     title: "How much does a psychiatrist cost in Mumbai?",
-    description: "What decides psychiatrist consultation fees in Mumbai, what a first visit and follow ups cost at Dr. Abhijeet Holambe's practice in Malad West, and how to plan for ongoing care.",
+    description: "What decides psychiatrist fees in Mumbai, what a first visit and follow ups cost at Dr. Abhijeet Holambe's Malad West practice, and other costs to plan for.",
     published: DATE,
     updated: DATE,
     intro: "Cost is one of the first questions people ask before booking. Fees in Mumbai vary from one psychiatrist to another, so it helps to know what affects the price and what you are paying for.",
